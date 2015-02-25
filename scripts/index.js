@@ -1,6 +1,6 @@
 'use strict';
 
-let React = require('react');
-let App = require('./app');
+import React from 'react';
+import App from'./app';
 
 React.render(<App />, document.getElementById('app'));
