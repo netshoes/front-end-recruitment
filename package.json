@@ -1,0 +1,24 @@
+{
+  "name": "front-end-recruitment",
+  "version": "0.0.1",
+  "description": "front-end recruitment tech test ",
+  "scripts": {
+    "start": "node --harmony server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netshoes/front-end-recruitment"
+  },
+  "author": "Hugo Bessa <hugobessaa@gmail.com> (http://github.com/hugobessaa)",
+  "license": "MIT",
+  "devDependencies": {
+    "react-hot-loader": "^1.1.1",
+    "webpack": "^1.5.1",
+    "webpack-dev-server": "1.6.4",
+    "babel-core": "^4.4.6",
+    "babel-loader": "^4.0.0"
+  },
+  "dependencies": {
+    "react": "^0.12.0"
+  }
+}
