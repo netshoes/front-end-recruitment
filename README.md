@@ -21,3 +21,15 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+***
+
+## Installation
+
+Clone the repo and run the following
+
+```bash
+npm install; npm start
+```
+
+to see this project working at `localhost:3000`.
