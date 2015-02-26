@@ -10,7 +10,6 @@ let ProductList = React.createClass({
   },
 
   render() {
-    console.log(this.props);
     return (
       <span>{this.props.products.length}</span>
     )
