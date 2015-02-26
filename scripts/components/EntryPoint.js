@@ -1,12 +1,12 @@
 'use strict';
 
-import React from 'react/addons';
+import React from 'react';
 import _ from 'lodash';
+import classnames from 'classnames';
 
 import NavBar from '../components/NavBar';
 
 let { PropTypes } = React;
-let { classSet } = React.addons;
 
 let EntryPoint = React.createClass({
 
@@ -27,7 +27,7 @@ let EntryPoint = React.createClass({
   render() {
     let { name } = this.props;
 
-    let classes = classSet({
+    let classes = classnames({
       'EntryPoint': true,
       [`EntryPoint--${name}`]: !_.isEmpty(name)
     });
