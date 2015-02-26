@@ -3,6 +3,8 @@
 import React from 'react/addons';
 import _ from 'lodash';
 
+import NavBar from '../components/NavBar';
+
 let { PropTypes } = React;
 let { classSet } = React.addons;
 
@@ -32,7 +34,10 @@ let HomeEntry = React.createClass({
 
 		return (
 			<div className={classes}>
-				{this.props.children}
+				<NavBar />
+				<div className="EntryPoint-content">
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
