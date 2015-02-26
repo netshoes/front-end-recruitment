@@ -8,7 +8,7 @@ let App = React.createClass({
   render() {
     return (
       <div className="App">
-      	<HomeEntry />
+        <HomeEntry />
       </div>
     );
   }

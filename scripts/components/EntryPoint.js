@@ -10,37 +10,37 @@ let { classSet } = React.addons;
 
 let EntryPoint = React.createClass({
 
-	propTypes: {
-		name: PropTypes.string,
-		children: PropTypes.oneOfType([
-			PropTypes.element,
-			PropTypes.arrayOf(PropTypes.element)
-		]).isRequired
-	},
+  propTypes: {
+    name: PropTypes.string,
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element)
+    ]).isRequired
+  },
 
-	getDefaultProps() {
-		return {
-			name: ''
-		};
-	},
+  getDefaultProps() {
+    return {
+      name: ''
+    };
+  },
 
-	render() {
-		let { name } = this.props;
+  render() {
+    let { name } = this.props;
 
-		let classes = classSet({
-			'EntryPoint': true,
-			[`EntryPoint--${name}`]: !_.isEmpty(name)
-		});
+    let classes = classSet({
+      'EntryPoint': true,
+      [`EntryPoint--${name}`]: !_.isEmpty(name)
+    });
 
-		return (
-			<div className={classes}>
-				<NavBar />
-				<div className="EntryPoint-content">
-					{this.props.children}
-				</div>
-			</div>
-		);
-	}
+    return (
+      <div className={classes}>
+        <NavBar />
+        <div className="EntryPoint-content">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
 
 });
 

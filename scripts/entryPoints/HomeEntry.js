@@ -8,15 +8,15 @@ import ProductList from '../components/ProductList';
 
 let HomeEntry = React.createClass({
 
-	render() {
-		return (
-			<EntryPoint name="Home">
+  render() {
+    return (
+      <EntryPoint name="Home">
         <FluxComponent connectToStores={['products']}>
           <ProductList />
         </FluxComponent>
-			</EntryPoint>
-		)
-	}
+      </EntryPoint>
+    )
+  }
 
 });
 

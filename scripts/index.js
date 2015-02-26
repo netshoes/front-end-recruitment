@@ -9,6 +9,6 @@ import Flux from './Flux';
  */
 let flux = new Flux();
 React.withContext(
-	{ flux },
-	() => React.render(<App />, document.getElementById('app'))
+  { flux },
+  () => React.render(<App />, document.getElementById('app'))
 );
