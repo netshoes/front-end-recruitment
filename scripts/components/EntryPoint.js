@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 let { PropTypes } = React;
 let { classSet } = React.addons;
 
-let HomeEntry = React.createClass({
+let EntryPoint = React.createClass({
 
 	propTypes: {
 		name: PropTypes.string,
@@ -44,4 +44,4 @@ let HomeEntry = React.createClass({
 
 });
 
-export default HomeEntry;
+export default EntryPoint;
