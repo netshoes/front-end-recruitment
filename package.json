@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "react": "^0.13.0-rc1",
-    "lodash": "^3.3.1"
+    "lodash": "^3.3.1",
+    "superagent": "^0.21.0",
+    "flummox": "^2.11.0"
   }
 }

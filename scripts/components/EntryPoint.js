@@ -12,7 +12,7 @@ let EntryPoint = React.createClass({
 
 	propTypes: {
 		name: PropTypes.string,
-		children: PropTypes.oneOf([
+		children: PropTypes.oneOfType([
 			PropTypes.element,
 			PropTypes.arrayOf(PropTypes.element)
 		]).isRequired

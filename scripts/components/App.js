@@ -7,7 +7,7 @@ let App = React.createClass({
 
   render() {
     return (
-      <div class="App">
+      <div className="App">
       	<HomeEntry />
       </div>
     );
