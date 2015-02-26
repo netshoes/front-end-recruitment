@@ -29,7 +29,7 @@ let EntryPoint = React.createClass({
 
     let classes = classnames({
       'EntryPoint': true,
-      [`EntryPoint--${name}`]: !_.isEmpty(name)
+      [`EntryPoint--${name.toLowerCase()}`]: !_.isEmpty(name)
     });
 
     return (
