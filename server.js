@@ -1,17 +1,49 @@
 'use strict';
 
+let express = require('express');
+let path = require('path');
+let logger = require('morgan');
+let bodyParser = require('body-parser');
+
+/**
+ * Express server configuration
+ */
+
+let app = express();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(express.static(__dirname + '/public'));
+
+let router = express.Router();
+router.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.use('/', router);
+
+/**
+ * Dev server tooling
+ */
+
 let webpack = require('webpack');
-let WebpackDevServer = require('webpack-dev-server');
-let config = require('./webpack.config');
+let webpackMiddleware = require('webpack-dev-middleware');
+let webpackConfig = require('./webpack.config');
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true
-}).listen(3000, 'localhost', function(err, result) {
-  if (err) {
-    console.log(err);
-  }
+if (app.get('env') === 'development') {
+  app.use(webpackMiddleware(webpack(webpackConfig), {
+    publicPath: '/scripts/'
+  }));
+}
 
-  console.log('Listening at localhost:3000');
+/**
+ * Start server
+ */
+
+app.set('port', process.env.PORT || 3000);
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
 });
