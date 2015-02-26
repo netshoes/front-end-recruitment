@@ -4,6 +4,8 @@ import { Store } from 'flummox';
 import request from 'superagent';
 import _ from 'lodash';
 
+import ProductWebUtils from '../utils/ProductWebUtils';
+
 class ProductStore extends Store {
 
   constructor(flux) {
@@ -15,9 +17,7 @@ class ProductStore extends Store {
     };
 
     // async data fetching
-    request
-      .get('/data/products.json')
-      .end(_.bind(this.onDataFetched, this));
+    ProductWebUtils.getAllProducts.end(_.bind(this.onDataFetched, this));
   }
 
   // TODO: error hanling
