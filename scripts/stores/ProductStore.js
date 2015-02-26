@@ -28,8 +28,7 @@ class ProductStore extends Store {
   }
 
   getAllProducts() {
-
-    return
+    return this.state.products;
   }
 
 }
