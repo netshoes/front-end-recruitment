@@ -19,6 +19,7 @@
     "babel-loader": "^4.0.0"
   },
   "dependencies": {
-    "react": "^0.13.0-rc1"
+    "react": "^0.13.0-rc1",
+    "lodash": "^3.3.1"
   }
 }

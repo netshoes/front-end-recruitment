@@ -1,15 +1,18 @@
 'use strict';
 
 import React from 'react';
+import HomeEntry from '../entryPoints/HomeEntry'
 
-class App extends React.Component {
+let App = React.createClass({
 
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div class="App">
+      	<HomeEntry />
+      </div>
     );
   }
 
-};
+});
 
-module.exports = App;
+export default App;
