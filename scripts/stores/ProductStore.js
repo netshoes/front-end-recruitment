@@ -16,16 +16,14 @@ class ProductStore extends Store {
 
     // async data fetching
     request
-      .get('/api/products')
+      .get('/data/products.json')
       .end(_.bind(this.onDataFetched, this));
   }
 
-  // TODO: better error hanling
-  onDataFetched(err, res) {
-    if (err) { return; }
-
+  // TODO: error hanling
+  onDataFetched(res) {
     this.setState({
-      products: res.products
+      products: res.body.products
     });
   }
 
