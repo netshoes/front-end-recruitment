@@ -17,7 +17,8 @@ class ProductStore extends Store {
     };
 
     // async data fetching
-    ProductWebUtils.getAllProducts.end(_.bind(this.onDataFetched, this));
+    ProductWebUtils.getAllProducts()
+      .end(_.bind(this.onDataFetched, this));
   }
 
   // TODO: error hanling

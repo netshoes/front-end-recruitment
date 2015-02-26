@@ -1,6 +1,12 @@
 'use strict';
 
 import React from 'react';
+import _ from 'lodash';
+
+import Collection from '../components/Collection';
+import CollectionItem from '../components/CollectionItem';
+import ProductItem from '../components/ProductItem';
+
 let { PropTypes } = React;
 
 let ProductList = React.createClass({
@@ -9,9 +15,21 @@ let ProductList = React.createClass({
     products: PropTypes.array
   },
 
+  renderProducts() {
+    return _.map(this.props.products, (product) => {
+      return (
+        <CollectionItem>
+          <ProductItem product={product} mode="collection" />
+        </CollectionItem>
+      );
+    });
+  },
+
   render() {
     return (
-      <span>{this.props.products.length}</span>
+      <Collection>
+        {this.renderProducts()}
+      </Collection>
     )
   }
 
