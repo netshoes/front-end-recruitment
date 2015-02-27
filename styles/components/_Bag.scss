@@ -59,6 +59,10 @@
       font-weight: 600;
       text-transform: uppercase;
 
+      // Hard-alignment
+      position: relative;
+      top: -9px;
+
       margin-top: 0;
       margin-bottom: 0;
       margin-left: $spacing-unit;
