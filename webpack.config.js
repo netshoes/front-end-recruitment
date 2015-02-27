@@ -24,7 +24,8 @@ module.exports = {
       { test: /\.scss$/, 'loader': 'style!css!sass?outputStyle=expanded' },
 
       // inline base64 URLs for <=8k images, direct URLs for the rest
-      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+      {test: /\.(eot|eot\?|svg|ttf|woff|woff2)$/, loader: 'url-loader'}
     ]
   }
 };
