@@ -17,7 +17,8 @@ let ProductItem = React.createClass({
     mode: PropTypes.oneOf(['collection', 'list']).isRequired
   },
 
-  onAddToBagClick() {
+  onProductItemLinkClick(e) {
+    e.preventDefault();
     let bagActions = flux.getActions('bagItems');
 
     bagActions.addItem(this.props.product);
@@ -39,18 +40,23 @@ let ProductItem = React.createClass({
 
     return (
       <div>
-        <ProductThumb sku={sku} title={title} />
-        <div className="ProductItem-info">
-          <h3 className="ProductItem-title">{title}</h3>
-          <MicroHr />
-          <ProductPrice
-            price={price}
-            currency={currencyFormat}
-            installments={installments}
-            highlight={true} />
+        <a
+          href="#"
+          className="ProductItem-link"
+          onClick={this.onProductItemLinkClick} >
 
-          <button onClick={this.onAddToBagClick}>add to bag</button>
-        </div>
+          <ProductThumb sku={sku} title={title} />
+          <div className="ProductItem-info">
+            <h3 className="ProductItem-title">{title}</h3>
+            <MicroHr />
+            <ProductPrice
+              price={price}
+              currency={currencyFormat}
+              installments={installments}
+              highlight={true} />
+          </div>
+
+        </a>
       </div>
     );
   },
