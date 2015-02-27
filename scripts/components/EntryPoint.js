@@ -4,8 +4,6 @@ import React from 'react';
 import _ from 'lodash';
 import classnames from 'classnames';
 
-import NavBar from '../components/NavBar';
-
 let { PropTypes } = React;
 
 let EntryPoint = React.createClass({
@@ -34,7 +32,6 @@ let EntryPoint = React.createClass({
 
     return (
       <div className={classes}>
-        <NavBar />
         <div className="EntryPoint-content">
           {this.props.children}
         </div>
