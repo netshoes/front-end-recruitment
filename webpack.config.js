@@ -21,6 +21,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel?experimental&sourceMap="inline"'], exclude: /node_modules/ },
+      { test: /\.scss$/, 'loader': 'style!css!sass?outputStyle=expanded' }
     ]
   }
 };

@@ -16,7 +16,10 @@
     "webpack": "^1.5.1",
     "babel-core": "^4.4.6",
     "babel-loader": "^4.0.0",
-    "webpack-dev-middleware": "^1.0.11"
+    "webpack-dev-middleware": "^1.0.11",
+    "style-loader": "^0.8.3",
+    "css-loader": "^0.9.1",
+    "sass-loader": "^0.4.0"
   },
   "dependencies": {
     "react": "^0.13.0-rc1",
