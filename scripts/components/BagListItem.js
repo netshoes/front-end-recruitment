@@ -30,7 +30,28 @@ let BagListItem = React.createClass({
           title={bagItem.title}
           size="square" />
 
-        <button onClick={this.onRemoveItemClick} >&times;</button>
+        <div className="BagList-info">
+          <span className="BagList-title">
+            {bagItem.title}
+          </span>
+          <span className="BagList-details">
+            {bagItem.availableSizes[0]} | {bagItem.style}
+          </span>
+          <span className="BagList-quantity">
+            Quantidade: {bagItem.quantity}
+          </span>
+        </div>
+
+        <div className="BagList-removeAndPrice">
+          <button onClick={this.onRemoveItemClick} >&times;</button>
+
+          <ProductPrice
+              price={bagItem.price}
+              currency={bagItem.currencyFormat}
+              gold={true} />
+
+        </div>
+
       </div>
     );
   }
