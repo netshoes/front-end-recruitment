@@ -16,6 +16,13 @@
 
     @include clearfix;
   }
+    .BagList-item--hoveringRemove {
+      opacity: 0.5;
+
+      * {
+        text-decoration: line-through;
+      }
+    }
 
     .BagList-thumb {
       width: 50px;
