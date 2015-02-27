@@ -11,3 +11,55 @@
   background-color: $color-dark-gray;
   color: $color-white;
 }
+
+  .Bag-header {
+    text-align: center;
+
+    padding-top: $spacing-unit--large;
+    padding-bottom: $spacing-unit--large;
+  }
+
+    .Bag-icon {
+      display: inline-block;
+
+      width: 33px;
+      height: 40px;
+      background-image: url("../images/bag-icon.png");
+      background-repeat: no-repeat;
+
+      // position reference to children
+      position: relative;
+    }
+
+      .Bag-badge {
+        position: absolute;
+        bottom: -7px;
+        right: -7px;
+        display: block;
+
+        width: 20px;
+        height: 20px;
+
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 23px;
+        text-indent: 1px;
+
+        border-radius: 50%;
+
+        color: $color-dark-gray;
+        background-color: $color-gold;
+      }
+
+    .Bag-title {
+      display: inline-block;
+
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: $spacing-unit;
+    }

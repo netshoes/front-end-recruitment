@@ -19,7 +19,10 @@ let BagHeader = React.createClass({
   render() {
     return (
       <header className="Bag-header">
-        <h2 className="Bag-title">{`Sacola (${this.props.quantity})`}</h2>
+        <span className="Bag-icon">
+          <span className="Bag-badge">{this.props.quantity}</span>
+        </span>
+        <h2 className="Bag-title">Sacola</h2>
       </header>
     );
   }
