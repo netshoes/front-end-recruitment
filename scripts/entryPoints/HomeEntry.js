@@ -2,6 +2,7 @@
 
 import React from 'react';
 import FluxComponent from 'flummox/component';
+import flux from '../flux';
 
 import EntryPoint from '../components/EntryPoint';
 import ProductList from '../components/ProductList';
@@ -12,11 +13,11 @@ let HomeEntry = React.createClass({
   render() {
     return (
       <EntryPoint name="Home">
-        <FluxComponent connectToStores={['products']}>
+        <FluxComponent flux={flux} connectToStores={['products']}>
           <ProductList />
         </FluxComponent>
 
-        <FluxComponent connectToStores={['bagItems']}>
+        <FluxComponent flux={flux} connectToStores={['bagItems']}>
           <Bag />
         </FluxComponent>
 

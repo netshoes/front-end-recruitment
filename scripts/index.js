@@ -1,14 +1,7 @@
 'use strict';
 
 import React from 'react';
-import App from'./components/app';
-import Flux from './Flux';
+import App from './components/App';
+import flux from './flux';
 
-/**
- * Render App with Flux in context
- */
-let flux = new Flux();
-React.withContext(
-  { flux },
-  () => React.render(<App />, document.getElementById('app'))
-);
+React.render(<App />, document.getElementById('app'));
