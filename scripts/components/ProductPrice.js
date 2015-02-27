@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import classnames from 'classnames';
+
 import formatMoney from '../utils/formatMoney';
 
 let { PropTypes } = React;
@@ -10,12 +12,14 @@ let ProductPrice = React.createClass({
   propTypes: {
     price: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
-    installments: PropTypes.number
+    installments: PropTypes.number,
+    highlight: PropTypes.bool
   },
 
   getDefaultProps() {
     return {
-      installments: 0
+      installments: 0,
+      highlight: false
     };
   },
 
@@ -30,8 +34,14 @@ let ProductPrice = React.createClass({
       installmentPrice = formatMoney(price / installments);
     }
 
+    let ProductPriceClasses = classnames({
+      'ProductPrice': true,
+      'ProductPrice--highlight': this.props.highlight,
+      'ProductItem-price': true
+    });
+
     return (
-      <div className="ProductPrice ProductItem-price">
+      <div className={ProductPriceClasses}>
         <span className="ProductPrice-value">
           {currency}
           &nbsp;

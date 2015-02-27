@@ -46,7 +46,8 @@ let ProductItem = React.createClass({
           <ProductPrice
             price={price}
             currency={currencyFormat}
-            installments={installments} />
+            installments={installments}
+            highlight={true} />
 
           <button onClick={this.onAddToBagClick}>add to bag</button>
         </div>
