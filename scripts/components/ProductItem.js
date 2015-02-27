@@ -14,7 +14,6 @@ let ProductItem = React.createClass({
 
   propTypes: {
     product: PropTypes.object.isRequired,
-    mode: PropTypes.oneOf(['collection', 'list']).isRequired
   },
 
   onProductItemLinkClick(e) {
@@ -24,22 +23,10 @@ let ProductItem = React.createClass({
     bagActions.addItem(this.props.product);
   },
 
-  renderByMode() {
-    let { mode } = this.props;
-    let result;
-
-    if (mode === 'collection') {
-      return this.renderAsCollection();
-    } else if (mode === 'list') {
-      return this.renderAsList();
-    }
-  },
-
-  renderAsCollection() {
+  render() {
     let { sku, title, price, currencyFormat, installments } = this.props.product;
-
     return (
-      <div>
+      <div className="ProductItem">
         <a
           href="#"
           className="ProductItem-link"
@@ -59,14 +46,6 @@ let ProductItem = React.createClass({
           </div>
 
         </a>
-      </div>
-    );
-  },
-
-  render() {
-    return (
-      <div className="ProductItem">
-        {this.renderByMode()}
       </div>
     );
   }
