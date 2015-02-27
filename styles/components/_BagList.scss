@@ -6,6 +6,16 @@
 
 }
 
+  .BagList-noItems {
+    display: block;
+
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+
+    text-align: center;
+    font-size: 22px;
+  }
+
   .BagList-item {
     padding-top: $spacing-unit--small;
     padding-bottom: $spacing-unit--small;
