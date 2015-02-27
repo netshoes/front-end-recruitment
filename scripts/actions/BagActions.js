@@ -8,6 +8,10 @@ class BagActions extends Actions {
     return item;
   }
 
+  removeItem(sku) {
+    return sku;
+  }
+
 }
 
 export default BagActions;

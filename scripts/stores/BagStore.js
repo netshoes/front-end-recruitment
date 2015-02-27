@@ -11,6 +11,7 @@ class BagStore extends Store {
     let bagActionIds = flux.getActionIds('bagItems');
 
     this.register(bagActionIds.addItem, this.handleAddItem);
+    this.register(bagActionIds.removeItem, this.handleRemoveItem);
 
     this.state = {
       bagItems: {},
@@ -38,8 +39,19 @@ class BagStore extends Store {
 
     this.setState({
       bagItems: bagItems,
-      quantity: this.getQuantity(),
-      subtotal: this.getSubtotal()
+      quantity: this.getQuantity(bagItems),
+      subtotal: this.getSubtotal(bagItems)
+    });
+  }
+
+  handleRemoveItem(sku) {
+    let bagItems = this.state.bagItems;
+    bagItems = _.omit(bagItems, sku);
+
+    this.setState({
+      bagItems: bagItems,
+      quantity: this.getQuantity(bagItems),
+      subtotal: this.getSubtotal(bagItems)
     });
   }
 
@@ -47,24 +59,29 @@ class BagStore extends Store {
     return this.state.bagItems;
   }
 
-  getQuantity() {
-    return _.reduce(this.state.bagItems, (sum, item) => sum + item.quantity, 0);
+  getQuantity(bagItems) {
+    return _.reduce(bagItems, (sum, item) => sum + item.quantity, 0);
   }
 
-  getAllowedInstallments() {
-    return _.min(_.pluck(this.state.bagItems, 'installments'));
+  getAllowedInstallments(bagItems) {
+    if (_.isEmpty(bagItems)) {
+      return 0;
+    }
+    else {
+      return _.min(_.pluck(bagItems, 'installments'));
+    }
   }
 
-  getSubtotalPrice() {
-    return _.reduce(this.state.bagItems, (sum, item) => {
+  getSubtotalPrice(bagItems) {
+    return _.reduce(bagItems, (sum, item) => {
       return sum + (item.price * item.quantity);
     }, 0);
   }
 
-  getSubtotal() {
+  getSubtotal(bagItems) {
     return {
-      'price': this.getSubtotalPrice(),
-      'installments': this.getAllowedInstallments(),
+      'price': this.getSubtotalPrice(bagItems),
+      'installments': this.getAllowedInstallments(bagItems),
       'currencyFormat': 'R$'
     }
   }
