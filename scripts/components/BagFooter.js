@@ -23,6 +23,7 @@ let BagFooter = React.createClass({
               price={subtotal.price}
               currency={subtotal.currencyFormat}
               installments={subtotal.installments}
+              smallInstallments={true}
               gold={true} />
         </span>
       </div>

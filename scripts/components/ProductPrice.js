@@ -13,12 +13,14 @@ let ProductPrice = React.createClass({
     price: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     installments: PropTypes.number,
+    smallInstallments: PropTypes.bool,
     highlight: PropTypes.bool
   },
 
   getDefaultProps() {
     return {
       installments: 0,
+      smallInstallments: false,
       highlight: false
     };
   },
@@ -34,13 +36,18 @@ let ProductPrice = React.createClass({
       installmentPrice = formatMoney(price / installments);
     }
 
-    let ProductPriceClasses = classnames({
+    let productPriceClasses = classnames({
       'ProductPrice': true,
       'ProductPrice--highlight': this.props.highlight
     });
 
+    let installmentsClasses = classnames({
+      'ProductPrice-installments': true,
+      'ProductPrice-installments--small': this.props.smallInstallments
+    });
+
     return (
-      <div className={ProductPriceClasses}>
+      <div className={productPriceClasses}>
         <span className="ProductPrice-value">
           {currency}
           &nbsp;
@@ -49,7 +56,7 @@ let ProductPrice = React.createClass({
         </span>
 
         {hasInstallments &&
-          <span className="ProductPrice-installments">
+          <span className={installmentsClasses}>
             {`ou ${installments} x ${currency} ${installmentPrice.full}`}
           </span>
         }
