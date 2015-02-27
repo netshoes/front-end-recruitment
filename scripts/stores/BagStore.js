@@ -31,12 +31,17 @@ class BagStore extends Store {
     }
 
     this.setState({
-      bagItems: bagItems
+      bagItems: bagItems,
+      quantity: this.getQuantity()
     });
   }
 
   getAllBagItems() {
     return this.state.bagItems;
+  }
+
+  getQuantity() {
+    return _.reduce(this.state.bagItems, (sum, item) => sum + item.quantity, 0);
   }
 
 }

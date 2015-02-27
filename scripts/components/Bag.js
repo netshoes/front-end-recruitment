@@ -2,18 +2,21 @@
 
 import React from 'react';
 
+import BagHeader from '../components/BagHeader';
+
 let { PropTypes } = React;
 
 let Bag = React.createClass({
 
   propTypes: {
-    bagItems: PropTypes.array
+    bagItems: PropTypes.array.isRequired,
+    quantity: PropTypes.number.isRequired
   },
 
   render() {
     return (
       <div className="Bag">
-        <h1>Bag</h1>
+        <BagHeader quantity={this.props.quantity} />
         {console.log(this.props.bagItems)}
       </div>
     );
