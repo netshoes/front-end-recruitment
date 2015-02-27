@@ -18,8 +18,11 @@ class BagStore extends Store {
   }
 
   handleAddItem(item) {
+    let bagItems = this.state.bagItems;
+    bagItems.push(item);
+
     this.setState({
-      bagItems: this.state.bagItems.push(item)
+      bagItems: bagItems
     });
   }
 
