@@ -37,7 +37,7 @@ let ProductThumb = React.createClass({
     return (
       <div className="ProductItem-thumb">
         <img
-          src={`/images/products/${sku}.jpg`}
+          src={`http://placehold.it/${imgSize.width}x${imgSize.height}`}
           alt={title}
           width={imgSize.width}
           height={imgSize.height} />
