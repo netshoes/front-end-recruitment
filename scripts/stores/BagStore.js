@@ -13,7 +13,8 @@ class BagStore extends Store {
     this.register(bagActionIds.addItem, this.handleAddItem);
 
     this.state = {
-      bagItems: {}
+      bagItems: {},
+      quantity: 0
     };
   }
 
