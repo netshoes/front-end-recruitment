@@ -1,0 +1,13 @@
+/**
+ * MicroHr
+ */
+
+.MicroHr {
+  display: block;
+  width: 15px;
+  height: 2px;
+
+  margin: $spacing-unit--tiny auto;
+
+  background-color: $color-gold;
+}
