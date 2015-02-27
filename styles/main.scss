@@ -15,6 +15,7 @@
  */
 
 @import "settings/spacing.scss";
+@import "settings/colors.scss";
 
 /**
  * Base
@@ -33,3 +34,4 @@
 
 @import "components/EntryPoint.scss";
 @import "components/Collection.scss";
+@import "components/Bag.scss";
