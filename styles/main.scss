@@ -5,6 +5,12 @@
  */
 
 /**
+ * Tools
+ */
+
+@import "tools/mixins/clearfix.scss";
+
+/**
  * Settings
  */
 
@@ -17,3 +23,12 @@
  */
 
 @import "base/normalize.scss";
+@import "base/page.scss";
+
+/**
+ * Components
+ *
+ * The true components here. Following SuitCSS naming conventions
+ */
+
+@import "components/EntryPoint.scss";

@@ -1,13 +1,13 @@
 'use strict';
 
 import React from 'react';
+import classnames from 'classnames';
 
-// TODO: implement correct Collection
 let Collection = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="Collection">
         {this.props.children}
       </div>
     );

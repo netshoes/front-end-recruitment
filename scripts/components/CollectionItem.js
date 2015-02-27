@@ -2,12 +2,11 @@
 
 import React from 'react';
 
-// TODO: implement correct CollectionItem
 let CollectionItem = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="Collection-item">
         {this.props.children}
       </div>
     );
