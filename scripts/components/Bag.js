@@ -2,9 +2,13 @@
 
 import React from 'react';
 import classnames from 'classnames';
+import FluxComponent from 'flummox/component';
 
 import BagHeader from '../components/BagHeader';
+import BagList from '../components/BagList';
 import BagFooter from '../components/BagFooter';
+
+import flux from '../flux';
 
 let { PropTypes } = React;
 
@@ -31,6 +35,11 @@ let Bag = React.createClass({
     return (
       <div className="Bag">
         <BagHeader quantity={this.props.quantity} />
+
+        <FluxComponent flux={flux} connectToStores={['bagItems']}>
+          <BagList />
+        </FluxComponent>
+
         <BagFooter subtotal={this.props.subtotal} />
         <a
           href="#buy"
@@ -38,7 +47,6 @@ let Bag = React.createClass({
           onClick={this.onBuyClick}>
           Comprar
         </a>
-        {console.log(this.props)}
       </div>
     );
   }
