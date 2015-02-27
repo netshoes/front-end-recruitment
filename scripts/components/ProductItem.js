@@ -6,6 +6,8 @@ import ProductThumb from '../components/ProductThumb';
 import ProductPrice from '../components/ProductPrice';
 import MicroHr from '../components/MicroHr';
 
+import flux from '../flux';
+
 let { PropTypes } = React;
 
 let ProductItem = React.createClass({
@@ -13,6 +15,12 @@ let ProductItem = React.createClass({
   propTypes: {
     product: PropTypes.object.isRequired,
     mode: PropTypes.oneOf(['collection', 'list']).isRequired
+  },
+
+  onAddToBagClick() {
+    let bagActions = flux.getActions('bagItems');
+
+    bagActions.addItem(this.props.product);
   },
 
   renderByMode() {
@@ -39,6 +47,8 @@ let ProductItem = React.createClass({
             price={price}
             currency={currencyFormat}
             installments={installments} />
+
+          <button onClick={this.onAddToBagClick}>add to bag</button>
         </div>
       </div>
     );
