@@ -1,0 +1,74 @@
+/**
+ * BagList
+ */
+
+.BagList {
+
+}
+
+  .BagList-item {
+    padding-top: $spacing-unit--small;
+    padding-bottom: $spacing-unit--small;
+
+    border-top: 2px solid $color-black;
+
+    font-size: 14px;
+
+    @include clearfix;
+  }
+
+    .BagList-thumb {
+      width: 50px;
+
+      float: left;
+      margin-right: $spacing-unit;
+    }
+
+    .BagList-info {
+      width: 290px;
+
+      float: left;
+    }
+      .BagList-title {
+        display: block;
+        margin-bottom: $spacing-unit--tiny;
+
+        font-weight: 600;
+      }
+
+      .BagList-details,
+      .BagList-quantity {
+        display: block;
+        font-size: 12px;
+        color: $color-medium-gray;
+        line-height: 1.3;
+      }
+
+    .BagList-removeAndPrice {
+      float: right;
+      text-align: right;
+    }
+
+      .BagList-remove {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+
+        background-color: transparent;
+        background-image: url("../images/remove-icon.png");
+        background-repeat: no-repeat;
+
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        border: 0;
+
+        @include attention {
+          background-image: url("../images/remove-icon--hover.png");
+        }
+      }
+
+      .BagList-price {
+        margin-top: $spacing-unit;
+        color: $color-gold;
+      }

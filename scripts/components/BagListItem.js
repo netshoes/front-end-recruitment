@@ -25,10 +25,12 @@ let BagListItem = React.createClass({
     let bagItem = this.props.bagItem;
     return (
       <div className="BagList-item">
-        <ProductThumb
-          sku={bagItem.sku}
-          title={bagItem.title}
-          size="square" />
+        <div className="BagList-thumb">
+          <ProductThumb
+            sku={bagItem.sku}
+            title={bagItem.title}
+            size="square" />
+        </div>
 
         <div className="BagList-info">
           <span className="BagList-title">
@@ -43,12 +45,15 @@ let BagListItem = React.createClass({
         </div>
 
         <div className="BagList-removeAndPrice">
-          <button onClick={this.onRemoveItemClick} >&times;</button>
+          <button
+            className="BagList-remove"
+            onClick={this.onRemoveItemClick} />
 
-          <ProductPrice
+          <div className="BagList-price">
+            <ProductPrice
               price={bagItem.price}
-              currency={bagItem.currencyFormat}
-              gold={true} />
+              currency={bagItem.currencyFormat} />
+          </div>
 
         </div>
 

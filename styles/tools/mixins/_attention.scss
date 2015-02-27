@@ -1,0 +1,11 @@
+/**
+ * Attention style
+ */
+
+@mixin attention {
+    &:hover,
+    &:focus,
+    &:active {
+      @content;
+    }
+}

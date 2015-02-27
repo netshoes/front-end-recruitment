@@ -9,6 +9,7 @@
  */
 
 @import "tools/mixins/clearfix.scss";
+@import "tools/mixins/attention.scss";
 
 /**
  * Settings
@@ -35,6 +36,7 @@
 @import "components/EntryPoint.scss";
 @import "components/Collection.scss";
 @import "components/Bag.scss";
+@import "components/BagList.scss";
 @import "components/ProductItem.scss";
 @import "components/ProductPrice.scss";
 @import "components/MicroHr.scss";
