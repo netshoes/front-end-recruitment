@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import HomeEntry from '../entryPoints/HomeEntry'
+import HomeEntry from '../entryPoints/HomeEntry';
 
 let App = React.createClass({
 

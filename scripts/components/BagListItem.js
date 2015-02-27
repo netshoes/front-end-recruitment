@@ -19,7 +19,7 @@ let BagListItem = React.createClass({
   getInitialState() {
     return {
       'hoveringRemove': false
-    }
+    };
   },
 
   onRemoveItemClick() {

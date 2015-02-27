@@ -94,7 +94,7 @@ class BagStore extends Store {
       'price': this.getSubtotalPrice(bagItems),
       'installments': this.getAllowedInstallments(bagItems),
       'currencyFormat': 'R$'
-    }
+    };
   }
 
 }

@@ -30,7 +30,7 @@ let ProductList = React.createClass({
       <Collection>
         {this.renderProducts()}
       </Collection>
-    )
+    );
   }
 
 });

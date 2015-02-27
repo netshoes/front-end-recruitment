@@ -23,7 +23,7 @@ let HomeEntry = React.createClass({
 
 
       </EntryPoint>
-    )
+    );
   }
 
 });

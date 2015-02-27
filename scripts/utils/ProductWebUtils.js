@@ -6,8 +6,8 @@ import request from 'superagent';
 let ProductWebUtils = {
   getAllProducts() {
     return request
-      .get('/data/products.json')
+      .get('/data/products.json');
   }
-}
+};
 
 export default ProductWebUtils;

@@ -26,7 +26,7 @@ let ProductPrice = React.createClass({
   },
 
   render() {
-    let { price, currency, installments } = this.props
+    let { price, currency, installments } = this.props;
 
     let { int: intPrice, dec: decPrice } = formatMoney(price);
     let hasInstallments = installments > 0;
