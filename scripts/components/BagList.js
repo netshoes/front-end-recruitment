@@ -14,7 +14,7 @@ let BagList = React.createClass({
   },
 
   renderItems() {
-    if (this.props.bagItems.length > 0) {
+    if (!_.isEmpty(this.props.bagItems)) {
       return _.map(this.props.bagItems, (item) => {
         return (<BagListItem key={item.sku} bagItem={item} />);
       });
