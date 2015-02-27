@@ -9,8 +9,8 @@ let { PropTypes } = React;
 let Bag = React.createClass({
 
   propTypes: {
-    bagItems: PropTypes.array.isRequired,
-    quantity: PropTypes.number.isRequired
+    bagItems: PropTypes.object,
+    quantity: PropTypes.number
   },
 
   render() {
