@@ -5,6 +5,7 @@ import FluxComponent from 'flummox/component';
 
 import EntryPoint from '../components/EntryPoint';
 import ProductList from '../components/ProductList';
+import Bag from '../components/Bag';
 
 let HomeEntry = React.createClass({
 
@@ -14,6 +15,12 @@ let HomeEntry = React.createClass({
         <FluxComponent connectToStores={['products']}>
           <ProductList />
         </FluxComponent>
+
+        <FluxComponent connectToStores={['bagItems']}>
+          <Bag />
+        </FluxComponent>
+
+
       </EntryPoint>
     )
   }
