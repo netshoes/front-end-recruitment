@@ -5,8 +5,6 @@ function formatMoney(value) {
   let dec = (((value % 1).toFixed(2)) * 100).toFixed();
   let full = `${int},${dec}`;
 
-  console.log(full);
-
   return {
     int: int,
     dec: dec,
