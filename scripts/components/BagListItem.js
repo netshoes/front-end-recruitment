@@ -26,7 +26,7 @@ let BagListItem = React.createClass({
     return (
       <div className="BagList-item">
         <ProductThumb
-          sku={bagItem.sky}
+          sku={bagItem.sku}
           title={bagItem.title}
           size="square" />
 
