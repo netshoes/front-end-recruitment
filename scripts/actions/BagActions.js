@@ -12,6 +12,10 @@ class BagActions extends Actions {
     return sku;
   }
 
+  resetBag() {
+    return;
+  }
+
 }
 
 export default BagActions;

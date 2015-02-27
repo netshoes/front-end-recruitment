@@ -12,6 +12,7 @@ class BagStore extends Store {
 
     this.register(bagActionIds.addItem, this.handleAddItem);
     this.register(bagActionIds.removeItem, this.handleRemoveItem);
+    this.register(bagActionIds.resetBag, this.handleResetBag);
 
     this.state = {
       bagItems: {},
@@ -47,6 +48,16 @@ class BagStore extends Store {
   handleRemoveItem(sku) {
     let bagItems = this.state.bagItems;
     bagItems = _.omit(bagItems, sku);
+
+    this.setState({
+      bagItems: bagItems,
+      quantity: this.getQuantity(bagItems),
+      subtotal: this.getSubtotal(bagItems)
+    });
+  }
+
+  handleResetBag() {
+    let bagItems = {};
 
     this.setState({
       bagItems: bagItems,
