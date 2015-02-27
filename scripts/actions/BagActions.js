@@ -13,7 +13,7 @@ class BagActions extends Actions {
   }
 
   resetBag() {
-    return;
+    return {};
   }
 
 }

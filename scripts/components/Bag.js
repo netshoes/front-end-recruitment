@@ -21,7 +21,9 @@ let Bag = React.createClass({
   },
 
   onBuyClick(e) {
-    e.preventDefault();
+    let bagActions = flux.getActions('bagItems');
+
+    bagActions.resetBag();
   },
 
   render() {
