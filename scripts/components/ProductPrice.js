@@ -31,7 +31,7 @@ let ProductPrice = React.createClass({
     }
 
     return (
-      <div className="ProductItem-price ProductPrice">
+      <div className="ProductPrice ProductItem-price">
         <span className="ProductPrice-value">
           {currency}
           <span className="ProductPrice-highlight">{intPrice}</span>
