@@ -14,7 +14,12 @@ class BagStore extends Store {
 
     this.state = {
       bagItems: {},
-      quantity: 0
+      quantity: 0,
+      subtotal: {
+        price: 0,
+        installments: 0,
+        currencyFormat: 'R$'
+      }
     };
   }
 
@@ -33,7 +38,8 @@ class BagStore extends Store {
 
     this.setState({
       bagItems: bagItems,
-      quantity: this.getQuantity()
+      quantity: this.getQuantity(),
+      subtotal: this.getSubtotal()
     });
   }
 
@@ -43,6 +49,24 @@ class BagStore extends Store {
 
   getQuantity() {
     return _.reduce(this.state.bagItems, (sum, item) => sum + item.quantity, 0);
+  }
+
+  getAllowedInstallments() {
+    return _.min(_.pluck(this.state.bagItems, 'installments'));
+  }
+
+  getSubtotalPrice() {
+    return _.reduce(this.state.bagItems, (sum, item) => {
+      return sum + (item.price * item.quantity);
+    }, 0);
+  }
+
+  getSubtotal() {
+    return {
+      'price': this.getSubtotalPrice(),
+      'installments': this.getAllowedInstallments(),
+      'currencyFormat': 'R$'
+    }
   }
 
 }

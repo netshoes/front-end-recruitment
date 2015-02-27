@@ -36,8 +36,7 @@ let ProductPrice = React.createClass({
 
     let ProductPriceClasses = classnames({
       'ProductPrice': true,
-      'ProductPrice--highlight': this.props.highlight,
-      'ProductItem-price': true
+      'ProductPrice--highlight': this.props.highlight
     });
 
     return (

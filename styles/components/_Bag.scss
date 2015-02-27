@@ -63,3 +63,26 @@
       margin-bottom: 0;
       margin-left: $spacing-unit;
     }
+
+  .Bag-footer {
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+
+    @include clearfix;
+  }
+
+    .Bag-footer-label {
+      float: left;
+
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $color-medium-gray;
+    }
+
+    .Bag-footer-price {
+      float: right;
+      text-align: right;
+      font-size: 24px;
+
+      color: $color-gold;
+    }

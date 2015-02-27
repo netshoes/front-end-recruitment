@@ -49,11 +49,13 @@ let ProductItem = React.createClass({
           <div className="ProductItem-info">
             <h3 className="ProductItem-title">{title}</h3>
             <MicroHr />
-            <ProductPrice
-              price={price}
-              currency={currencyFormat}
-              installments={installments}
-              highlight={true} />
+            <span className="ProductItem-price">
+              <ProductPrice
+                price={price}
+                currency={currencyFormat}
+                installments={installments}
+                highlight={true} />
+              </span>
           </div>
 
         </a>
