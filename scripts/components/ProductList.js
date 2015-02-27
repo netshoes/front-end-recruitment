@@ -18,7 +18,7 @@ let ProductList = React.createClass({
   renderProducts() {
     return _.map(this.props.products, (product) => {
       return (
-        <CollectionItem>
+        <CollectionItem key={product.sku}>
           <ProductItem product={product} mode="collection" />
         </CollectionItem>
       );
