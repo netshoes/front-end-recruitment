@@ -1,7 +1,6 @@
 'use strict';
 
 import { Store } from 'flummox';
-import request from 'superagent';
 import _ from 'lodash';
 
 import ProductWebUtils from '../utils/ProductWebUtils';
