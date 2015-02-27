@@ -14,7 +14,7 @@ let Bag = React.createClass({
     return (
       <div className="Bag">
         <h1>Bag</h1>
-        {this.props.bagItems.length}
+        {console.log(this.props.bagItems)}
       </div>
     );
   }

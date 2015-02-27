@@ -13,13 +13,22 @@ class BagStore extends Store {
     this.register(bagActionIds.addItem, this.handleAddItem);
 
     this.state = {
-      bagItems: []
+      bagItems: {}
     };
   }
 
   handleAddItem(item) {
     let bagItems = this.state.bagItems;
-    bagItems.push(item);
+
+    // item already in the bag. Increasing quantity
+    if (_.has(bagItems, item.sku)) {
+      bagItems[item.sku].quantity++;
+    }
+    // not in the bag. Adding it
+    else {
+      item.quantity = 1;
+      bagItems[item.sku] = item;
+    }
 
     this.setState({
       bagItems: bagItems
