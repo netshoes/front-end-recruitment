@@ -41,7 +41,6 @@ app.get('/', function(req, res, next) {
   // run action and render page
   getAllProducts()
     .then(function() {
-      console.log('got!');
       let reactApp = React.renderToString(
         FluxComponent({flux: flux}, 
           App()
@@ -57,20 +56,6 @@ app.get('/', function(req, res, next) {
     })
     .catch(error => console.log(error.stack));
 });
-
-/**
- * Dev server tooling
- */
-
-// let webpack = require('webpack');
-// let webpackMiddleware = require('webpack-dev-middleware');
-// let webpackConfig = require('./webpack.config');
-// 
-// if (app.get('env') === 'development') {
-//   app.use(webpackMiddleware(webpack(webpackConfig), {
-//     publicPath: '/scripts/'
-//   }));
-// }
 
 /**
  * Start server
