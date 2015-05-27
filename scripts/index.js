@@ -1,5 +1,6 @@
 'use strict';
 
+require('isomorphic-fetch');
 import React from 'react';
 import App from './components/App';
 import FluxComponent from 'flummox/component';
