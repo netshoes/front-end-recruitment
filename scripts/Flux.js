@@ -1,7 +1,23 @@
 'use strict';
 
-import FluxClass from './FluxClass';
+import { Flummox } from 'flummox';
 
-let flux = new FluxClass();
+import BagActions from './actions/BagActions';
+import ProductActions from './actions/ProductActions';
 
-export default flux;
+import ProductStore from './stores/ProductStore';
+import BagStore from './stores/BagStore';
+
+class FluxClass extends Flummox {
+  constructor() {
+    super();
+
+    this.createActions('bagItems', BagActions);
+    this.createActions('products', ProductActions);
+
+    this.createStore('products', ProductStore, this);
+    this.createStore('bagItems', BagStore, this);
+  }
+}
+
+export default FluxClass;

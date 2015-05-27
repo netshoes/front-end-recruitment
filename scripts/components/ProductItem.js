@@ -6,8 +6,6 @@ import ProductThumb from '../components/ProductThumb';
 import ProductPrice from '../components/ProductPrice';
 import MicroHr from '../components/MicroHr';
 
-import flux from '../flux';
-
 let { PropTypes } = React;
 
 let ProductItem = React.createClass({

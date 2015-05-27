@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "front-end recruitment tech test ",
   "scripts": {
-    "start": "node --harmony server.js"
+    "start": "npm run build; node --harmony server.js",
+    "build": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
@@ -24,15 +25,20 @@
     "url-loader": "^0.5.5"
   },
   "dependencies": {
-    "react": "^0.13.0-rc1",
-    "lodash": "^3.3.1",
-    "superagent": "^0.21.0",
-    "flummox": "^2.11.0",
-    "classnames": "^1.1.4",
-    "path": "^0.11.14",
-    "express": "^4.12.0",
+    "babel": "^5.4.7",
     "body-parser": "^1.12.0",
+    "classnames": "^1.1.4",
+    "css-loader": "^0.14.3",
+    "ejs": "^2.3.1",
+    "express": "^4.12.0",
+    "extract-text-webpack-plugin": "^0.8.1",
+    "flummox": "^4.0.0-alpha2",
+    "isomorphic-fetch": "^2.1.0",
+    "kakuna": "^1.0.1",
+    "lodash": "^3.3.1",
     "morgan": "^1.5.1",
-    "ejs": "^2.3.1"
+    "path": "^0.11.14",
+    "react": "^0.13.0-rc1",
+    "sync-fs": "^1.0.1"
   }
 }

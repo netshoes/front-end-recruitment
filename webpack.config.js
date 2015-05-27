@@ -1,9 +1,10 @@
 'use strict';
 
-let webpack = require('webpack');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: [
     './scripts/index'
   ],
@@ -13,7 +14,8 @@ module.exports = {
     publicPath: '/public/scripts/'
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('../styles/bundle.css')
   ],
   resolve: {
     extensions: ['', '.js']
@@ -21,7 +23,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel?experimental&sourceMap="inline"'], exclude: /node_modules/ },
-      { test: /\.scss$/, 'loader': 'style!css!sass?outputStyle=expanded' },
+      { test: /\.scss$/, 'loader': ExtractTextPlugin.extract('css-loader!sass?outputStyle=expanded') },
 
       // inline base64 URLs for <=8k images, direct URLs for the rest
       {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},

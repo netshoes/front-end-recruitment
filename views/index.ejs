@@ -1,9 +1,13 @@
 <html>
   <head>
     <title>Sample App</title>
+    <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app"><%- reactApp %></div>
+    <% if (!!snapshot) { %>
+      <script>window.snapshot = <%- snapshot %>;</script>
+    <% } %>
     <script src="/scripts/bundle.js"></script>
   </body>
 </html>

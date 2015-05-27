@@ -3,27 +3,26 @@
 import { Store } from 'flummox';
 import _ from 'lodash';
 
-import ProductWebUtils from '../utils/ProductWebUtils';
+function noop() {};
 
 class ProductStore extends Store {
 
   constructor(flux) {
     super();
 
-    // sync data
+    let productActionsIds = flux.getActionIds('products');
+
+    this.registerAsync(productActionsIds.getAllProducts, noop, this.onProductsFetched);
+
     this.state = {
       products: []
     };
-
-    // async data fetching
-    ProductWebUtils.getAllProducts()
-      .end(_.bind(this.onDataFetched, this));
   }
 
   // TODO: error hanling
-  onDataFetched(res) {
+  onProductsFetched(data) {
     this.setState({
-      products: res.body.products
+      products: data.products
     });
   }
 
@@ -32,5 +31,8 @@ class ProductStore extends Store {
   }
 
 }
+
+ProductStore.serialize = (state) => JSON.stringify(state);
+ProductStore.deserialize = (state) => JSON.parse(state);
 
 export default ProductStore;

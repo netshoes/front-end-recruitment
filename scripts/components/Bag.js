@@ -8,8 +8,6 @@ import BagHeader from '../components/BagHeader';
 import BagList from '../components/BagList';
 import BagFooter from '../components/BagFooter';
 
-import flux from '../flux';
-
 let { PropTypes } = React;
 
 let Bag = React.createClass({
@@ -38,7 +36,7 @@ let Bag = React.createClass({
       <div className="Bag">
         <BagHeader quantity={this.props.quantity} />
 
-        <FluxComponent flux={flux} connectToStores={['bagItems']}>
+        <FluxComponent connectToStores={['bagItems']}>
           <BagList />
         </FluxComponent>
 
