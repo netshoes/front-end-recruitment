@@ -30,6 +30,10 @@ class ProductStore extends Store {
     return this.state.products;
   }
 
+  getProduct(sku) {
+    return _.find(this.state.products, { sku });
+  }
+
 }
 
 ProductStore.serialize = (state) => JSON.stringify(state);

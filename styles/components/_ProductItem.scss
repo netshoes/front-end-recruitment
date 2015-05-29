@@ -5,7 +5,7 @@
 .ProductItem {
 
   // ensure every product is correctly aligned (avoiding hard rows)
-  height: 315px;
+  height: 365px;
   text-align: center;
 }
 
@@ -32,4 +32,10 @@
 
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .ProductItem-buy {
+    border: none;
+    background-color: $color-gold;
+    padding: $spacing-unit--tiny $spacing-unit--small;
   }

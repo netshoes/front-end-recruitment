@@ -10,15 +10,19 @@ let { PropTypes } = React;
 
 let ProductItem = React.createClass({
 
+  contextTypes: {
+    flux: PropTypes.any.isRequired
+  },
+
   propTypes: {
     product: PropTypes.object.isRequired,
   },
 
-  onProductItemLinkClick(e) {
+  onBuySubmit(e) {
     e.preventDefault();
-    let bagActions = flux.getActions('bagItems');
+    let bagActions = this.context.flux.getActions('bagItems');
 
-    bagActions.addItem(this.props.product);
+    bagActions.addItem(this.props.product.sku);
   },
 
   render() {
@@ -27,23 +31,26 @@ let ProductItem = React.createClass({
       <div className="ProductItem">
         <a
           href="#"
-          className="ProductItem-link"
-          onClick={this.onProductItemLinkClick} >
-
+          className="ProductItem-link" >
           <ProductThumb sku={sku} title={title} />
-          <div className="ProductItem-info">
-            <h3 className="ProductItem-title">{title}</h3>
-            <MicroHr />
-            <span className="ProductItem-price">
-              <ProductPrice
-                price={price}
-                currency={currencyFormat}
-                installments={installments}
-                highlight={true} />
-              </span>
-          </div>
-
         </a>
+
+        <div className="ProductItem-info">
+          <h3 className="ProductItem-title">{title}</h3>
+          <MicroHr />
+          <span className="ProductItem-price">
+            <ProductPrice
+              price={price}
+              currency={currencyFormat}
+              installments={installments}
+              highlight={true} />
+          </span>
+        </div>
+
+        <form className="ProductItem-form" method="POST" action="/product" onSubmit={this.onBuySubmit}>
+          <input type="hidden" name="sku" value={sku} />
+          <button className="ProductItem-buy" type="Submit">Comprar</button>
+        </form>
       </div>
     );
   }
