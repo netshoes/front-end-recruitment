@@ -3,5 +3,6 @@ npm-debug.log
 .DS_Store
 *.swp
 *.swo
-public
+public/scripts
+public/styles
 
