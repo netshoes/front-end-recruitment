@@ -47,8 +47,7 @@ let ProductItem = React.createClass({
           </span>
         </div>
 
-        <form className="ProductItem-form" method="POST" action="/product" onSubmit={this.onBuySubmit}>
-          <input type="hidden" name="sku" value={sku} />
+        <form className="ProductItem-form" method="POST" action={`/api/bag/${sku}`} onSubmit={this.onBuySubmit}>
           <button className="ProductItem-buy" type="Submit">Comprar</button>
         </form>
       </div>

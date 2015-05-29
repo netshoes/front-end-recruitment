@@ -6,7 +6,7 @@ import ProductWebUtils from '../utils/ProductWebUtils';
 class ProductActions extends Actions {
 
   getAllProducts() {
-    return ProductWebUtils.getAllProducts();
+    return ProductWebUtils.get();
   }
 
 }

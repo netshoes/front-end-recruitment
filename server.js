@@ -3,6 +3,7 @@
 require('babel/register');
 require('isomorphic-fetch');
 let express = require('express');
+let api = require('./scripts/server/api');
 let path = require('path');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
@@ -33,7 +34,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res, next) {
   let indexTemplate = fs.readFileSync('./views/index.ejs', 'utf8');
   let flux = new Flux();
-  
+
   // inject products
   // TODO: wait for every async action called by components in a route
   let getAllProducts = flux.getActions('products').getAllProducts;
@@ -49,13 +50,17 @@ app.get('/', function(req, res, next) {
 
       let snapshot = flux.serialize();
 
-      res.send(ejs.render(indexTemplate, {
-        snapshot: JSON.stringify(snapshot),
-        reactApp: reactApp
-      }));
+      res.send(
+        ejs.render(indexTemplate, {
+          snapshot: JSON.stringify(snapshot),
+          reactApp: reactApp
+        })
+      );
     })
     .catch(error => console.log(error.stack));
 });
+
+app.use('/api', api);
 
 /**
  * Start server

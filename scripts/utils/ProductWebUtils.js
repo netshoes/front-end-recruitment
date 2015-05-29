@@ -11,7 +11,7 @@ if (typeof window === 'undefined') {
 
 // all WebUtils fetching methods return a Promise
 let ProductWebUtils = {
-  getAllProducts() {
+  get() {
     return fetch(`${baseUrl}/data/products.json`)
       .then(products => products.json());
   }

@@ -1,15 +1,16 @@
 'use strict';
 
 import { Actions } from 'flummox';
+import BagWebUtils from '../utils/BagWebUtils';
 
 class BagActions extends Actions {
 
-  addItem(item) {
-    return item;
+  addItem(sku) {
+    return BagWebUtils.post(sku);
   }
 
   removeItem(sku) {
-    return sku;
+    return BagWebUtils.delete(sku);
   }
 
   resetBag() {

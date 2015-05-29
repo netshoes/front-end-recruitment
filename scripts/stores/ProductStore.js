@@ -31,7 +31,7 @@ class ProductStore extends Store {
   }
 
   getProduct(sku) {
-    return _.find(this.state.products, { sku });
+    return _.find(this.state.products, { sku: sku });
   }
 
 }

@@ -3,6 +3,8 @@
 import { Store } from 'flummox';
 import _ from 'lodash';
 
+function noop() {};
+
 class BagStore extends Store {
 
   constructor(flux) {
@@ -10,8 +12,8 @@ class BagStore extends Store {
 
     let bagActionIds = flux.getActionIds('bagItems');
 
-    this.register(bagActionIds.addItem, this.handleAddItem);
-    this.register(bagActionIds.removeItem, this.handleRemoveItem);
+    this.registerAsync(bagActionIds.addItem, this.handleAddItem);
+    this.registerAsync(bagActionIds.removeItem, this.handleRemoveItem);
     this.register(bagActionIds.resetBag, this.handleResetBag);
 
     this.ProductStore = flux.getStore('products');
@@ -27,7 +29,9 @@ class BagStore extends Store {
     };
   }
 
-  handleAddItem(sku) {
+  handleAddItem(data) {
+    let sku = data.actionArgs[0];
+
     // wait for ProductStore if it handles this action
     this.waitFor(this.ProductStore);
 
@@ -104,5 +108,9 @@ class BagStore extends Store {
   }
 
 }
+
+
+BagStore.serialize = (state) => JSON.stringify(state);
+BagStore.deserialize = (state) => JSON.parse(state);
 
 export default BagStore;
