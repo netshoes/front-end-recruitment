@@ -123,7 +123,7 @@
       "installments": 4,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": false,
+      "isFreeShipping": false
     },
 
     {

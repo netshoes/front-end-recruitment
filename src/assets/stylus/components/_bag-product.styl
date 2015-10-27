@@ -1,0 +1,81 @@
+@import "../settings/_settings.defaults"
+
+bag-product-border = 2px solid #131316
+
+.bag-product
+	border-top bag-product-border
+	display table
+	padding 18px 0
+	position relative
+	margin 0 auto
+	width 90%
+	
+	&:last-child
+		border-bottom bag-product-border
+
+.bag-product__image-holder
+	display table-cell
+	vertical-align middle
+	width 15%
+
+.bag-product__image
+	max-width 50px
+	vertical-align middle
+	width 100%
+
+.bag-product__name
+	color #ffffff
+	display block
+	font-size 13px
+	font-weight 600
+	line-height 17px
+	margin-bottom 4px
+
+.bag-product__info
+	color #999999
+	display table-cell
+	width 65%
+	
+.bag-product__description
+	display block
+
+.bag-product__price-holder
+	display table-cell
+	vertical-align bottom
+	text-align right
+	width 20%
+	
+.bag-product__remove
+	color #000000
+	cursor pointer
+	font-size 18px
+	font-weight 700
+	position absolute
+	top 15px
+	right 0
+
+.bag-product__price
+	color highlight-color
+	font-size 14px
+	
+	.product--price__integer
+		font-weight 700
+
+.bag-product--remove
+	.bag-product__remove
+		color #ffffff
+		z-index 2
+		
+	.bag-product__name,
+	.bag-product__info,
+	.bag-product__price
+		text-decoration: line-through
+
+	&:after
+		content: ''
+		position absolute
+		background rgba(0, 0, 0, 0.5)
+		top -2%
+		left -5.5%
+		height 104%
+		width 111%

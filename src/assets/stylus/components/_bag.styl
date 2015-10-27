@@ -1,0 +1,85 @@
+@import "../settings/_settings.defaults"
+
+.bag
+	background bag-background
+	border-radius 0 0 0 10px
+	border-left 2px solid #cccccc
+	color #ffffff
+	display inline-table
+	padding-bottom 20px
+	position absolute
+	top 0
+	right -100%
+	overflow hidden
+	transition right 0.5s linear
+	height 100%
+	width 515px
+	z-index 2
+	
+	&.bag--opened
+		right 0
+
+.bag__header
+	text-transform uppercase
+	text-align center
+	font-size 24px
+	padding 9.9% 0
+	
+.bag__product-count
+	border-radius 50%
+	background highlight-color
+	color #000000
+	display inline-block
+	text-align center
+	font-weight 700
+	width 14px
+	height 14px
+	font-size 9px
+	padding-top 1px
+	margin 28px 0 0 24px
+	float left
+	
+.bag__product-count__holder
+	background url(../../images/bag.jpg) no-repeat
+	padding 0 0 10px 0
+	width 165px
+	margin 0 auto
+    
+.bag__product-count__title
+	padding-top 10px
+
+.bag__subtotal
+	color #5d5d5f
+	display table
+	margin 0 auto
+	padding 26px 0
+	text-transform uppercase
+	width 90%
+
+.bag__subtotal__holder
+	display table
+	width 100%
+
+.bag__subtotal__label
+	display table-cell
+	vertical-align middle
+	font-size 14px
+	width 40%
+
+.bag__subtotal__price-holder
+	display table-cell
+	text-align right
+	width 60%
+
+.bag-subtotal___price
+	color highlight-color
+	display block
+	font-size 23px
+	
+.product--price__integer
+	font-weight 700
+	
+.bag .bag--button
+	display block
+	margin 0 auto
+	width 90%

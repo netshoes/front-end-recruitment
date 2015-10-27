@@ -1,0 +1,39 @@
+{
+  "name": "front-end-recruitment",
+  "version": "1.0.0",
+  "description": "Front end recruitment for Netshoes",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julivandamaceno/front-end-recruitment.git"
+  },
+  "author": "Julivan Damaceno Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julivandamaceno/front-end-recruitment/issues"
+  },
+  "homepage": "https://github.com/Julivandamaceno/front-end-recruitment#readme",
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browserify": "^9.0.8",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.1.0",
+    "karma": "^0.13.11",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
+    "normalize-styl": "^3.0.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-onclickoutside": "^4.0.1"
+  }
+}
