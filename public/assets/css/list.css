@@ -58,3 +58,8 @@ body{
 .product-installment{
     color: #999999;
 }
+
+
+.clickable {
+    cursor: pointer;
+}

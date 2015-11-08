@@ -1,7 +1,18 @@
-<article class="product">
+<script type="text/html" id="templateThis">
+    <a href="" data-template-bind='[
+        {"attribute": "content", "value": "this"},
+        {"attribute": "href", "value": "this"}
+    ]
+    '></a>
+</script>
 
-    <div class="product-image-holder">
-        <img src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>
+<article class="product" data-template-bind='
+        [
+            {"attribute": "data-product-info", "value": "JSONString"}
+        ]'  >
+
+    <div class="product-image-holder ">
+        <img class="clickable" src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>
     </div>
     <div class="product-info-holder">
 
@@ -17,5 +28,35 @@
         <div class="free-shipping"></div>
 
     </div>
+
+    <div style="display: none" class="product-detail" data-template-bind='
+        [
+            {"attribute": "id", "value": "modalDetailId"}
+        ]'
+        id="">
+
+        <div>Calção Nike Corinthians</div>
+        <div>
+            <img src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>
+        </div>
+        <div data-content="description"></div>
+        <div data-content="style"></div>
+
+
+
+        <div>
+            Tamanhos disponíveis:
+            <div data-content="availableSizes" data-format="nestedTemplateFormatter" data-format-options='#templateThis'></div>
+        </div>
+
+        <div><span data-content="currencyFormat" class="currency"></span><strong data-content="productPrice1"></strong><span data-content="productPrice2" ></span></div>
+
+        <div class="product-installment">ou <span data-content="installments" ></span> x R$ <span data-content="installmentPrice" ></span>
+
+
+        <div>FRETE Grátis</div>
+
+    </div>
+
 
 </article>

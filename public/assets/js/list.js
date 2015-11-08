@@ -9,6 +9,15 @@ Number.prototype.formatMoney = function( currencyId){
     return this.toFixed(2).replace(/(\d)(?=(\d{3})+.)/g, '$1.');
 };
 
+$.addTemplateFormatter({
+    AddPrefix : function(value, prefix) {
+        return prefix+value;
+    },
+    AddSufix : function(value, sufix) {
+        return value + sufix;
+    }
+});
+
  function ListPage( dataPath , listContainerSelector, itemTemplatePath){
     // Private STATMENTS
     var self  = this;
@@ -16,7 +25,8 @@ Number.prototype.formatMoney = function( currencyId){
     var dataPath = dataPath;
     var listContainer = $("#"+listContainerSelector);
     var productList;
-
+     var productDetails =  new Array();
+var detailModalPrefix =  "productDetail_";
     function getData() {
         $.get( dataPath, parseData, "json"  );
     };
@@ -31,6 +41,10 @@ Number.prototype.formatMoney = function( currencyId){
             product.productPrice1 = product.price.toString().split(".")[0];
             product.productPrice2 = ","+product.price.toString().split(".")[1];
             product.installmentPrice = ( product.price / product.installments ).formatMoney(product.currencyId);
+            product.modalDetailId = detailModalPrefix  + product.id ;
+            product.JSONString = window.JSON.stringify(product);
+
+
         }
         renderList();
 
@@ -38,10 +52,43 @@ Number.prototype.formatMoney = function( currencyId){
 
     function renderList(){
         for ( var i =0 ; i < productList.products.length; i++){
-            console.log(productList.products[i]);
-            listContainer.loadTemplate(itemTemplatePath, productList.products[i] , {overwriteCache: true, append: true});
+            //console.log(productList.products[i]);
+            listContainer.loadTemplate(itemTemplatePath, productList.products[i] , { overwriteCache : true, append: true});
         }
+
+        setTimeout(bindEvents, 100);
+
+
     }
+
+     function bindEvents(){
+         $(".product-detail").each(function(){
+             //console.log($(this).attr("id"));
+             productDetails[$(this).attr("id")] =
+                 $(this).dialog({
+                     closeOnEscape: true,
+                     draggable: false,
+                     modal: true,
+                     open: function(event, ui) {
+                         $(".ui-dialog-titlebar-close").hide();
+                         $(".ui-dialog-titlebar").hide();
+
+                     },
+                    autoOpen: false
+                 });
+         });
+
+         $(".product .clickable").click(function(){
+              var product_id =  $(this).parents("article").data("product-info").id ;
+              productDetails[detailModalPrefix  + product_id].dialog( "open" );
+             $('.ui-widget-overlay').click(function(){
+                 //$(this).find(".dialog").dialog("close");
+                 productDetails[detailModalPrefix  + product_id].dialog('close');
+             });
+         });
+
+        //console.log(productDetails);
+     }
 
     // PUBLIC STATMENTS
     this.show = function(){
@@ -55,21 +102,6 @@ Number.prototype.formatMoney = function( currencyId){
 
 
 }
-
-//ListPage.prototype = (function() {
-//
-//    return {
-//
-//        constructor: ListPage,
-//
-//        show: function () {
-//
-//        }
-//
-//    };
-//});
-
-
 $(function() {
     var lp = new ListPage( "data/products.json", "product-list", "assets/product.tpl.html" );
     lp.show();
