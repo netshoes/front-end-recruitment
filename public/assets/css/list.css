@@ -2,14 +2,14 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.product-list{
+#product-list{
     /*width:100%;*/
 
 }
 .product{
     float: left;
     margin: 0px 10px 40px 10px ;
-    max-width: 210px;
+    /*width: 210px;*/
 }
 
 .product-image-holder{
@@ -39,11 +39,13 @@ body{
 
 .product-name{
     margin-bottom: 5px;
+    /*max-width: 210px;*/
 
 }
 
 .product-pricing{
     margin-bottom: 5px;
+
 }
 
 .product-price{

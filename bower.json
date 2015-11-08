@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "jquery-template": "~1.4.4"
   }
 }
