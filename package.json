@@ -1,0 +1,22 @@
+{
+  "name": "front-end-recruitment",
+  "version": "1.0.0",
+  "description": "## Expected result",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanlucian/front-end-recruitment.git"
+  },
+  "author": "Alan Lucian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanlucian/front-end-recruitment/issues"
+  },
+  "homepage": "https://github.com/alanlucian/front-end-recruitment#readme",
+  "devDependencies": {
+    "live-server": "^0.8.2"
+  }
+}

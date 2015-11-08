@@ -21,3 +21,15 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+
+
+
+
+RUN Simplest Node.js server - "http-server"
+ If not instaled:
+
+run:
+$ npm install http-server -g
+$ cd public
+$ http-server

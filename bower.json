@@ -1,0 +1,20 @@
+{
+  "name": "front-end-recruitment",
+  "version": "0.0.0",
+  "homepage": "https://github.com/alanlucian/front-end-recruitment",
+  "authors": [
+    "alanlucian <alanlucian@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4"
+  }
+}
