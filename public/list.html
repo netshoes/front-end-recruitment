@@ -2,19 +2,22 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
     <link rel="stylesheet" href="assets/css/list.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
     <link rel="stylesheet" href="assets/components/jquery-ui/themes/humanity/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/components/jquery-ui/themes/flick/theme.css">
 
     <script src="assets/components/jquery/dist/jquery.min.js" ></script>
     <script src="assets/components/jquery-ui/jquery-ui.min.js" ></script>
     <script src="assets/components/jquery-template/jquery-loadTemplate/jquery.loadTemplate-1.4.4.js"></script>
+    <script src="assets/js/cart.js" ></script>
     <script src="assets/js/product.js" ></script>
     <script src="assets/js/list.js" ></script>
     <title></title>
 </head>
 <body>
+
 
 <section id="product-list">
 
@@ -43,6 +46,63 @@
 
 
 </section>
+<div id="cart-container">
+    <a  id="cartToggle"  >
 
+            <div class="cart-image left"><div class="cart-image-circle" >0</div></div>
+
+    </a>
+    <div id="cart-content">
+        <div id="cart-content-header" style="    height: 100px;">
+            <div class="cart-image left"><div class="cart-image-circle" >0</div></div>
+            <div class="left" style="margin-left: 15px; vertical-align: middle">
+                SACOLA
+            </div>
+        </div>
+        <div>
+            <section id="cart-products">
+                <!--<article class="cart-item">-->
+                    <!--<input type="hidden" name="product-info" data-template-bind='{"attribute": "value", "value": "JSONString"}' >-->
+                    <!--<div class="left product-detail-image" style="width: 10%">-->
+                        <!--<img width="50" src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>-->
+                    <!--</div>-->
+
+                    <!--<div class="left" style="width: 60%" >-->
+                        <!--<div data-content="title" class="product-detail-name" >name</div>-->
+                        <!--<div data-content="description" class="product-detail-description">desc</div>-->
+
+
+
+
+                        <!--<div class="product-detail-sizes">-->
+                            <!--<span data-content="size" >GG</span> | <span data-content="style" class="product-detail-style">Preto E branco</span>-->
+                        <!--</div>-->
+                        <!--<div >-->
+                            <!--Quantidade: <span data-content="quantity" >1</span>-->
+                        <!--</div>-->
+
+                       <!--</div>-->
+                    <!--<div class="left" style="width: 30%">-->
+                        <!--<div>X</div>-->
+                        <!--<div class="product-detail-price">-->
+                            <!--<span data-content="currencyFormat" >R$</span><span data-content="productPrice1">19</span><span data-content="productPrice2" >,90</span>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--</form>-->
+                <!--</article>-->
+
+
+
+            </section>
+        </div>
+        <!--<div id="cart-content-footer">-->
+            <!--<button >COMPRAR</button>-->
+        <!--</div>-->
+
+
+    </div>
+
+</div>
 </body>
 </html>

@@ -29,6 +29,8 @@ $.addTemplateFormatter({
     var productList;
     var productDetails =  new Array();
     var detailModalPrefix =  "productDetail_";
+    var bindEventsLock = false; // bool to lock due an BUG on loadTemplate Plugin
+
     function getData() {
         $.get( dataPath, parseData, "json"  );
     };
@@ -43,7 +45,7 @@ $.addTemplateFormatter({
             product.productPrice1 = product.price.toString().split(".")[0];
             product.productPrice2 = ","+product.price.toFixed(2).toString().split(".")[1];
             product.installmentPrice = ( product.price / product.installments ).formatMoney(product.currencyId);
-            product.modalDetailId = detailModalPrefix  + product.id ;
+            product.modalDetailId = detailModalPrefix  + product.sku ;
             product.freeShippingInfo = ( product.isFreeShipping? "display:block":"display:none");
             product.JSONString = window.JSON.stringify(product);
 
@@ -57,11 +59,11 @@ $.addTemplateFormatter({
     function renderList(){
         for ( var i =0 ; i < productList.products.length; i++){
 
-
+            //console.log(listContainer,itemTemplatePath,productList.products[i]);
             listContainer.loadTemplate(itemTemplatePath, productList.products[i] ,
                 {   overwriteCache : true,
                     append: true,
-                    success: (i==productList.products.length-1)? bindEvents: null , //  at the last item BindEvents when template load is complete
+                    complete: (i==productList.products.length-1)? bindEvents: null,  //  at the last item BindEvents when template load is complete
                     bindingOptions: {"ignoreUndefined": true, "ignoreNull": true}
                 });
         }
@@ -69,6 +71,11 @@ $.addTemplateFormatter({
     }
 
      function bindEvents(){
+         if( bindEventsLock ) return ;
+         bindEventsLock = true;
+
+
+         /* List */
          $(".product-detail").each(function(){
              //console.log($(this).attr("id"));
              productDetails[$(this).attr("id")] =
@@ -87,12 +94,18 @@ $.addTemplateFormatter({
          });
 
          $(".product .clickable").click(function(){
-              var product_id =  $(this).parents("article").data("product-info").id ;
+              var product_id =  $(this).parents("article").data("product-info").sku ;
               productDetails[detailModalPrefix  + product_id].dialog( "open" );
              $('.ui-widget-overlay').click(function(){
 
                  productDetails[detailModalPrefix  + product_id].dialog('close');
              });
+         });
+
+         /* Detail Events */
+
+         $(".product-buy-btn").click(function(){
+             CartModule.addProduct( $(this).parents("form").serializeArray() );
          });
 
 
