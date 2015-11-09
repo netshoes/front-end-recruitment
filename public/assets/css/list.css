@@ -1,7 +1,14 @@
-body{
+body
+{
     font-family: 'Open Sans', sans-serif;
 }
 
+.left {
+    float:left;
+}
+.clickable {
+    cursor: pointer;
+}
 #product-list{
     /*width:100%;*/
 
@@ -30,14 +37,14 @@ body{
     text-align: center;
 }
 
-.visual-spacer{
+.visual-line{
     margin: auto;
     height: 2px;
     width: 20px;
     background-color: #dfbd00;
 }
 
-.product-name{
+.product-name, .product-detail-name{
     margin-bottom: 5px;
     /*max-width: 210px;*/
 
@@ -59,7 +66,33 @@ body{
     color: #999999;
 }
 
+/* PRODUCT DETAIL*/
+    .product-detail{
+        font-family: 'Open Sans', sans-serif;
 
-.clickable {
-    cursor: pointer;
-}
+    }
+    .product-detail-image{
+
+    }
+    .product-detail-description,
+    .product-detail-style{
+        font-size: 12px;
+        color:#999;
+
+    }
+
+    .product-detail-sizes{
+        font-size: 16px;
+        margin: 10px 0px;
+    }
+    .product-detail-installment{
+        font-size: 12px;
+    }
+    .product-detail-shipping{
+    color: #dfbd00;
+    }
+
+
+    .product-buy-btn{
+        margin-top: 10px;
+    }

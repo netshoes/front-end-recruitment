@@ -10,6 +10,8 @@ Number.prototype.formatMoney = function( currencyId){
 };
 
 $.addTemplateFormatter({
+
+
     AddPrefix : function(value, prefix) {
         return prefix+value;
     },
@@ -25,8 +27,8 @@ $.addTemplateFormatter({
     var dataPath = dataPath;
     var listContainer = $("#"+listContainerSelector);
     var productList;
-     var productDetails =  new Array();
-var detailModalPrefix =  "productDetail_";
+    var productDetails =  new Array();
+    var detailModalPrefix =  "productDetail_";
     function getData() {
         $.get( dataPath, parseData, "json"  );
     };
@@ -39,10 +41,12 @@ var detailModalPrefix =  "productDetail_";
         for ( var i =0 ; i < productList.products.length; i++){
             var product = productList.products[i];
             product.productPrice1 = product.price.toString().split(".")[0];
-            product.productPrice2 = ","+product.price.toString().split(".")[1];
+            product.productPrice2 = ","+product.price.toFixed(2).toString().split(".")[1];
             product.installmentPrice = ( product.price / product.installments ).formatMoney(product.currencyId);
             product.modalDetailId = detailModalPrefix  + product.id ;
+            product.freeShippingInfo = ( product.isFreeShipping? "display:block":"display:none");
             product.JSONString = window.JSON.stringify(product);
+
 
 
         }
@@ -52,12 +56,15 @@ var detailModalPrefix =  "productDetail_";
 
     function renderList(){
         for ( var i =0 ; i < productList.products.length; i++){
-            //console.log(productList.products[i]);
-            listContainer.loadTemplate(itemTemplatePath, productList.products[i] , { overwriteCache : true, append: true});
+
+
+            listContainer.loadTemplate(itemTemplatePath, productList.products[i] ,
+                {   overwriteCache : true,
+                    append: true,
+                    success: (i==productList.products.length-1)? bindEvents: null , //  at the last item BindEvents when template load is complete
+                    bindingOptions: {"ignoreUndefined": true, "ignoreNull": true}
+                });
         }
-
-        setTimeout(bindEvents, 100);
-
 
     }
 
@@ -66,6 +73,7 @@ var detailModalPrefix =  "productDetail_";
              //console.log($(this).attr("id"));
              productDetails[$(this).attr("id")] =
                  $(this).dialog({
+                     width:'auto',
                      closeOnEscape: true,
                      draggable: false,
                      modal: true,
@@ -82,12 +90,12 @@ var detailModalPrefix =  "productDetail_";
               var product_id =  $(this).parents("article").data("product-info").id ;
               productDetails[detailModalPrefix  + product_id].dialog( "open" );
              $('.ui-widget-overlay').click(function(){
-                 //$(this).find(".dialog").dialog("close");
+
                  productDetails[detailModalPrefix  + product_id].dialog('close');
              });
          });
 
-        //console.log(productDetails);
+
      }
 
     // PUBLIC STATMENTS
