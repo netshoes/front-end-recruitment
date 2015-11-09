@@ -3,7 +3,7 @@
  */
 
 
-var CartModule = (function ( cartContainer , cartItemTemplate) {
+var CartModule = (function ( cartContainerSelector, cartProductListSelector, cartItemTemplate) {
 
     // Time in minutes
     var cartCacheDuration =  60;
@@ -12,21 +12,15 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
 
     var cacheVarCart = "CART_ITENS";
     var cacheVarTime = "CART_TIMESTAMP";
-    var cartContainerSelector = cartContainer;
+    var cartProductListSelector = cartProductListSelector;
+    var cartContainerSelector = cartContainerSelector;
     var cartItemTemplate = cartItemTemplate;
 
     /* Persist data  */
     function saveData(){
-        var saveData = [];
-        //console.log(cartItens );
 
-        //
-        //for( var i in cartItens ){
-        //    //console.log(cartItens[i], JSON.stringify( cartItens[i]));
-        //    saveData.push( JSON.stringify( cartItens[i]));
-        //}
-        saveData = (JSON.stringify( cartItens));
-//console.log( JSON.stringify(cartItens) );
+        var saveData = (JSON.stringify( cartItens));
+
         localStorage.setItem( cacheVarCart , saveData );
         refreshCartExpirarion();
     }
@@ -58,26 +52,27 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
         localStorage.removeItem(cacheVarTime);
     }
 
-    function renderCartData(data){
+    function renderCartData(){
+        for( var i in cartItens) {
+            renderCartDataItem(cartItens[i],(i==cartItens.length-1));
+        }
+    }
 
+    function renderCartDataItem(cartItem,completeEvent){
+        typeof completeEvent !== 'undefined' ? completeEvent : false;
 
-            for( var i in cartItens) {
+        var productInfo = Object.create(cartItem.data );
+        productInfo.quantity = cartItem.quantity
 
-                var productInfo = cartItens[i].data;
-                productInfo.quantity = cartItens[i].quantity
+        console.log(cartProductListSelector, cartItemTemplate, productInfo);
 
-                console.log(cartContainer, cartItemTemplate, data);
-
-                $(cartContainerSelector).loadTemplate(cartItemTemplate, productInfo,
-                    {
-                        overwriteCache: true,
-                        append: true,
-
-                        complete: (i==cartItens.length-1)? bindEvents: null,  //  at the last item BindEvents when template load is complete
-                        //bindingOptions: {"ignoreUndefined": true, "ignoreNull": true}
-                    });
-            }
-
+        $(cartProductListSelector).loadTemplate(cartItemTemplate, productInfo,
+            {
+                overwriteCache: true,
+                append: true,
+                complete: (completeEvent)? bindEvents: null  //  at the last item BindEvents when template load is complete
+                //bindingOptions: {"ignoreUndefined": true, "ignoreNull": true}
+            });
     }
 
     function bindEvents(){
@@ -92,7 +87,6 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
                 product = $.parseJSON( productData[i].value);
                 continue;
             }
-
             product[productData[i].name] = productData[i].value;
 
         }
@@ -112,6 +106,7 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
             var productAdded = false;
             for( var inCartProduct in cartItens ){
                 // identical product found, increment quantity
+                console.log(JSON.stringify(cartItens[inCartProduct].data) , JSON.stringify( product ));
                 if( JSON.stringify(  cartItens[inCartProduct].data) == JSON.stringify( product)){
                     cartItens[inCartProduct].quantity+=1;
                     productAdded = true;
@@ -120,10 +115,13 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
 
             if(!productAdded ){
                 cartItens.push( {data: product , quantity:1});
+                //console.log( "?>" , cartItens[cartItens.length-1]);
+                renderCartDataItem(cartItens[cartItens.length-1]);
             }
 
             console.log(cartItens);
             saveData();
+            this.showCart();
         },
 
         loadData:function(){
@@ -137,24 +135,39 @@ var CartModule = (function ( cartContainer , cartItemTemplate) {
             loadCachedData();
             renderCartData( cartItens );
 
+        },
+
+        showCart:function(){
+            $(cartContainerSelector).addClass("open");
+            setTimeout(function(){
+                $('#cartToggle').addClass("cartOpen");
+            }, 200);
+        },
+        hideCart:function(){
+            $(cartContainerSelector).removeClass("open");
+            setTimeout(function(){
+                $('#cartToggle').removeClass("cartOpen");
+            }, 200);
         }
+
 
     }
 
 
-})("#cart-products", "assets/cart-item.tpl.html" );
+})('#cart-container',"#cart-products", "assets/cart-item.tpl.html" );
 $(function() {
     CartModule.setCacheDuration(10);
     CartModule.loadData();
-
-
+    $('html').click(function (e) {
+        if (!e.target.id == 'cart-container') {
+            CartModule.hideCart()
+        }
+    });
+    $("#cart-container").mouseleave(function(){
+        CartModule.hideCart();
+    });
     $('#cartToggle').click(function(e){
-        var $parent = $(this).parent('#cart-container');
-        $parent.toggleClass("open");
-        setTimeout(function(){
-            $('#cartToggle').toggleClass("cartOpen");
-        }, 200);
-        e.preventDefault();
+        CartModule.showCart();
     });
 });
 

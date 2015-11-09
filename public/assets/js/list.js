@@ -105,6 +105,7 @@ $.addTemplateFormatter({
          /* Detail Events */
 
          $(".product-buy-btn").click(function(){
+             $('.ui-widget-overlay').trigger("click");
              CartModule.addProduct( $(this).parents("form").serializeArray() );
          });
 
