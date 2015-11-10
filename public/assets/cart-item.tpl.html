@@ -1,27 +1,37 @@
-<article class="cart-item">
-    <input type="hidden" name="product-info" data-template-bind='{"attribute": "value", "value": "JSONString"}' >
-    <div class="left product-detail-image" style="width: 11%">
+<article class="cart-item" data-template-bind='
+[
+    {"attribute": "id", "value": "modalDetailId"},
+    {"attribute": "data-product-info", "value": "JSONString"}
+
+    ]'>
+<form>
+    <input type="hidden"  name="product-info"  >
+    <div class="left product-detail-image" style="width: 15%">
         <img width="60" src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>
     </div>
 
-    <div class="left" style="width: 59%" >
-        <div data-content="title" class="product-detail-name" ></div>
-        <div data-content="description" class="product-detail-description"></div>
+    <div class="left" style="width: 55%" >
+        <div class="product-detail-name" >
+            <span data-content="title" ></span>
+            <span data-content="description" ></span>
+
+        </div>
+        <!--<div data-content="description" class="product-detail-description"></div>-->
         <div class="cart-item-details">
             <span data-content="size" ></span> | <span data-content="style" ></span>
         </div>
         <div class="cart-item-details" >
-            Quantidade: <span data-content="quantity" ></span>
+            Quantidade: <span data-content="quantity" class="cart-item-quantity"  ></span>
         </div>
 
     </div>
-    <div class="left" style="width: 30%">
-        <div class="cart-item-remove" >X</div>
+    <div class="left" style="width: 20% ; text-align: right">
+        <div class="cart-item-remove clickable" >&times;</div>
         <div class="cart-item-price">
             <span data-content="currencyFormat" >R$</span>
             <strong data-content="productPrice1">19</strong><span data-content="productPrice2" >,90</span>
         </div>
-
     </div>
     </form>
+    <!--<hr class="cart-spacer-black-line"/>-->
 </article>
