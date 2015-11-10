@@ -1,3 +1,6 @@
+#Build
+`$ bower install`
+
 #Run the project
 - Run static server:
 	- `$ http-server public `   
