@@ -1,3 +1,13 @@
+#Run the project
+- Run static server:
+	- `$ http-server public `   
+
+- If not installed run:
+	- `$ npm install http-server -g`
+	- `$ http-server public`
+
+- Access http://127.0.0.1:8080/list.html
+
 # Netshoes Cart Test
 
 ## Expected result
@@ -22,14 +32,3 @@ The data we provide is a static JSON file under `/public/data`.
 * Test your code;
 * Instructions on how to build/run the project.
 
-
-
-
-
-RUN Simplest Node.js server - "http-server"
- If not instaled:
-
-run:
-$ npm install http-server -g
-$ cd public
-$ http-server

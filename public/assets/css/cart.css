@@ -1,7 +1,5 @@
 
-.hide{
-    display: none;
-}
+
 
 .open {
     right: 0 !important;
@@ -166,7 +164,8 @@ color:#dfbd00;
     width: 65%
 }
 .cart-item-price-wrapper{
-    width: 20% ; text-align: right
+    width: 20% ;
+    text-align: right;
 }
 .cart-item-price {
     color:#dfbd00;
