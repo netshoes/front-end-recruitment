@@ -54,31 +54,47 @@
 
     </a>
     <div id="cart-content">
-        <div id="cart-content-header" style="    height: 100px;">
-            <div class="cart-image left"><div class="cart-image-circle cart-item-count"  >0</div></div>
-            <div class="left" style="margin-left: 15px; vertical-align: middle">
-                SACOLA
-            </div>
+        <div id="cart-header">
+
+                <div class="cart-image left"><div class="cart-image-circle cart-item-count"  >0</div></div>
+                <div class="left" id="cart-header-text" style="margin-left: 15px; ">
+                    SACOLA
+                </div>
+
         </div>
         <div>
             <section id="cart-products">
-
-
-
             </section>
         </div>
-        <div id="cart-content-footer">
+        <div id="cart-footer">
 
-            <div>
-                <div>
-                    SUBTOTAL
-                    <span id="cart-total-price"></span>
+                <div class="cart-footer-center" id="cart-empty-message">
+                    Nenhum item na SACOLA
                 </div>
-                ou <span id="cart-instalments"></span> de
-                <span id="cart-instalments-value"></span>
-            </div>
 
-            COMPRAR
+                <div id="cart-total-info" class="hide">
+                    <div  id="cart-footer-pricing">
+                        <div class="">
+                            <div class="left gray-text" style="width: 20%;    padding-top: 20px;">SUBTOTAL</div>
+
+                            <div  class="left" style="width: 80%; text-align: right">
+
+                                <div id="cart-total-price"></div>
+                                <div id="cart-instalments-info" class="gray-text">
+                                    OU EM ATÉ <span id="cart-instalments"></span> X
+                                    <span id="cart-instalments-value"></span>
+                                </div>
+                            </div>
+                    </div>
+
+                    </div>
+
+                    <div id="cart-buy-btn" class="clickable">
+                        COMPRAR
+                    </div>
+                </div>
+
+
         </div>
 
 

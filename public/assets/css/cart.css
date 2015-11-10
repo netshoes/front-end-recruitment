@@ -1,3 +1,17 @@
+
+.hide{
+    display: none;
+}
+
+.open {
+    right: 0 !important;
+    overflow: auto;
+}
+
+.gray-text{
+    color:#858587;
+}
+/* CART LAYOUT*/
 .cart-image{
     width: 33px;
     height: 40px;
@@ -11,10 +25,10 @@
     position: relative;
     left: 26px;
     top: 32px;
-    font-size: 9px;
+    font-size: 10px;
     background: #dfbd00;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -42,20 +56,63 @@
     background: #202025;
     display: block;
     position: relative;
-    height: 40px;
-    left: -50px;
-    top: 75px;
+
+
     width: 50px;
+    height: 43px;
+    padding: 10px;
+    left: -55px;
+    top: 75px;
+
 }
 
 #cart-container  #cartToggle.cartOpen{
     display: none;
 }
 
-.open {
-    right: 0 !important;
-    overflow: auto;
+
+#cart-header{
+    height: 100px;
+    margin: auto;
+    width: 115px;
+    margin-top: 30px;
 }
+#cart-header-text{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+/*#cart-footer{*/
+    /*width: 100%;    */
+/*}*/
+
+#cart-footer-pricing{
+   height: 60px;
+    padding: 10px;
+
+}
+
+
+#cart-total-price{
+    color:#dfbd00;
+    font-size: 24px;
+}
+
+#cart-instalments-info{
+    font-size: 11px;
+}
+
+#cart-buy-btn, #cart-empty-message{
+    background-color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    width: 480px;
+    text-align: center;
+    height: 30px;
+    margin: 10px;
+    padding-top: 15px;
+}
+
+/* CART ITEM LIST */
 
 .cart-item{
     padding: 10px;
@@ -66,6 +123,10 @@
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
 }
+
+
+
+
 .highlight{
 color:#dfbd00;
 }
@@ -96,9 +157,16 @@ color:#dfbd00;
     width: 400px;
 }
 
+.cart-item-image{
+    width: 15%;
+}
 .cart-item-details{
     font-size: 12px;
-    color:#999999;
+
+    width: 65%
+}
+.cart-item-price-wrapper{
+    width: 20% ; text-align: right
 }
 .cart-item-price {
     color:#dfbd00;
@@ -113,42 +181,6 @@ color:#dfbd00;
     text-decoration: line-through;
 }
 
-
-#cart-content-footer{
-    width: 100%;
-    background-color: #000;
-}
-/*nav #cartToggle span {*/
-    /*background: white;*/
-    /*display: block;*/
-    /*height: 10%;*/
-    /*left: 10%;*/
-    /*position: absolute;*/
-    /*top: 45%;*/
-    /*width: 80%;*/
-/*}*/
-
-
-/*nav #cartToggle span:after { top: 250%; }*/
-
-/*nav a:nth-child(n+2) {*/
-    /*color: white;*/
-    /*display: block;*/
-    /*font-size: 2.5em;*/
-    /*margin: 30px 0 30px 30px;*/
-/*}*/
-
-/*nav a:nth-child(n+2):after {*/
-    /*background: #ffa53e;*/
-    /*content: '';*/
-    /*display: block;*/
-    /*height: 2px;*/
-    /*-moz-transition: width 0.2s;*/
-    /*-o-transition: width 0.2s;*/
-    /*-webkit-transition: width 0.2s;*/
-    /*transition: width 0.2s;*/
-    /*width: 0;*/
-/*}*/
 
 
 

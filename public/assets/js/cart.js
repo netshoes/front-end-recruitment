@@ -70,16 +70,21 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
                 complete:bindEvents
             });
 
-        refreshNumbers()
+        refreshUI()
     }
 
-    function refreshNumbers(){
+    function refreshUI(){
         $(".cart-item-count").html(cartItens.length);
 
         var totalPrice = 0;
         var minInstallments  ;
         var currencyID;
         var currencyFormat;
+        if( cartItens.length == 0 ){
+            $("#cart-empty-message").show();
+            $("#cart-total-info").hide();
+            return ;
+        }
 
         for( var i in cartItens){
             totalPrice+= cartItens[i].data.price * cartItens[i].quantity;
@@ -91,12 +96,14 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
         }
 
         console.log(  totalPrice, minInstallments );
-        $("#cart-total-price").html( totalPrice ) ;
+        $("#cart-total-price").html( currencyFormat + " " + totalPrice.formatMoney(currencyID) ) ;
         $("#cart-instalments").html( minInstallments );
         $("#cart-instalments-value").html(
             currencyFormat + " " +
             ( totalPrice / minInstallments ).formatMoney(currencyID)
         ) ;
+        $("#cart-empty-message").hide();
+        $("#cart-total-info").show();
     }
 
     function updateCartItemUIQuantity( productIndex){
@@ -158,7 +165,7 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
                     cartItens.splice( productIndex, 1);
                     console.log(cartItens);
                     var selector = $("#cart-content article").eq(productIndex).remove();
-                    refreshNumbers();
+                    refreshUI();
                     saveData();
                 }
             }
@@ -192,7 +199,7 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
             }
 
             console.log(cartItens);
-            refreshNumbers();
+            refreshUI();
             saveData();
             this.showCart();
         },
@@ -235,7 +242,7 @@ $(function() {
     CartModule.setCacheDuration(10);
     CartModule.loadData();
     $("#cart-container").mouseleave(function(){
-        //CartModule.hideCart();
+        CartModule.hideCart();
     });
     $('#cartToggle').click(function(e){
         CartModule.showCart();

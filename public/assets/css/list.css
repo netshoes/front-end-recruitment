@@ -6,6 +6,9 @@ body
 .left {
     float:left;
 }
+.right{
+    float:left;
+}
 .clickable {
     cursor: pointer;
 }
