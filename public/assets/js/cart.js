@@ -3,7 +3,7 @@
  */
 
 
-var CartModule = (function ( cartContainerSelector, cartProductListSelector, cartItemTemplate) {
+var CartModule = (function ( cartContainerSelector, cartProductListSelector) {
 
     // Time in minutes
     var cartCacheDuration =  60;
@@ -14,7 +14,7 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
     var cacheVarTime = "CART_TIMESTAMP";
     var cartProductListSelector = cartProductListSelector;
     var cartContainerSelector = cartContainerSelector;
-    var cartItemTemplate = cartItemTemplate;
+
 
     /* Persist data  */
     function saveData(){
@@ -63,7 +63,9 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
         var productInfo = Object.create(cartItem.data );
         productInfo.quantity = cartItem.quantity
         productInfo.JSONString = JSON.stringify(cartItem.data );
-        $(cartProductListSelector).loadTemplate(cartItemTemplate, productInfo,
+        productInfo.image = VIEW_CONFIG.productImagePath + cartItem.data.sku + ".png";
+
+        $(cartProductListSelector).loadTemplate( VIEW_CONFIG.cartItemTemplate, productInfo,
             {
                 overwriteCache: true,
                 append: true,
@@ -237,7 +239,7 @@ var CartModule = (function ( cartContainerSelector, cartProductListSelector, car
     }
 
 
-})('#cart-container',"#cart-products", "assets/cart-item.tpl.html" );
+})('#cart-container',"#cart-products" );
 $(function() {
     CartModule.setCacheDuration(10);
     CartModule.loadData();

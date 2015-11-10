@@ -4,7 +4,7 @@
 
       {
       "id": 0,
-      "sku": 8552515751438644,
+      "sku": "8552515751438644",
       "title": "Camisa Nike Corinthians I",
       "description": "14/15 s/nº",
       "availableSizes": ["S", "G", "GG", "GGG"],
@@ -18,7 +18,7 @@
 
     {
       "id": 1,
-      "sku": 18644119330491312,
+      "sku": "18644119330491312",
       "title": "Camisa Nike Corinthians II",
       "description": "14/15 s/nº",
       "availableSizes": ["S", "G", "GG", "GGG"],
@@ -32,7 +32,7 @@
 
     {
       "id": 2,
-      "sku": 11854078013954528,
+      "sku": "11854078013954528",
       "title": "Camisa Feminina Nike Corinthians I",
       "description": "14/15 s/nº",
       "availableSizes": ["S", "G"],
@@ -46,7 +46,7 @@
 
     {
       "id": 3,
-      "sku": 876661122392077,
+      "sku": "876661122392077",
       "title": "Camisa Feminina Nike Corinthians II",
       "description": "2014 s/nº",
       "availableSizes": ["S", "G"],
@@ -60,7 +60,7 @@
 
     {
       "id": 4,
-      "sku": 9197907543445677,
+      "sku": "9197907543445677",
       "title": "Camisa Nike Corinthians I",
       "description": "14/15 s/nº - Jogador",
       "availableSizes": ["GG"],
@@ -88,7 +88,7 @@
 
     {
       "id": 6,
-      "sku": 6090484789343891,
+      "sku": "6090484789343891",
       "title": "Calção Nike Corinthians",
       "description": "Goleiro 13/14",
       "availableSizes": ["GG", "GGG"],
@@ -102,7 +102,7 @@
 
     {
       "id": 7,
-      "sku": 18532669286405342,
+      "sku": "18532669286405342",
       "title": "Camisa Corinthians Réplica",
       "description": "1977 Infantil",
       "availableSizes": ["S"],
@@ -116,7 +116,7 @@
 
     {
       "id": 8,
-      "sku": 5619496040738316,
+      "sku": "5619496040738316",
       "title": "Calção Nike Strike Lgr Woven",
       "description": "",
       "availableSizes": ["GG"],
@@ -130,7 +130,7 @@
 
     {
       "id": 9,
-      "sku": 11600983276356165,
+      "sku": "11600983276356165",
       "title": "Jaqueta Corinthians CP",
       "description": "",
       "availableSizes": ["G", "GG"],
@@ -144,7 +144,7 @@
 
     {
       "id": 10,
-      "sku": 27250082398145995,
+      "sku": "27250082398145995",
       "title": "Jaqueta Corinthians Urban c/ Capuz",
       "description": "",
       "availableSizes": ["G", "GG"],
@@ -158,7 +158,7 @@
 
     {
       "id": 11,
-      "sku": 39876704341265606,
+      "sku": "39876704341265606",
       "title": "Jaqueta Corinthians Elite",
       "description": "",
       "availableSizes": ["S", "G"],
@@ -172,7 +172,7 @@
 
     {
       "id": 12,
-      "sku": 12064273040195392,
+      "sku": "12064273040195392",
       "title": "Tênis Nike Air Relentless",
       "description": "4 MSL",
       "availableSizes": ["40", "43"],
@@ -186,7 +186,7 @@
 
     {
       "id": 13,
-      "sku": 51498472915966366,
+      "sku": "51498472915966366",
       "title": "Tênis Nike Biscuit Canvas",
       "description": "",
       "availableSizes": ["41"],
@@ -200,7 +200,7 @@
 
     {
       "id": 14,
-      "sku": 10686354557628303,
+      "sku": "10686354557628303",
       "title": "Camisa Nike Academy",
       "description": "GPX Poly 1",
       "availableSizes": ["S", "G", "GG"],
@@ -214,7 +214,7 @@
 
     {
       "id": 15,
-      "sku": 11033926921508487,
+      "sku": "11033926921508487",
       "title": "Camisa Nike Corinthians",
       "description": "Treino 2014",
       "availableSizes": ["S", "G", "GG", "GGG"],
@@ -228,7 +228,7 @@
 
     {
       "id": 16,
-      "sku": 10412368723880253,
+      "sku": "10412368723880253",
       "title": "Camisa Polo Corinthians Ouro",
       "description": "",
       "availableSizes": ["S", "G", "GG"],

@@ -2,34 +2,18 @@
  * Created by alanlucian on 11/6/15.
  */
 
-Number.prototype.formatMoney = function( currencyId){
-    if(currencyId == "BRL"){
-        return this.toFixed(2).replace(/\./,",").replace(/(\d)(?=(\d{3})+,)/g, '$1.');
-    }
-    return this.toFixed(2).replace(/(\d)(?=(\d{3})+.)/g, '$1.');
-};
 
-$.addTemplateFormatter({
-
-
-    AddPrefix : function(value, prefix) {
-        return prefix+value;
-    },
-    AddSufix : function(value, sufix) {
-        return value + sufix;
-    }
-});
-
- function ListPage( dataPath , listContainerSelector, itemTemplatePath){
+ function ListPage( dataPath , listContainerSelector){
     // Private STATMENTS
     var self  = this;
-    var itemTemplatePath = itemTemplatePath;
+
     var dataPath = dataPath;
     var listContainer = $("#"+listContainerSelector);
     var productList;
     var productDetails =  new Array();
     var detailModalPrefix =  "productDetail_";
     var bindEventsLock = false; // bool to lock due an BUG on loadTemplate Plugin
+
 
     function getData() {
         $.get( dataPath, parseData, "json"  );
@@ -48,6 +32,7 @@ $.addTemplateFormatter({
             product.modalDetailId = detailModalPrefix  + product.sku ;
             product.freeShippingInfo = ( product.isFreeShipping? "display:block":"display:none");
             product.JSONString = window.JSON.stringify(product);
+            product.image = VIEW_CONFIG.productImagePath + product.sku + ".png";
 
 
 
@@ -60,7 +45,7 @@ $.addTemplateFormatter({
         for ( var i =0 ; i < productList.products.length; i++){
 
             //console.log(listContainer,itemTemplatePath,productList.products[i]);
-            listContainer.loadTemplate(itemTemplatePath, productList.products[i] ,
+            listContainer.loadTemplate(VIEW_CONFIG.listItemTemplate, productList.products[i] ,
                 {   overwriteCache : true,
                     append: true,
                     complete: (i==productList.products.length-1)? bindEvents: null,  //  at the last item BindEvents when template load is complete
