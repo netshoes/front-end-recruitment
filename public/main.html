@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shoppingCart">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Netshoes Shopping Cart</title>
+ 
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/public/style.css">
+ 
+</head>
+ 
+<body ng-controller="CartCtrl">
+
+    <div ng-view></div>
+
+    <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="/node_modules/angular-route/angular-route.min.js"></script>
+
+    <script src="/public/app.js"></script>
+    <script src="/public/cart/cart.js"></script>
+    <script src="/public/checkout/checkout.js"></script> 
+
+</body>
+ 
+</html>

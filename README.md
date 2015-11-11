@@ -21,3 +21,28 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+
+# Netshoes Cart Test > Caio da Cunha Batista
+
+## Technologies / Frameworks
+
+* Bootstrap
+* AngularJs
+* Node > Express
+* NoSQL Database
+* Gulp 
+
+## Development setup
+
+1. Install the dependencies:
+
+        $ npm install
+
+2. Run local server
+
+        $ gulp
+
+## Database note
+
+* This shopping cart use https://orchestrate.io/ to provide the product list.
