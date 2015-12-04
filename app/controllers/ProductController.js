@@ -2,24 +2,13 @@ import promise from 'bluebird';
 
 module.exports = function(app){
 
-  let Player = new app.models.Player();
+  let Product = new app.models.Product();
 
-  class PlayerController extends app.controllers.ApplicationController{
-
-    create(name, email){
-      let resolver = promise.pending();
-      Player.create({ 'name' : name, 'email' : email })
-      .then(function(row) {
-        resolver.resolve(row);
-      }).catch(function(error) {
-        resolver.reject(error);
-      });
-      return resolver.promise;
-    }
+  class ProductController extends app.controllers.ApplicationController{
 
     show(id){
       let resolver = promise.pending();
-      Player.findById(id)
+      Product.findById(id)
       .then(function(rows) {
         resolver.resolve(rows);
       }).catch(function(error) {
@@ -30,7 +19,7 @@ module.exports = function(app){
 
     list(){
       let resolver = promise.pending();
-      Player.sort('id')
+      Product.sort('id')
       .then(function(rows) {
         resolver.resolve(rows);
       }).catch(function(error) {
@@ -41,6 +30,6 @@ module.exports = function(app){
 
   }
 
-  return PlayerController;
+  return ProductController;
 
 };

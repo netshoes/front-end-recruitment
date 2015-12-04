@@ -1,12 +1,10 @@
 {
-  "name": "MemoMath",
-  "version": "0.0.3",
+  "name": "Netshoes Cart Test",
+  "version": "0.0.1",
   "author": "Gustavo Alves <contato@gustavocalves.com.br>",
-  "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "./node_modules/bower/bin/bower install && gulp dist"
+    "start": "node server.js"
   },
   "devDependencies": {
     "bower": "^1.4.1",
@@ -37,7 +35,7 @@
     "karma-coverage": "^0.2.7"
   },
   "engines": {
-    "node": "0.12.2"
+    "node": "5.0.0"
   },
   "dependencies": {
     "express": "^4.11.2",
