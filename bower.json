@@ -1,0 +1,31 @@
+{
+  "name": "angular-init",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gcajpa/angular-init",
+  "description": "Init for Angular project.",
+  "license": "MIT",
+  "author": "Gustavo Alves <contato@gustavocalves.com.br>",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.4",
+    "angular-animate": "~1.4.4",
+    "angular-loading-bar": "~0.8.0",
+    "angular-mocks": "~1.4.4",
+    "angular-spinner": "~0.6.2",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap-sass": "~3.3.5",
+    "bourbon": "~4.2.3",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1",
+    "spin.js": "~2.3.2",
+    "validate": "~0.8.0"
+  },
+  "resolutions": {
+    "spin.js": "~2.3.2"
+  }
+}

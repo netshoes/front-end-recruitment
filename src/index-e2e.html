@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="appTestE2E">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Init Angular - E2E</title>
+
+  <meta name="description" content="A minimal setup for AngularJS development.">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/app.css">
+  <!-- End of Stylesheets -->
+</head>
+<body>
+  <div ui-view></div>
+
+  <!-- Javascripts -->
+  <script src="assets/js/vendor.min.js"></script>
+  <script src="assets/js/vendor-test.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
+
+  <script>
+  (function() {
+    // Boot Test App
+    angular.module('appTestE2E', ['app', 'ngMockE2E']);
+
+    // Disable jQuery
+    // animations
+    jQuery.fx.off = true;
+
+    // Disable ngAnimate
+    angular.module('appTestE2E').run(['$animate', function($animate) {
+      $animate.enabled(false);
+    }]);
+
+    // Set test environment
+    window.ENV = 'test';
+  })();
+  </script>
+  <!-- End of Javascripts -->
+</body>
+</html>
