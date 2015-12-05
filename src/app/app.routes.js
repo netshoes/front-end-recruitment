@@ -14,7 +14,7 @@
 
   function Routes($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/produtos');
 
     $stateProvider.state('app', {
       url: '',

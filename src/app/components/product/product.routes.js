@@ -13,20 +13,19 @@
   Routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function Routes($stateProvider, $urlRouterProvider) {
-
-    $stateProvider.state('app.dashboard.product', {
-      url: 'produto/:id',
+    $stateProvider.state('app.product', {
+      url: '/produto/:id',
       views: {
-        '@app.dashboard': {
+        '@': {
           templateUrl: 'product/show.html',
           controller: 'ProductController as vm'
         }
       }
     })
-    .state('app.dashboard.products', {
-      url: 'produtos',
+    .state('app.products', {
+      url: '/produtos',
       views: {
-        '@app.dashboard': {
+        '@': {
           templateUrl: 'product/list.html',
           controller: 'ProductController as vm'
         }

@@ -9,7 +9,6 @@
   'use strict';
   angular.module('app.components', [
       'app.components.core'
-    , 'app.components.dashboard'
     , 'app.components.product'
   ]);
 })();
