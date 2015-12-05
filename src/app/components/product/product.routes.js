@@ -13,7 +13,7 @@
   Routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function Routes($stateProvider, $urlRouterProvider) {
-    $stateProvider.state('app.product', {
+    $stateProvider.state('app.products.show', {
       url: '/produto/:id',
       views: {
         '@': {

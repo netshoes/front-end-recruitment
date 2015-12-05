@@ -1,1 +1,18 @@
-<h1>Produtos</h1>
+<div class="container">
+  <ul class="products">
+    <li class="product" ng-repeat="product in vm.products">
+      <a ui-sref="app.products.show({ id: product.id })">
+        <img src="" alt="" class="product-image">
+        <div class="product-name">
+          {{product.title}}
+        </div>
+        <div class="product-price">
+          {{product.currencyFormat}} {{product.price}}
+        </div>
+        <div class="product-installment">
+          ou 3 x R$ 25,00
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
