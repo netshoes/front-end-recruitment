@@ -31,7 +31,7 @@
         }
       , 'cart@': {
           templateUrl: 'cart/cart.html',
-          controller: 'CartController as vm'
+          controller: 'CartController as cart'
         }
       }
     });

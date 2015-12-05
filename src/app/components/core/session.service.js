@@ -13,14 +13,13 @@
   Session.$inject = ['APP','ENV', '$window'];
 
   function Session(APP, ENV, $window) {
-    const _ = $window._;
     const storage = $window.localStorage;
 
     const session = {
         STORAGE: JSON.parse(storage.getItem(ENV)) || {}
     };
 
-    return {set, get, getKeys, getAll, unset, clearAll};
+    return {set, get, getAll, unset, clearAll};
 
     function persist() {
       try {
@@ -29,21 +28,13 @@
     }
 
     function set(key, value = null){
-      if (!_.isString(key)) return false;
-
-      const data = _.set(session.STORAGE, key, value);
-
+      if (!angular.isString(key)) return false;
+      session.STORAGE[key] = value;
       persist();
-
-      return data;
     }
 
     function get(key, defaultValue = ''){
-      return _.get(session.STORAGE, key, defaultValue);
-    }
-
-    function getKeys(){
-      return _.keys(session.STORAGE);
+      return session.STORAGE[key];
     }
 
     function getAll(){

@@ -19,12 +19,13 @@
     Session = session;
 
     this.add = function(product){
-      console.log(product);
-      Session.set('cart', product);
+      let cart = Session.get('cart') || [];
+      cart.push(product);
+      Session.set('cart', cart);
     };
 
     this.remove = function(product){
-      Session.unset('cart');
+      Session.remove(product);
     };
 
     this.list = function(){

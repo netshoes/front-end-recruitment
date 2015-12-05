@@ -1,20 +1,20 @@
-<div class="cart">
+<div class="cart" ng-init="cart.init()">
 
   <div class="cart-head">
     <div class="cart-title">
-      <span class="cart-counter">3</span>
+      <span class="cart-counter">{{cart.items_size}}</span>
       <span class="icon-cart"></span> Sacola
     </div>
   </div>
 
   <div class="cart-list">
     <ul class="product-list product-list--horizontal">
-      <li class="product-item">
+      <li class="product-item" ng-repeat="cart_item in cart.cart">
         <div class="product-item__image">
-          <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}">
+          <img ng-src="assets/images/{{cart_item.id}}.jpg" alt="{{cart_item.title}}">
         </div>
         <div class="product-item__title">
-          Camisa Nike Corinthians III 2014 s/nº  Nike Corinthians III 2014 s/nº
+          {{cart_item.title}}
           <ul class="product-item__details">
             <li>
               GG | Preto e branco
@@ -25,47 +25,9 @@
           </ul>
         </div>
         <div class="product-item__price">
-          R$ 149,90
+          {{cart_item.price | currency:cart_item.currencyFormat}}
         </div>
       </li>
-        <li class="product-item">
-          <div class="product-item__image">
-            <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}">
-          </div>
-          <div class="product-item__title">
-            Camisa Nike Corinthians III 2014 s/nº  Nike Corinthians III 2014 s/nº
-            <ul class="product-item__details">
-              <li>
-                GG | Preto e branco
-              </li>
-              <li>
-                Quantidade: 2
-              </li>
-            </ul>
-          </div>
-          <div class="product-item__price">
-            R$ 149,90
-          </div>
-        </li>
-          <li class="product-item">
-            <div class="product-item__image">
-              <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}">
-            </div>
-            <div class="product-item__title">
-              Camisa Nike Corinthians III 2014 s/nº  Nike Corinthians III 2014 s/nº
-              <ul class="product-item__details">
-                <li>
-                  GG | Preto e branco
-                </li>
-                <li>
-                  Quantidade: 2
-                </li>
-              </ul>
-            </div>
-            <div class="product-item__price">
-              R$ 149,90
-            </div>
-          </li>
     </ul>
   </div>
 
@@ -76,9 +38,10 @@
     <div class="cart-subtotal__sum">
       <div class="cart-subtotal__sum-total">
         <div class="cart-subtotal__sum-total__value">
-          333
+          {{cart.total.price | currency:"R$ "}}
         </div>
-        ou em até 10 X R$ 37,97
+        ou em até 10 X
+        <product-installments price="{{cart.total.price}}" installments="10"></product-installments>
       </div>
     </div>
   </div>

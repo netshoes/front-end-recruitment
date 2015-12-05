@@ -20,6 +20,12 @@
     this.isHidden = true;
   }
 
+  Controller.prototype.init = function(){
+    this.list();
+    this.count();
+    this.total();
+  }
+
   Controller.prototype.show = function(){
     this.isHidden = false;
   };
@@ -38,6 +44,18 @@
 
   Controller.prototype.remove = function(product){
     Service.remove(product);
+  };
+
+  Controller.prototype.total = function(){
+    let cart = Service.list();
+    this.total = cart.reduce((previous, current) => {
+      return { price: previous.price + current.price };
+    }, { price: 0 });
+  };
+
+  Controller.prototype.count = function(){
+    let cart = Service.list();
+    this.items_size = cart.length;
   };
 
 
