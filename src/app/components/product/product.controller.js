@@ -10,18 +10,19 @@
 
   angular.module('app.components.product').controller('ProductController', Controller);
 
-  let State, Service;
+  let State, PService, CService;
 
-  Controller.$inject = ['$state', 'ProductService'];
+  Controller.$inject = ['$state', 'ProductService', 'CartService'];
 
-  function Controller($state, ProductService) {
+  function Controller($state, ProductService, CartService) {
     State   = $state;
-    Service = ProductService;
+    PService = ProductService;
+    CService = CartService;
   }
 
   Controller.prototype.show = function(){
     let id = State.params.id;
-    let result = Service.show(id);
+    let result = PService.show(id);
     result.then( (data) => {
       this.product = data.data;
     }, (errors) => {
@@ -36,12 +37,16 @@
   };
 
   Controller.prototype.list = function(){
-    let result = Service.list();
+    let result = PService.list();
     result.then( (data) => {
       this.products = data.data;
     }, (errors) => {
 
     });
+  };
+
+  Controller.prototype.buy = function(product){
+    CService.add(product);
   };
 
 })();

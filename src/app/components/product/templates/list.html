@@ -1,7 +1,7 @@
 <div class="box-container">
   <ul class="product-list" ng-init="vm.list()">
     <li class="product-item" ng-repeat="product in vm.products">
-      <a ui-sref="app.products.show({ id: product.id })" class="product-item__link">
+      <a ng-click="vm.buy(product)" class="product-item__link">
         <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}" class="product-item__image">
         <div class="product-item__title">
           {{product.title}}

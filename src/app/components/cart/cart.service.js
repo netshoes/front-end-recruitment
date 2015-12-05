@@ -8,7 +8,7 @@
 (function() {
   'use strict';
 
-  angular.module('app.components.cart').service('Cartervice', Service);
+  angular.module('app.components.cart').service('CartService', Service);
 
   let Session;
 
@@ -19,6 +19,7 @@
     Session = session;
 
     this.add = function(product){
+      console.log(product);
       Session.set('cart', product);
     };
 
