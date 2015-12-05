@@ -3,7 +3,7 @@
 
   angular
     .module('app.components.core')
-    .directive('installments', Directive);
+    .directive('productInstallments', Directive);
 
     Directive.$inject = ['$filter'];
 

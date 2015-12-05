@@ -8,11 +8,11 @@
           {{product.title}}
         </div>
         <div class="product-item__price">
-          {{product.currencyFormat}} <strong>{{product.price | currency:' '}}</strong>
+          <product-price price="{{product.price}}" currency="{{product.currencyFormat}}">
         </div>
         <div class="product-item__installment">
           ou {{product.installments}} x
-          <installments price="{{product.price}}" installments="{{product.installments}}"></installments>
+          <product-installments price="{{product.price}}" installments="{{product.installments}}"></product-installments>
         </div>
       </a>
     </li>
