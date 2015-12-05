@@ -44,11 +44,16 @@
 
   Controller.prototype.add = function(product){
     Service.add(product);
+    this.isHidden = false;
     this.reinitialize();
   };
 
-  Controller.prototype.remove = function(product){
-    Service.remove(product);
+  Controller.prototype.remove = function(id){
+    Service.remove(id);
+    this.reinitialize();
+    if(!this.cart.length){
+      this.isHidden = true;
+    }
   };
 
   Controller.prototype.total = function(){

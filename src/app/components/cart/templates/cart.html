@@ -27,6 +27,7 @@
           </ul>
         </div>
         <div class="product-item__price">
+          <a href="#" ng-click="cart.remove(cart_item.id)" class="product-item__remove">X</a>
           {{cart_item.price | currency:cart_item.currencyFormat}}
         </div>
       </li>

@@ -30,8 +30,15 @@
       Session.set('cart', cart);
     };
 
-    this.remove = function(product){
-      Session.remove(product);
+    this.remove = function(id){
+      let cart = Session.get('cart');
+      cart.forEach((item) =>{
+        if( item.id === id ){
+          cart.splice(item, 1);
+          return;
+        }
+      });
+      Session.set('cart', cart);
     };
 
     this.list = function(){

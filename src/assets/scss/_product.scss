@@ -110,3 +110,11 @@
   font-weight: 600;
   margin-top: 8px;
 }
+
+.product-item__remove{
+  color: $black;
+  display: block;
+  font-size: $font-size-base + 4;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
