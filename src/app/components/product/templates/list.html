@@ -1,17 +1,17 @@
 <div class="box-container">
-  <ul class="products">
-    <li class="product" ng-repeat="product in vm.products">
-      <a ui-sref="app.products.show({ id: product.id })">
-        <img src="" alt="" class="product-image">
-        <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}" class="product-image">
-        <div class="product-name">
+  <ul class="product-list">
+    <li class="product-item" ng-repeat="product in vm.products">
+      <a ui-sref="app.products.show({ id: product.id })" class="product-item__link">
+        <img src="" alt="" class="product-item__image">
+        <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}" class="product-item__image">
+        <div class="product-item__title">
           {{product.title}}
         </div>
-        <div class="product-price">
-          {{product.currencyFormat}} {{product.price}}
+        <div class="product-item__price">
+          {{product.currencyFormat}} <strong>{{product.price}}</strong>
         </div>
-        <div class="product-installment">
-          ou 3 x R$ 25,00
+        <div class="product-item__installment">
+          ou {{product.installments}} x R$ 25,00
         </div>
       </a>
     </li>

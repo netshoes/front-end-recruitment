@@ -1,0 +1,39 @@
+.product-list{
+  list-style: none;
+  width: 100%;
+  .product-item{
+    display: inline-block;
+    width: 25%;
+  }
+}
+
+.product-item{
+  margin-top: 60px;
+  text-align: center;
+}
+
+.product-item__title{
+  margin-top: 15px;
+}
+
+.product-item__price{
+  font-size: $font-size-base - 2;
+  &:before{
+    content: '';
+    background: $yellow;
+    display: block;
+    height: 2px;
+    margin: 8px auto 7px auto;
+    width: 15px;
+  }
+  strong{
+    font-size: $font-size-base + 10;
+    font-weight: 700;
+  }
+}
+
+.product-item__installment{
+  color: $gray-dark;
+  font-weight: 600;
+  margin-top: 8px;
+}

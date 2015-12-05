@@ -11,12 +11,13 @@
 $white: #fff;
 $black: #000;
 
-$gray-dark: #656565;
+$gray-dark: #999999;
+$yellow: #dfbd00;
 
 // Type Colors
 $text-color: $gray-dark;
 
-$link-color: $gray-dark;
+$link-color: $black;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
