@@ -3,6 +3,6 @@
     "port" : 3000
   },
   "DB" : {
-    "URI": "mongodb://localhost/mean"
+    "URI": "mongodb://localhost/netshoes"
   }
 }

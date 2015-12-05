@@ -9,9 +9,9 @@ module.exports = function(app){
     show(id){
       let resolver = promise.pending();
       Product.findById(id)
-      .then(function(rows) {
+      .then( (rows) => {
         resolver.resolve(rows);
-      }).catch(function(error) {
+      }, (error) => {
         resolver.reject(error);
       });
       return resolver.promise;
@@ -20,9 +20,9 @@ module.exports = function(app){
     list(){
       let resolver = promise.pending();
       Product.sort('id')
-      .then(function(rows) {
+      .then( (rows) => {
         resolver.resolve(rows);
-      }).catch(function(error) {
+      }, (error) => {
         resolver.reject(error);
       });
       return resolver.promise;
