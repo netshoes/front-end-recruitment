@@ -1,7 +1,13 @@
 // Atoms
+@import 'reset';
+
 @import 'variables';
 @import 'mixins';
 
-@import 'reset';
-
 @import 'fonts';
+
+@import 'grid';
+@import 'responsive';
+
+@import 'links';
+@import 'type';

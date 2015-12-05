@@ -1,0 +1,61 @@
+.display-xs,
+.display-sm,
+.display-md,
+.display-lg{
+  display: none!important;
+}
+
+@media (max-width: $screen-xs-max) {
+  .display-xs{
+    display: block!important;
+  }
+}
+
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+  .display-sm{
+    display: block!important;
+  }
+}
+
+@media (max-width: $screen-md-max) and (min-width: $screen-md-min) {
+  .display-md{
+    display: block!important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .display-lg{
+    display: block!important;
+  }
+}
+
+.hide-xs,
+.hide-sm,
+.hide-md,
+.hide-lg{
+  display: block!important;
+}
+
+@media (max-width: $screen-xs-max) {
+  .hide-xs{
+    display: none!important;
+  }
+}
+
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
+  .hide-sm{
+    display: none!important;
+  }
+}
+
+@media (max-width: $screen-md-max) and (min-width: $screen-md-min) {
+  .hide-md{
+    display: none!important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .hide-lg{
+    display: none!important;
+  }
+}
