@@ -1,0 +1,23 @@
+/******************
+ *  GENERAL
+ ******************/
+
+ @mixin clearfix() {
+   &:before,
+   &:after {
+     content: " ";
+     display: table;
+   }
+   &:after {
+     clear: both;
+   }
+ }
+
+ /******************
+ *  Animation and Effect
+ ******************/
+
+@mixin transition($seconds) {
+  -webkit-transition: all $seconds ease-in-out;
+  transition:  all $seconds ease-in-out;
+}

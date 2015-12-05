@@ -1,8 +1,7 @@
-/*!
- * App stylesheets
- *
- * @author Gustavo Alves - contato@gustavocalves.com.br
- *
- */
-
+// Atoms
 @import 'variables';
+@import 'mixins';
+
+@import 'reset';
+
+@import 'fonts';

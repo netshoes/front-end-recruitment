@@ -3,5 +3,27 @@
  * @author Gustavo Alves - contato@gustavocalves.com.br
  */
 
-$color-black: #000000;
-$color-white: #ffffff;
+/******************
+ *  COLORS
+ ******************/
+
+// General Colors
+$white: #fff;
+$black: #000;
+
+$gray-dark: #656565;
+
+// Type Colors
+$text-color: $gray-dark;
+
+$link-color: $gray-dark;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+
+/******************
+ *  FONT
+ ******************/
+
+$font-size-base: 14px;
+$font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
