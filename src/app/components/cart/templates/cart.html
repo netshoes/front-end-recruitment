@@ -9,7 +9,11 @@
     </div>
   </div>
 
-  <div class="cart-list">
+  <div class="cart-message" ng-if="cart.message">
+    {{cart.message}}
+  </div>
+
+  <div class="cart-list" ng-if="cart.cart">
     <ul class="product-list product-list--horizontal">
       <li class="product-item" ng-repeat="cart_item in cart.cart">
         <div class="product-item__image">

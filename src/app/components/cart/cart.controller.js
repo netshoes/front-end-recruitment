@@ -32,6 +32,7 @@
     this.list();
     this.count();
     this.total();
+    this.message = "";
   };
 
   Controller.prototype.control = function(){
@@ -87,9 +88,12 @@
     return false;
   };
 
-  Controller.prototype.checkout = function(){
-    Service.checkout();
-    this.reinitialize();
+  Controller.prototype.checkout = function(){;
+    if(this.cart && this.cart.length){
+      Service.checkout();
+      this.reinitialize();
+      this.message = "Parabéns pela compra!!! :)"
+    }
   }
 
 })();

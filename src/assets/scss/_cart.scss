@@ -46,6 +46,16 @@
     color: $yellow;
   }
 }
+.cart-head{
+  margin-bottom: 30px;
+}
+.cart-message{
+  color: $yellow;
+  font-size: $font-size-base + 10;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
 .cart-title{
   color: $white;
   font-size: $font-size-base + 10;
