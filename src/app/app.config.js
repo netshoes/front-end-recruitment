@@ -85,15 +85,5 @@
     });
   }
 
-  /**
-   * Setup Loading Bar config options
-  **/
-  angular.module('app.config').config(ConfigLoadingBar);
-
-  ConfigLoadingBar.$inject = ['cfpLoadingBarProvider'];
-
-  function ConfigLoadingBar(cfpLoadingBarProvider) {
-    cfpLoadingBarProvider.latencyThreshold = 50;
-  }
 
 })();

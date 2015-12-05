@@ -12,16 +12,10 @@ global['config'] = module.exports = {
   vendor : {
     dev: {
       srcs: [
-        // General
-          './src/bower/jquery/dist/jquery.min.js'
-        , './src/bower/lodash/lodash.min.js'
-        , './src/bower/validate/validate.min.js'
-        , './src/bower/bootstrap-sass/assets/javascripts/bootstrap.min.js'
         // Angular
-        , './src/bower/angular/angular.min.js'
+          './src/bower/angular/angular.min.js'
         , './src/bower/angular-animate/angular-animate.min.js'
         , './src/bower/angular-ui-router/release/angular-ui-router.min.js'
-        , './src/bower/angular-loading-bar/build/loading-bar.min.js'
       ]
       ,  dest: './src/assets/js/'
       , file: 'vendor.min.js'

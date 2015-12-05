@@ -15,7 +15,6 @@
 
       'ui.router'
     , 'ngAnimate'
-    , 'angular-loading-bar'
 
     , 'app.templates'
     , 'app.routes'
