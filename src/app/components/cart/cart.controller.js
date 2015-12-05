@@ -87,4 +87,9 @@
     return false;
   };
 
+  Controller.prototype.checkout = function(){
+    Service.checkout();
+    this.reinitialize();
+  }
+
 })();

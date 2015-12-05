@@ -59,6 +59,10 @@
       return product;
     };
 
+    this.checkout = function(){
+      Session.unset('cart');
+    };
+
   }
 
 })();

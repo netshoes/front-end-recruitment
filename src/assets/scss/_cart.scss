@@ -70,6 +70,8 @@
 }
 .cart-list{
   margin-top: 50px;
+  max-height: 80%;
+  overflow-y: scroll;
   li{
     border-top: 2px solid rgba(19, 19, 22, 0.4);
     &:last-child{
