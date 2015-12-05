@@ -1,6 +1,6 @@
 describe("Cart Controller", function(){
 
-  var CartController, CartService, cart, cart_list, scope, session;
+  var CartController, CartService, cart, cart_list, scope, rootScope, session;
 
   beforeEach(module('app'));
   beforeEach(inject(function(_$controller_, _$rootScope_, _CartService_, _session_) {
