@@ -3,6 +3,7 @@
     <li class="product" ng-repeat="product in vm.products">
       <a ui-sref="app.products.show({ id: product.id })">
         <img src="" alt="" class="product-image">
+        <img ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}" class="product-image">
         <div class="product-name">
           {{product.title}}
         </div>

@@ -1,5 +1,5 @@
-<div class="product" ng-init="vm.show()">  
-  <img src="" alt="" class="product-image">
+<div class="product" ng-init="vm.show()">
+  <img ng-src="assets/images/{{vm.product.id}}.jpg" alt="{{vm.product.title}}" class="product-image">
   <div class="product-name">
     {{vm.product.title}}
   </div>
