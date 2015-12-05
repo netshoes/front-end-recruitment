@@ -4,15 +4,44 @@
   height: 100%;
   padding-top: 50px;
   position: fixed;
-  right: 0;
+  right: -515px;
   text-transform: uppercase;
   top: 0;
   width: 515px;
   @media (max-width: $screen-sm-min) {
+    right: -80%;
     width: 80%;
   }
   @media (max-width: $screen-xs-min) {
+    right: -90%;
     width: 90%;
+  }
+  &--open{
+    right: 0;
+    @media (max-width: $screen-sm-min) {
+      right: 0;
+    }
+    @media (max-width: $screen-xs-min) {
+      right: 0
+    }
+  }
+}
+.cart-control{
+  background: $blue-dark;
+  border: 2px solid $gray;
+  border-right: none;
+  color: $white;
+  cursor: pointer;
+  font-weight: 700;
+  height: 30px;
+  line-height: 30px;
+  left: -30px;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 30px;
+  &:hover{
+    color: $yellow;
   }
 }
 .cart-title{

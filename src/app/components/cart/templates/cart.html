@@ -1,5 +1,7 @@
-<div class="cart" ng-init="cart.init()">
-
+<div class="cart"
+        ng-class="!cart.isHidden ? 'cart--open' : ''"
+        ng-init="cart.init()">
+  <div href="" class="cart-control" ng-click="cart.control()">{{cart.items_size}}</div>
   <div class="cart-head">
     <div class="cart-title">
       <span class="cart-counter">{{cart.items_size}}</span>
@@ -17,7 +19,7 @@
           {{cart_item.title}}
           <ul class="product-item__details">
             <li>
-              GG | Preto e branco
+              {{cart_item.availableSizes[0]}} | {{cart_item.style}}
             </li>
             <li>
               Quantidade: {{cart_item.quantity}}

@@ -34,12 +34,8 @@
     this.total();
   };
 
-  Controller.prototype.show = function(){
-    this.isHidden = false;
-  };
-
-  Controller.prototype.hide = function(){
-    this.isHidden = true;
+  Controller.prototype.control = function(){
+    this.isHidden = !this.isHidden;
   };
 
   Controller.prototype.list = function(){
