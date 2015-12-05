@@ -8,6 +8,12 @@
   text-transform: uppercase;
   top: 0;
   width: 515px;
+  @media (max-width: $screen-sm-min) {
+    width: 80%;
+  }
+  @media (max-width: $screen-xs-min) {
+    width: 90%;
+  }
 }
 .cart-title{
   color: $white;

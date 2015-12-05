@@ -5,6 +5,12 @@
   .product-item{
     display: inline-block;
     width: 25%;
+    @media (max-width: $screen-sm-min) {
+      width: 50%;
+    }
+    @media (max-width: $screen-xs-min) {
+      width: 100%;
+    }
   }
 
   &--horizontal{
