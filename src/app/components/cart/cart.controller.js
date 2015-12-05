@@ -39,6 +39,9 @@
   };
 
   Controller.prototype.add = function(product){
+    if( isInCart(product) ){
+      console.log('ja estava');
+    }
     Service.add(product);
   };
 
@@ -58,6 +61,9 @@
     this.items_size = cart.length;
   };
 
-
+  Controller.prototype.isInCart(product){
+    let cart = Service.list();
+    return cart.find({ id: product.id });
+  }
 
 })();
