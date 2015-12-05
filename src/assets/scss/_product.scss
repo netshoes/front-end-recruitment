@@ -1,5 +1,6 @@
 .product-list{
   list-style: none;
+  margin-bottom: 60px;
   width: 100%;
   .product-item{
     display: inline-block;
@@ -9,10 +10,13 @@
 
 .product-item{
   margin-top: 60px;
+  padding: 0 10px;
   text-align: center;
+  vertical-align: top;
 }
 
 .product-item__title{
+  line-height: 20px;
   margin-top: 15px;
 }
 

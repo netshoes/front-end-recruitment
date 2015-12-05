@@ -8,10 +8,11 @@
           {{product.title}}
         </div>
         <div class="product-item__price">
-          {{product.currencyFormat}} <strong>{{product.price}}</strong>
+          {{product.currencyFormat}} <strong>{{product.price | currency:' '}}</strong>
         </div>
         <div class="product-item__installment">
-          ou {{product.installments}} x R$ 25,00
+          ou {{product.installments}} x
+          <installments price="{{product.price}}" installments="{{product.installments}}"></installments>
         </div>
       </a>
     </li>

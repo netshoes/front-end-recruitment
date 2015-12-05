@@ -16,6 +16,7 @@ global['config'] = module.exports = {
           './src/bower/angular/angular.min.js'
         , './src/bower/angular-animate/angular-animate.min.js'
         , './src/bower/angular-ui-router/release/angular-ui-router.min.js'
+        , './src/bower/angular-i18n/angular-locale_pt-br.js'
       ]
       ,  dest: './src/assets/js/'
       , file: 'vendor.min.js'
