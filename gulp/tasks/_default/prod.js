@@ -9,3 +9,9 @@ gulp.task('dist', () => {
     'dist:copy'
   );
 });
+
+gulp.task('heroku:production', () => {
+  $.runsec(
+    'dist'
+  );
+});
