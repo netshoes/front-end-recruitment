@@ -1,0 +1,73 @@
+.cart{
+  background: $blue-dark;
+  border-left: 2px solid $gray;
+  height: 100%;
+  padding-top: 50px;
+  position: fixed;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  width: 515px;
+}
+.cart-title{
+  color: $white;
+  font-size: $font-size-base + 10;
+  font-weight: 700;
+  text-align: center;
+  span{
+    margin-right: 22px;
+  }
+}
+.cart-counter{
+  background: $yellow;
+  border-radius: 100%;
+  color: $black;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 19px;
+  height: 19px;
+  margin: 28px 0 0 18px;
+  position: absolute;
+  text-align: center;
+  width: 19px;
+}
+.cart-list{
+  margin-top: 50px;
+  li{
+    border-top: 2px solid rgba(19, 19, 22, 0.4);
+    &:last-child{
+      border-bottom: 2px solid rgba(19, 19, 22, 0.4);
+    }
+  }
+}
+.cart-subtotal{
+  display: table;
+  padding: 0 27px;
+  width: 100%;
+  > div{
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+  }
+}
+.cart-subtotal__text{
+  color: rgba(204, 204, 204, 0.4);
+  font-size: $font-size-base;
+  text-align: left;
+}
+.cart-subtotal__sum{
+  color: rgba(204, 204, 204, 0.2);
+  font-size: $font-size-base - 2;
+  line-height: 22px;
+  text-align: right;
+}
+.cart-subtotal__sum-total__value{
+  color: $yellow;
+  font-size: $font-size-base + 10;
+  font-weight: 700;
+}
+.cart-buy{
+  margin-top: 35px;
+  padding: 0 20px;
+  text-align: center;
+}

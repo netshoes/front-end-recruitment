@@ -29,6 +29,10 @@
           templateUrl: 'product/list.html',
           controller: 'ProductController as vm'
         }
+      , 'cart@': {
+          templateUrl: 'cart/cart.html',
+          controller: 'CartController as vm'
+        }
       }
     });
   }

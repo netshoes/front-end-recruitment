@@ -1,5 +1,5 @@
 /**
- * Sample controller
+ * Product controller
  *
  * @author Gustavo Alves - contato@gustavocalves.com.br
  *
