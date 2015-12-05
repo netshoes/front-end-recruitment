@@ -20,7 +20,13 @@
 
     this.add = function(product){
       let cart = Session.get('cart') || [];
-      cart.push(product);
+      let productInCart = this.findById(product.id);
+      if( productInCart ){
+        productInCart.quantity = productInCart.quantity + 1;
+      }else{
+        product.quantity = 1;
+        cart.push(product);
+      }
       Session.set('cart', cart);
     };
 
@@ -30,6 +36,20 @@
 
     this.list = function(){
       return Session.get('cart');
+    };
+
+    this.findById = function(id){
+      let cart = Session.get('cart');
+      let product = null;
+      if(!cart){
+        return product;
+      }
+      cart.forEach((item) =>{
+        if( item.id === id ){
+          product = item;
+        }
+      });
+      return product;
     };
 
   }

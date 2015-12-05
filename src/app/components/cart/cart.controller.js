@@ -10,21 +10,29 @@
 
   angular.module('app.components.cart').controller('CartController', Controller);
 
-  let Service;
+  let Scope, Service;
 
-  Controller.$inject = ['CartService'];
+  Controller.$inject = ['$scope', 'CartService'];
 
-  function Controller(CartService) {
+  function Controller($scope, CartService) {
+    Scope = $scope;
     Service = CartService;
 
     this.isHidden = true;
   }
 
   Controller.prototype.init = function(){
+    this.reinitialize();
+    Scope.$on('buy', (event, product) => {
+      this.add(product);
+    });
+  };
+
+  Controller.prototype.reinitialize = function(){
     this.list();
     this.count();
     this.total();
-  }
+  };
 
   Controller.prototype.show = function(){
     this.isHidden = false;
@@ -39,10 +47,8 @@
   };
 
   Controller.prototype.add = function(product){
-    if( isInCart(product) ){
-      console.log('ja estava');
-    }
     Service.add(product);
+    this.reinitialize();
   };
 
   Controller.prototype.remove = function(product){
@@ -51,19 +57,33 @@
 
   Controller.prototype.total = function(){
     let cart = Service.list();
-    this.total = cart.reduce((previous, current) => {
-      return { price: previous.price + current.price };
-    }, { price: 0 });
+    this.total_price = 0;
+    if(!cart){
+      this.total_price = 0;
+      return;
+    }
+    cart.forEach((item) => {
+      this.total_price = this.total_price + (item.price * item.quantity);
+    });
   };
 
   Controller.prototype.count = function(){
     let cart = Service.list();
-    this.items_size = cart.length;
+    this.items_size = 0;
+    if(cart){
+      this.items_size = cart.length || 0;
+    }
   };
 
-  Controller.prototype.isInCart(product){
+  Controller.prototype.isInCart = function(product){
     let cart = Service.list();
-    return cart.find({ id: product.id });
-  }
+    if(!cart){
+      return false;
+    }
+    if(Service.findById(product.id)){
+      return true;
+    }
+    return false;
+  };
 
 })();

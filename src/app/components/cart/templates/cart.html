@@ -1,4 +1,4 @@
-<div class="cart" ng-init="cart.init()">
+<!-- <div class="cart" ng-init="cart.init()">
 
   <div class="cart-head">
     <div class="cart-title">
@@ -20,7 +20,7 @@
               GG | Preto e branco
             </li>
             <li>
-              Quantidade: 2
+              Quantidade: {{cart_item.quantity}}
             </li>
           </ul>
         </div>
@@ -38,10 +38,10 @@
     <div class="cart-subtotal__sum">
       <div class="cart-subtotal__sum-total">
         <div class="cart-subtotal__sum-total__value">
-          {{cart.total.price | currency:"R$ "}}
+          {{cart.total_price | currency:"R$ "}}
         </div>
         ou em até 10 X
-        <product-installments price="{{cart.total.price}}" installments="10"></product-installments>
+        <product-installments price="{{cart.total_price}}" installments="10"></product-installments>
       </div>
     </div>
   </div>
@@ -51,3 +51,4 @@
   </div>
 
 </div>
+ -->
