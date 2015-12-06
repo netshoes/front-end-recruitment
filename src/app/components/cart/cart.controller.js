@@ -88,12 +88,12 @@
     return false;
   };
 
-  Controller.prototype.checkout = function(){;
+  Controller.prototype.checkout = function(){
     if(this.cart && this.cart.length){
       Service.checkout();
       this.reinitialize();
-      this.message = "Parabéns pela compra!!! :)"
+      this.message = "Parabéns pela compra!!! :)";
     }
-  }
+  };
 
 })();
