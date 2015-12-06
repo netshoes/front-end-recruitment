@@ -10,14 +10,14 @@
 
   angular.module('app.components.product').controller('ProductController', Controller);
 
-  let Scope, State, Service;
+  let State, Service, Events;
 
-  Controller.$inject = ['$rootScope', '$state', 'ProductService'];
+  Controller.$inject = ['$state', 'ProductService', 'events'];
 
-  function Controller($rootScope, $state, ProductService) {
-    Scope   = $rootScope;
+  function Controller($state, ProductService, events) {
     State   = $state;
     Service = ProductService;
+    Events  = events;
   }
 
   Controller.prototype.show = function(){
@@ -46,7 +46,7 @@
   };
 
   Controller.prototype.buy = function(product){
-    Scope.$broadcast('buy', product);
+    Events.emit('buy', product);
   };
 
 })();

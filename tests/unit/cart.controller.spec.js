@@ -1,14 +1,15 @@
 describe("Cart Controller", function(){
 
-  var CartController, CartService, cart, cart_list, scope, rootScope, session;
+  var CartController, CartService, cart, cart_list, scope, rootScope, session, events;
 
   beforeEach(module('app'));
-  beforeEach(inject(function(_$controller_, _$rootScope_, _CartService_, _session_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _CartService_, _session_, _events_) {
 
     rootScope = _$rootScope_;
     scope   = _$rootScope_.$new();
 
     session = _session_;
+    events = _events_;
 
     CartController = _$controller_("CartController", {
      '$scope' : scope, 'CartService' : _CartService_
@@ -94,6 +95,11 @@ describe("Cart Controller", function(){
 
     isInCart = CartController.isInCart(cart[1]);
     expect(isInCart).toBe(false);
+  });
+
+  it('event buy', function(){
+    events.emit('buy', cart[1]);
+    expect(rootScope.$emit).toHaveBeenCalledWith( 'buy', cart[1]);
   });
 
   afterEach(function(){

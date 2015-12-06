@@ -23,7 +23,9 @@
     function on(key, scope, cb) {
       const unbind = $rootScope.$on(key, cb);
 
-      scope.$on('$destroy', unbind);
+      if (scope) {
+        scope.$on('$destroy', unbind);
+      }
 
       return unbind;
     }

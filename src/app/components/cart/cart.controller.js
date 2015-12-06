@@ -10,20 +10,21 @@
 
   angular.module('app.components.cart').controller('CartController', Controller);
 
-  let Scope, Service;
+  let Scope, Service, Events;
 
-  Controller.$inject = ['$scope', 'CartService'];
+  Controller.$inject = ['$scope', 'CartService', 'events'];
 
-  function Controller($scope, CartService) {
+  function Controller($scope, CartService, events) {
     Scope = $scope;
     Service = CartService;
+    Events = events;
 
     this.isHidden = true;
   }
 
   Controller.prototype.init = function(){
     this.reinitialize();
-    Scope.$on('buy', (event, product) => {
+    Events.on('buy', Scope, (ev, product) => {
       this.add(product);
     });
   };
