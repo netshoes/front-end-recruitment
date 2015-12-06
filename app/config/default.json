@@ -3,6 +3,6 @@
     "port" : 3000
   },
   "DB" : {
-    "URI": "mongodb://localhost/netshoes"
+    "URI": "mongodb://netshoes:1q2w3e4r@ds063134.mongolab.com:63134/netshoes"
   }
 }
