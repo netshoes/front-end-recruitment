@@ -4,8 +4,7 @@
   "author": "Gustavo Alves <contato@gustavocalves.com.br>",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "run": "export NODE_CONFIG_DIR=app/config && gulp dist && node server",
+    "start": "export NODE_CONFIG_DIR=app/config && gulp dist && node server",
     "postinstall": "./node_modules/bower/bin/bower install && gulp dist",
     "dev": "gulp dev",
     "test": "gulp test"
