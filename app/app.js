@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', dir + '/dist');
 app.use(express.static(dir  + '/dist', { index: false }));
 
+app.get('/', function(req, res) {
+    res.sendFile(dir + '/dist' + '/index.html');
+});
+
 load('models', {cwd: dir_app})
   .then('controllers', {cwd: dir_app})
   .then('routes', {cwd: dir_app})
