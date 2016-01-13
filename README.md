@@ -1,23 +1,16 @@
 # Netshoes Cart Test
 
-## Expected result
+Required `node`, `npm`, `gulp`, `bower`
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
+## Usage
 
-## Data
+After clone, run this commands to install the dependencies 
 
-The data we provide is a static JSON file under `/public/data`.
+```
+npm install
+```
 
-## Notes
-
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
-
-## Bonus
-
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+```
+bower install
+```
+Run `gulp serve` to launch a browser sync server, `gulp serve:dist` to launch a server on your optimized application, and `gulp build`  to build an optimized version of your application in `/dist`.
