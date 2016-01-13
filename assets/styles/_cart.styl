@@ -22,7 +22,6 @@
   }
 }
 .list-cart-item {
-  padding: 1em;
   float: left;
   cursor: pointer;
   &:hover {
@@ -45,7 +44,7 @@
   }
   .list-cart-info {
     float: left;
-    width: 415px;
+    width: 405px;
     position: relative;
     .list-cart-price {
       position: absolute;
@@ -67,4 +66,67 @@
       }
     }
   }
+  .list-cart-content {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    float: left;
+    padding: 15px 0;
+    margin: 0px 20px;
+  }
+}
+.logo-wrap {
+    position: relative;
+}
+.quant-cart {
+    background-color: #dfbd00;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    color: #000;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin-left: -90px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.btn-buy {
+    width: 465px;
+    margin: 20px auto;
+    display: block;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.cart-subtotal {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.cart-info {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    height: 50px;
+}
+.cart-price-total {
+    color: #dfbd00;
+    font-size: 16px;
+    float: right;
+    margin-right: 45px;
+}
+.cart-parcel-price {
+    color: #46464a;
+    text-transform: uppercase;
+    font-size: 13px;
+    position: relative;
+    right: -73px;
+    float: right;
+    top: 22px;
 }

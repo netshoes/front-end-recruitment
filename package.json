@@ -28,6 +28,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "gulp-zip": "^3.0.2",
+    "jshint": "^2.9.1-rc3",
     "jshint-stylish": "^2.1.0",
     "lost": "^6.6.2",
     "poststylus": "^0.2.2",
