@@ -1,0 +1,126 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+$white : #fff;
+$black : #000000;
+$ligthGrey : #999999;
+$mediumGrey : #202025;
+$darkGrey : #313135;
+$plusDarkGrey : #131316;
+$ultraLigthGrey : #cccccc;
+$golden : #dfbd00;
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+	max-width: 970px;
+}
+
+#products{
+	.col-md-4{
+		margin : 0 0 0px 0;
+		padding-top : 15px;
+		padding-bottom : 15px;
+		-webkit-transition: all 500ms ease;
+		   -moz-transition: all 500ms ease;
+		    -ms-transition: all 500ms ease;
+		     -o-transition: all 500ms ease;
+		        transition: all 500ms ease;
+		&:hover{
+			background-color: #f5f5f5;
+			cursor : pointer;
+		}
+		.btn-block{
+			margin-top: 10px;
+		}
+		span {
+			width : 100%;
+			display : inline-block;
+			color : $ligthGrey;
+			&.title{
+				font-size : 14px;
+				margin : 15px 0;
+				position: relative;
+				&:after{
+					content : '';
+					width : 15px;
+					position : absolute;
+					bottom : -10px;
+					display : block;
+					left : 50%;
+					height : 2px;
+					background-color : $golden;
+					transform : translate(-50%);
+					-webkit-transform : translate(-50%);
+					-moz-transform : translate(-50%);
+					-o-transform : translate(-50%);
+					-ms-transform : translate(-50%);
+				}
+			}
+			&.total-price{
+				font-size : 12px;
+				strong{
+					font-size : 24px;
+					color : $darkGrey;
+				}
+			}
+		}
+	}
+	.search-bar{
+		margin : 15px 0 45px 0;
+		.col-md-6{
+			position: relative;
+		}
+		input {
+			font-size : 16px;
+			color : $darkGrey;
+			border : 2px solid $ultraLigthGrey;
+			height: 47px;
+			line-height: 47px;
+			padding : 0 70px 0 18px;
+		}
+		button {
+			background: transparent;
+    		border: none;
+    		position: absolute;
+    		right: 30px;
+    		width: 50px;
+    		height: 47px;
+    		top: 0;
+    		&:hover{
+    			cursor : default;
+    		}
+		}
+	}
+}
+
+.no-error .help-block{
+	display : none;
+}
+
+.ngdialog-content .has-error .help-block{
+	display : block
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
