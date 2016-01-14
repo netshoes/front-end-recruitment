@@ -8,7 +8,7 @@
     <title>Sacola</title>
     <link rel="stylesheet" href="assets/styles/main.css">
   </head>
-  <body>
+  <body ng-app="app" ng-controller="ProductController">
     <header>
       <h1>Sacola Test</h1>
     </header>
@@ -67,7 +67,10 @@
             <a href="#" class="list-link">
               <figure>
                 <img src="http://placehold.it/180x230/" alt="">
-              </figure>
+            </figure>
+        <div class="list-cart-wrap">
+          <div class="list-product-cart">
+            <ul>
               <div class="product-info">
                 <h2 class="list-product-title">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</h2>
                 <span class="list-product-price">R$ <strong>149</strong>,90</span>
@@ -125,5 +128,9 @@
         </div>
       </section>
     </main>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="assets/script/app.js"></script>
+    <script src="assets/script/product.service.js"></script>
+    <script src="assets/script/product.controller.js"></script>
   </body>
 </html>
