@@ -7,8 +7,19 @@
   top: 0;
   height: 100%;
   box-shadow: 0px 0px 10px #666;
+  transition: all .5s ease-in-out;
+  &.open {
+    right: 0;
+  }
+  &.close {
+    right: -545px;
+  }
   h1 {
     text-transform: uppercase;
+    padding: 2em;
+		font-size: 1.5em;
+    text-align: center;
+    margin-left: 40px;
   }
   .icon-saloca {
     background: url("../../assets/images/sprite.png") no-repeat -4px -2px;
@@ -17,7 +28,7 @@
     display: block;
     position: absolute;
     left: 50%;
-    margin-left: -110px;
+    margin-left: -90px;
     top: 35px;
   }
 }
@@ -87,7 +98,7 @@
     position: absolute;
     left: 50%;
     top: 60px;
-    margin-left: -90px;
+    margin-left: -70px;
     padding: 8px;
     text-align: center;
     font-weight: bold;

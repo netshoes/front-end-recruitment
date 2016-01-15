@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "modernizr": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "angular": "latest"
   }
 }

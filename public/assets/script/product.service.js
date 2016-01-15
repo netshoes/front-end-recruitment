@@ -3,13 +3,13 @@
 
 	angular
 		.module('app')
-		.service('ProductService', Product);
+		.service('ProductService', productService);
 
-	Product.$inject = ['$http'];
+	productService.$inject = ['$http'];
 
-	function Product($http) {
-        this.get = function() {
-            return $http.get("../data/products.json");
-        };
+	function productService($http) {
+    this.getProducts = function() {
+        return $http.get("../data/products.json");
+    };
 	};
 })();

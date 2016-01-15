@@ -126,22 +126,22 @@ table {
 body {
   background-color: #fff;
 }
-header {
+.header-main {
   *zoom: 1;
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
-header:before {
+.header-main:before {
   content: '';
   display: table;
 }
-header:after {
+.header-main:after {
   content: '';
   display: table;
   clear: both;
 }
-header h1 {
+.header-main h1 {
   text-align: center;
   padding: 2em;
   font-size: 1.5em;
@@ -251,9 +251,21 @@ header h1 {
   top: 0;
   height: 100%;
   box-shadow: 0px 0px 10px #666;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.cart-wrap.open {
+  right: 0;
+}
+.cart-wrap.close {
+  right: -545px;
 }
 .cart-wrap h1 {
   text-transform: uppercase;
+  padding: 2em;
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: 40px;
 }
 .cart-wrap .icon-saloca {
   background: url("../../assets/images/sprite.png") no-repeat -4px -2px;
@@ -262,7 +274,7 @@ header h1 {
   display: block;
   position: absolute;
   left: 50%;
-  margin-left: -110px;
+  margin-left: -90px;
   top: 35px;
 }
 .list-cart-item {
@@ -331,7 +343,7 @@ header h1 {
   position: absolute;
   left: 50%;
   top: 60px;
-  margin-left: -90px;
+  margin-left: -70px;
   padding: 8px;
   text-align: center;
   font-weight: bold;
