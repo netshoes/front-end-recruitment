@@ -28,12 +28,3 @@ gulp.task(config.tasks.jsmin, function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(config.dist.scripts));
 });
-
-// minify & concatinate all other js
-// gulp.task(config.tasks.jsconcat, function() {
-//     gulp.src(config.paths.js)
-//         .pipe(concat('all.min.js'))
-//         .pipe(uglify())
-//         .pipe(rename({suffix: '.min'}))
-//         .pipe(gulp.dest(config.pathsMin.js));
-// });
