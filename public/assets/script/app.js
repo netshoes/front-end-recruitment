@@ -2,33 +2,42 @@
   'use strict';
 
   var Products = function () {
-    this.$elementList;
-    this.items = {};
-    this.buildList();
+    this.items = [];
     this.getItems();
   }
 
   Products.prototype.getItems = function () {
+    var self = this;
     $.getJSON('../data/products.json', function() {
     }).done(function(data) {
-      this.items = data.products;
-      this.loadItems();
+      self.items = data.products;
+      self.loadItems(self.items);
     });
   }
 
-  Products.prototype.loadItems = function() {
-    $.each(this.items, function(i, item) {
-      var $elementItem = $('<li class="list-product-wrap"/>');
-      $elementItem.append('<h2 class="list-product-title"/>').text(item.title);
-      $elementItem.append('<span class="list-product-price"/>').text(item.description);
-      $elementItem.append('<span class="parcel-price"/>').text(item.price);
-      this.$elementList.append($elementItem);
-    //   console.log($elementItem);
-    });
-  }
+  Products.prototype.loadItems = function(items) {
+    var ul = $("#items-list");
 
-  Products.prototype.buildList = function() {
-    this.$elementList = $('<ul class="products-list"/>');
+    $.each(items, function(i, item) {
+
+      var elementItem =
+        '<li class="list-product-item">' +
+        '<a href="" class="list-link"/>' +
+        '<div class="list-cart-content"/>' +
+        '<figure>' +
+        '<img src="http://placehold.it/180x230/"/>' +
+        '</figure>' +
+        '<div class="product-info">' +
+        '<h2 class="list-product-title">' + item.title + '</h2>' +
+        '<span class="list-product-price">' + item.price + '</span>' +
+        '<span class="parcel-price">' + item.installments + '</span>' +
+        '</div>' +
+        '</div>' +
+        '</a>' +
+'</li>';
+
+      ul.append(elementItem);
+    });
   }
 
   $(document).ready(function () {

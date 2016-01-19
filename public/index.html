@@ -9,28 +9,13 @@
     <link rel="stylesheet" href="assets/styles/main.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
-  <body ng-app="app" ng-controller="ProductController">
+  <body>
     <header class="header-main">
       <h1>Sacola Test</h1>
     </header>
     <main>
       <section class="list-product-wrap">
-        <ul>
-          <li class="list-product-item">
-            <a href="#" class="list-link">
-            <div class="list-cart-content">
-                <figure>
-                    <img src="http://placehold.it/180x230/" alt="">
-                </figure>
-                <div class="product-info">
-                    <h2 class="list-product-title" id="teste"></h2>
-                    <span class="list-product-price">R$ <strong>0</strong></span>
-                    <span class="parcel-price"></span>
-                </div>
-            </div>
-            </a>
-          </li>
-        </ul>
+        <ul id="items-list"></ul>
       </section>
       <section ng-class="cart" class="cart-wrap">
         <header>
