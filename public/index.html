@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sacola</title>
     <link rel="stylesheet" href="assets/styles/main.css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body ng-app="app" ng-controller="ProductController">
     <header class="header-main">
@@ -21,7 +22,7 @@
                 <img src="http://placehold.it/180x230/" alt="">
               </figure>
               <div class="product-info">
-                <h2 class="list-product-title">{{product.title}} - {{product.description}}</h2>
+                <h2 class="list-product-title" id="teste"></h2>
                 <span class="list-product-price">R$ <strong>{{product.price}}0</strong></span>
                 <span class="parcel-price">ou {{product.installments}} x {{product.price / product.installments | currency}}</span>
               </div>
@@ -65,10 +66,11 @@
         </div>
       </section>
     </main>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-locale-pt-br/angular-locale_pt-br.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-locale-pt-br/angular-locale_pt-br.js"></script> -->
     <script src="assets/script/app.js"></script>
-    <script src="assets/script/product.service.js"></script>
-    <script src="assets/script/product.controller.js"></script>
+    <!-- <script src="assets/script/product.service.js"></script> -->
+    <!-- <script src="assets/script/product.controller.js"></script> -->
   </body>
 </html>
