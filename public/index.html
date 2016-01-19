@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sacola</title>
     <link rel="stylesheet" href="assets/styles/main.css">
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body ng-app="app" ng-controller="ProductController">
     <header class="header-main">
@@ -16,16 +16,18 @@
     <main>
       <section class="list-product-wrap">
         <ul>
-          <li class="list-product-item" ng-repeat="product in products">
-            <a href="#" class="list-link" ng-click="addProduct()">
-              <figure>
-                <img src="http://placehold.it/180x230/" alt="">
-              </figure>
-              <div class="product-info">
-                <h2 class="list-product-title" id="teste"></h2>
-                <span class="list-product-price">R$ <strong>{{product.price}}0</strong></span>
-                <span class="parcel-price">ou {{product.installments}} x {{product.price / product.installments | currency}}</span>
-              </div>
+          <li class="list-product-item">
+            <a href="#" class="list-link">
+            <div class="list-cart-content">
+                <figure>
+                    <img src="http://placehold.it/180x230/" alt="">
+                </figure>
+                <div class="product-info">
+                    <h2 class="list-product-title" id="teste"></h2>
+                    <span class="list-product-price">R$ <strong>0</strong></span>
+                    <span class="parcel-price"></span>
+                </div>
+            </div>
             </a>
           </li>
         </ul>
@@ -66,7 +68,7 @@
         </div>
       </section>
     </main>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
     <!-- <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-locale-pt-br/angular-locale_pt-br.js"></script> -->
     <script src="assets/script/app.js"></script>

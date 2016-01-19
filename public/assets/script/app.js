@@ -18,12 +18,13 @@
 
   Products.prototype.loadItems = function() {
     $.each(this.items, function(i, item) {
-      var $elementItem = $('<li class="product"/>');
-      $elementItem.append('<h2/>').text(item.title);
-      $elementItem.append('<p/>').text(item.description);
-      $elementItem.append('<span/>').text(item.value);
+      var $elementItem = $('<li class="list-product-wrap"/>');
+      $elementItem.append('<h2 class="list-product-title"/>').text(item.title);
+      $elementItem.append('<span class="list-product-price"/>').text(item.description);
+      $elementItem.append('<span class="parcel-price"/>').text(item.price);
       this.$elementList.append($elementItem);
-    }.bind(this))
+    //   console.log($elementItem);
+    });
   }
 
   Products.prototype.buildList = function() {
@@ -31,7 +32,7 @@
   }
 
   $(document).ready(function () {
-    window.ns.Products = new Products();
+    window.Products = new Products();
   })
 
 }(jQuery);
