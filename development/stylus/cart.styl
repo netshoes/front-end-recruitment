@@ -1,0 +1,104 @@
+.cart
+  position fixed
+  padding 0 20px 20px
+  right 0
+  top 0
+  height 100%
+  width 500px
+  background-color dark_grey
+  overflow auto
+
+  .cart__header
+    padding 40px 0
+    font-weight 400
+    color #fff
+    font-size 1.5em
+    letter-spacing .03725em
+    text-align center
+
+    span
+      position relative
+      line-height auto
+
+      &:after
+        content attr(data-count)
+        position absolute
+        width 17px
+        height 17px
+        right -12px
+        bottom -2px
+        background-color yellow
+        color dark_grey
+        font-weight 800
+        border-radius 50%
+        text-align center
+        font-size .4em
+        line-height 1.9em
+
+  .cart__list
+    width 100%
+
+    .list__item
+      position relative
+      display block
+      padding 20px 0 20px 60px
+      border-top 2px solid darker_grey
+
+      .item__remove
+        position absolute
+        color darker_grey
+        top 0
+        right 0
+        font-size 1.2em
+        font-weight 800
+        cursor pointer
+
+      .item__figure
+        position absolute
+        background-color #fff
+        width 45px
+        height 45px
+        left 0
+        border-radius 50%
+        overflow hidden
+
+      .item__title
+        color #fff
+        font-weight 600
+        font-size .8em
+
+        .title__details
+          margin-top 5px
+          font-size .9em
+          font-weight 400
+          color #aaa
+
+      .item__price
+        position absolute
+        right 0
+        bottom 20px
+        color yellow
+        font-weight 400
+
+  .cart__subtotal
+    position relative
+    padding 30px 0
+    border-top 2px solid darker_grey
+
+    .subtotal__text
+      float left
+      color #aaa
+      text-transform uppercase
+      font-size .75em
+      font-weight 600
+
+    .subtotal__value
+      font-size 1.5em
+      font-weight 400
+      color yellow
+      text-align right
+
+      small
+        color #aaa
+        font-size .5em
+

@@ -1,0 +1,24 @@
+{
+  "name": "front-end-recruitment",
+  "version": "1.0.0",
+  "description": "Recruitment test for Netshoes Front End Developer",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matmarsiglio/front-end-recruitment.git"
+  },
+  "author": "Matheus Marsiglio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matmarsiglio/front-end-recruitment/issues"
+  },
+  "homepage": "https://github.com/matmarsiglio/front-end-recruitment#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-stylus": "^2.2.0",
+    "gulp-watch": "^4.3.5"
+  }
+}
