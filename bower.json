@@ -5,6 +5,6 @@
   "dependencies": {
     "modernizr": "latest",
     "normalize.css": "latest",
-    "angular": "latest"
+    "jquery": "latest"
   }
 }

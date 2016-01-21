@@ -16,7 +16,7 @@
   }
 
   Products.prototype.loadItems = function(items) {
-    var $elementItems = $("#items-list");
+    var $elementItems = $('#items-list');
 
     $.each(items, function(i, item) {
       var parcel = item.price/item.installments;
@@ -55,13 +55,50 @@
   }
 
   Products.prototype.addItem = function(item) {
-  	// console.log(item);
+    var $elementWrapCart = $('#items-cart');
+    var $elementItemCart = $('<li class="list-cart-item">');
+    var quantProduct = $('.list-cart-item').length;
+
+    $('<div class="list-cart-content">').data('data-cart-total', item)
+      .appendTo($elementItemCart);
+    $('<figure>')
+      .append('<img>')
+      .appendTo($elementItemCart.find('.list-cart-content'));
+    $('<div class="list-cart-info">')
+      .append('<h2 class="list-cart-title">')
+      .append('<span class="cart-product-style">')
+      .append('<span class="cart-product-size">')
+      .append('<i class="icon-close">')
+      .append('<span class="list-cart-price">')
+      .appendTo($elementItemCart.find('.list-cart-content'));
+
+    $elementItemCart.find('img').attr('src', 'http://placehold.it/50x50/');
+    $elementItemCart.find('.list-cart-title').text(item.title);
+    $elementItemCart.find('.cart-product-style').text(item.style);
+    $elementItemCart.find('.cart-product-size').text(item.availableSizes);
+    $elementItemCart.find('.list-cart-price').text(item.price);
+
+    $elementWrapCart.append($elementItemCart);
+
+    $('.quant-cart').text(quantProduct);
+    $('.cart-price-total').text(item.price);
   }
+
+  Products.prototype.removeItem = function() {
+    $('.list-cart-item').remove();
+    $('.cart-price-total').text(0);
+  }
+
+  $(document).on('click', '.icon-close', function(e) {
+    e.preventDefault();
+    var productItem = $(this).closest('li.list-cart-item');
+    window.Products.removeItem(productItem);
+  })
 
   $(document).on('click', '.list-link',function(e) {
     e.preventDefault();
     var productItem = $(this).closest('li.list-product-item').data('data-product-item');
-    window.Products.addItem(productItem)
+    window.Products.addItem(productItem);
     $('.cart-wrap').addClass('open');
     setTimeout(function(){
       $('.cart-wrap').removeClass('open');

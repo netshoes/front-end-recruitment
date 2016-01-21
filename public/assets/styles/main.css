@@ -253,12 +253,16 @@ body {
   box-shadow: 0px 0px 10px #666;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  overflow: scroll;
 }
 .cart-wrap.open {
   right: 0;
 }
 .cart-wrap.close {
   right: -545px;
+}
+.cart-wrap:hover {
+  right: 0;
 }
 .cart-wrap h1 {
   text-transform: uppercase;
@@ -293,7 +297,8 @@ body {
   font-size: 14px;
   margin-bottom: 5px;
 }
-.list-cart-item .cart-product-info {
+.list-cart-item .cart-product-style,
+.list-cart-item .cart-product-size {
   color: #999;
   font-size: 12px;
   display: block;
