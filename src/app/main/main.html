@@ -1,0 +1,37 @@
+<div class="container">
+	<section class="products">
+		<ul class="product-list">
+			<li ng-repeat="product in products" ng-click="addToCart($index)">
+				<img src="assets/images/camisa.jpg" alt="{{ item.title }}">
+				<span class="title">{{ product.title }}</span>
+				<span class="separator"></span>
+				<span class="price"><small>R$</small> {{ product.price  | currency: ""}}</span>
+				<span class="parcel"> ou 3x {{ product.price / 3 | currency: "R$ "}}</span>
+			</li>
+		</ul>
+	</section>
+
+	<section class="cart" ng-show="showCart">
+		<a ng-click="showCart = false" class="btn-close" href="javascript:;" title="Fechar sacola">fechar</a>
+		<h1><span class="icon"><span class="badge">{{CartItens.length}}</span></span>sacola</h1>
+		<ul class="cart-items">
+			<li ng-repeat="item in CartItens">
+				<img src="assets/images/thumb.jpg" alt="{{ item.title }}">
+				<div class="details">
+					<span class="title">{{ item.title }}</span>
+					<span class="size">GG | Preto</span>
+					<span class="quantity">Quantidade: 1</span>
+				</div>
+				<a ng-click="removeItem($index)" class="remove" href="javascript:;" title="Remover item">remover</a>
+				<span class="price">{{ item.price | currency: "R$ " }}</span>
+			</li>
+		</ul>
+		<div ng-show="TotalPrice > 1" class="subtotal">
+			Subtotal:
+			<strong>{{ TotalPrice  | currency: "R$ "}}</strong>
+			<span>ou 10x {{ TotalPrice / 10  | currency: "R$ " }}</span>
+			<button class="buy">comprar</button>
+		</div>
+
+	</section>
+</div>
