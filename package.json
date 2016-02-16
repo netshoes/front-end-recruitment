@@ -1,0 +1,34 @@
+{
+  "name": "netshoes",
+  "version": "1.0.0",
+  "description": "Netshoes Cart",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netshoes/front-end-recruitment.git"
+  },
+  "author": "Daniel Calissi Nakatate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netshoes/front-end-recruitment/issues"
+  },
+  "homepage": "https://github.com/netshoes/front-end-recruitment#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "angular": "^1.5.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.2.1",
+    "gulp-open": "^1.0.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-serve": "^1.2.0",
+    "gulp-webserver": "^0.9.1",
+    "path": "^0.12.7"
+  }
+}

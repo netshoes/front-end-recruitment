@@ -11,7 +11,8 @@
       "installments": 9,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": true
+      "isFreeShipping": true,
+      "img": "corinthians_03.jpg"
     },
 
     {
@@ -39,7 +40,8 @@
       "installments": 7,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": true
+      "isFreeShipping": true,
+      "img": "corinthians_07.jpg"
     },
 
     {
@@ -53,7 +55,8 @@
       "installments": 7,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": true
+      "isFreeShipping": true,
+      "img": "corinthians_12.jpg"
     },
 
     {
@@ -67,7 +70,8 @@
       "installments": 12,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": false
+      "isFreeShipping": false,
+      "img": "corinthians_13.jpg"
     },
 
     {
@@ -81,7 +85,8 @@
       "installments": 9,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": false
+      "isFreeShipping": false,
+      "img": "corinthians_14.jpg"
     },
 
     {
@@ -109,7 +114,8 @@
       "installments": 4,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": true
+      "isFreeShipping": true,
+      "img": "corinthians_21.jpg"
     },
 
     {
@@ -235,7 +241,8 @@
       "installments": 5,
       "currencyId": "BRL",
       "currencyFormat": "R$",
-      "isFreeShipping": true
+      "isFreeShipping": true,
+      "img": "corinthians_20.jpg"
     }
   ]
 }

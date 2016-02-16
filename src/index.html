@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Netshoes Frontend Test</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+  <script src="js/lib/jquery.min.js" charset="utf-8"></script>
+  <script src="js/lib/angular.min.js" charset="utf-8"></script>
+  <script src="js/lib/angular-locale_pt-br.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">
+</head>
+<body ng-app="netshoes">
+
+  <main id="container" class="container corinthians" ng-controller="mainController" ng-init="latestData()">
+
+    <div class="row">
+      <div class="col-sm-4 item" ng-repeat="item in loja.products" id="{{item.sku}}" ng-click="addItemCart(item)">
+        <img ng-src="images/{{item.img}}" ng-if="item.img" />
+        <span class="no-img" ng-if="!item.img"></span>
+        <p>{{item.title}}</p>
+        <hr>
+        <p>
+          <!--small class="symbol">{{item.currencyFormat}}</small--> <span class="price">{{item.price | currency}}</span>
+          <div class="installments">ou {{item.installments}} x de {{(item.price / item.installments | currency)}}</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="cart">
+
+      <div class="btn-cart" ng-click="showCart()">
+        <h2><i>{{cart.length}}</i><img src="images/cadeado.png" alt="SACOLA" /> SACOLA</h2>
+      </div>
+
+      <div class="container-fluid">
+
+        <div class="row" ng-click="hideCart()">
+          <h2><i>{{cart.length}}</i><img src="images/cadeado.png" alt="SACOLA" /> SACOLA</h2>
+        </div>
+
+        <div class="row no-itens" ng-if="!cart.length">
+          Não há itens na sacola!
+        </div>
+
+        <div class="row cart-item" ng-repeat="i in cart track by $index">
+
+          <div class="col-sm-2">
+            <img ng-src="images/{{i.img}}" alt=" :(" />
+          </div>
+          <div class="col-sm-7">
+            <p>
+              {{i.title}}
+              <div class="description">
+                <ul>
+                  <li ng-repeat="size in i.availableSizes">{{size}}</li>
+                </ul>
+                | {{i.style}}<br>
+                Quantidade: {{i.availableSizes.length}}
+              </div>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <div class="delete" ng-click="delItemCart($index)"></div>
+            <div class="price">
+              {{i.price | currency}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row sub-total" ng-if="cart.length">
+          <div class="col-sm-6">
+            SUBTOTAL
+          </div>
+          <div class="col-sm-6">
+            <div class="price">
+              {{subTotal.totalPrice | currency}}
+            </div>
+            <div class="installments">
+              OU EM ATÉ {{subTotal.installments}} X DE {{subTotal.installPrice | currency}}
+            </div>
+          </div>
+        </div>
+
+        <div class="row buy" ng-if="cart.length">
+          <div class="col-sm-12">
+            <a class="btn btn-block" ng-click="checkout(cart)">COMPRAR</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="error" ng-show="error" ng-click="error=false">
+        <h1>:(</h1>
+        <p>Erro finalizar pedido!</p>
+      </div>
+      <div class="error" ng-show="success" ng-click="success=false">
+        <h1>;)</h1>
+        <p>Pedido realizado com sucesso! <br>
+          confira os dados do pedido no seu e-mail.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
