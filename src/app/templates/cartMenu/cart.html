@@ -1,0 +1,47 @@
+<div ng-controller="CartMenuController">
+
+	<div class="sidebar" sidebar-directive="state">
+
+		<button href="#" id="navigation-toggle" ng-click="toggleState()"><span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+		<div class="center-block text-center">
+			<div class="bag">
+				<span>{{cartOrders.length}}</span>
+			</div>
+			<span class="title">sacola</span>
+		</div>
+		<div class="scroll-body" slimscroll="{ alwaysVisible : true }">
+			<ul id="cart-list">
+				<li ng-repeat="order in cartOrders track by $index">
+					<div>
+						<a href="#" class="pull-right remove" ng-click="remove(order)"><span class="glyphicon glyphicon-remove"></span></a>
+						<img ng-src="assets/images/products/{{order.sku}}.jpg" class="pull-left"/>
+						<div class="">
+							<span class="name">{{order.title}}</span><br/>
+							<span class="size">{{order.size}} | {{order.style}}</span><br>
+							<span class="quantity">Quantidade: {{order.quantity}}</span>
+							<span class="pull-right price">R$ <strong>{{order.price | awnum : 2 : ',' : 'round' : 'true'}}</strong></span>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+			<div class="subtotal">
+				<div ng-if="totalPrice() == 0">
+					Sua sacola está vazia
+				</div>
+				<div ng-if="totalPrice() != 0">
+					<div class="pull-right text-right value">
+						<span class="price">R$ <strong>{{totalPrice() | awnum : 2 : ',' : 'round' : 'true'}}</strong></span> <br>
+						<span class="installments">ou em até 10x R$ {{ totalPrice() / 10 | awnum : 2 : ',' : 'round' : 'true' }}</span>
+					</div>
+					SUBTOTAL
+					<div class="clearfix">
+						<button type="button" class="btn btn-large btn-block btn-buy" ng-click="addToCart(product)">COMPRAR</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

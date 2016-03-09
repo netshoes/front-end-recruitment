@@ -1,0 +1,130 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.sidebar {
+	position : fixed;
+	top : 0;
+	z-index: 10;
+	right : -515px;
+	height: 100%;
+	width: 515px;
+	color: $white;
+	padding : 50px 0 25px 0;
+	background-color: $darkGrey;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+	
+	.title{
+		font-weight: bold;
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+	.bag{
+		width : 33px;
+		display : inline-block;
+		height : 40px;
+		vertical-align : bottom;
+		margin-right : 15px;
+		position: relative;
+		background : url(/assets/images/bag.png) no-repeat center center;
+		span {
+			background-color: $golden;
+			padding: 2px 7px;
+			border-radius: 50%;
+			position: absolute;
+			right: -5px;
+			bottom: -8px;
+		}
+	}
+	.subtotal{
+		color : $ligthGrey;
+		padding : 0 25px;
+		.value {
+			margin-bottom: 30px;
+		}
+		.price{
+			font-size: 24px;
+			color: $golden;
+		}
+		.installments {
+			font-size: 12px;
+		}
+		.btn-buy{
+			background-color: $black;
+			color: $white;
+		    padding: 15px 0;
+		    font-weight: bold;
+		}
+	}
+}
+
+#navigation-toggle {
+	border : none;
+	position : absolute;
+	right : 515px;
+	background : $darkGrey;
+	color : white;
+	text-decoration : none;
+	padding : 20px;
+	&:focus{
+		outline : none;
+	}
+}
+.show {
+	right : 0;
+}
+
+#cart-list {
+	margin-top: 50px;
+	padding: 0;
+	list-style: none;
+	li {
+		line-height: 16px;
+		padding: 0 25px;
+		img.pull-left{
+			margin-right: 20px;
+			max-width: 50px;
+		}
+		&>div:first-child{
+			padding: 25px 0;
+			border-width: 1px 0 1px 0;
+			border-style: solid;
+			border-color: $plusDarkGrey;
+		}
+		&:hover {
+			background-color: $plusDarkGrey;
+			.remove span{
+				color: $white;
+			}
+		}
+		span{
+			color : $ligthGrey;
+			font-size: 12px;
+			&.name {
+				color : $white;
+				font-size: 14px;
+			}
+			&.price {
+				color: $golden;
+				font-size: 14px;
+			}
+		}
+		.remove span{
+			color: $black;
+		}
+	}
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

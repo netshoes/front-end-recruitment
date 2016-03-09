@@ -1,0 +1,54 @@
+<div class="container" id="products">
+
+	<div class="search-bar">
+		<div class="row">
+			<div class="col-md-6">
+				<input type="text" name="" id="input" class="form-control" placeholder="O que você precisa?" ng-model="search">
+				<button type="button" class=""><span class="glyphicon glyphicon-search"></span></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 text-center" ng-repeat="product in productsList | filter:search">
+			<img ng-elevate-zoom ng-src="assets/images/products/{{product.sku}}.jpg" zoom-image="assets/images/products/{{product.sku}}.jpg"  class="img-responsive"/>
+			<span class="title">{{product.title}} - {{product.qiantity}} </span>
+			<span class="total-price"> R$ <strong>{{product.price | awnum : 2 : ',' : 'round' : 'true'}}</strong> </span>
+			<span class="installments">ou {{product.installments}} x {{ product.price / product.installments | awnum : 2 : ',' : 'round' : 'true' }}</span>
+			<button type="button" class="btn btn-large btn-block btn-default" ng-click="addToCart(product)">Adicionar ao Carrinho</button>
+		</div>
+	</div>
+
+</div>
+
+<div ng-include src="'app/templates/cartMenu/cart.html'"></div>
+
+<script type="text/ng-template" id="confirm">
+	<div class="clearfix">
+		<div class="row">
+			<div class="col-md-12">
+				<h5><strong>Adicionar o item : </strong></h5>
+				{{productModal.title}}
+			</div>
+			<div class="col-md-7" ng-class="{ 'has-error' : hasError, 'no-error' : !hasError }">
+				<h5><strong>Escolha o tamanho:</strong></h5>
+				<div class="btn-group">
+					<label ng-repeat="size in productModal.availableSizes track by $index" class="btn btn-default" ng-model="$parent.radioModel" uib-btn-radio="size">{{size}}</label>
+				</div>
+				<p class="help-block">Selecione um tamanho</p>
+			</div>
+			<div class="col-md-5" ng-class="{ 'has-error' : hasErrorQtd, 'no-error' : !hasErrorQtd }">
+				<h5><strong>Quantidade:</strong></h5>
+				<input type="number" class="form-control" ng-model="quantity" min="1">
+				<p class="help-block">Mínimo 1 unidade</p>
+			</div>
+		</div>
+		<br>
+		<div class="clearfix">
+			<div class="pull-right">
+				<button class="btn btn-primary" type="button" ng-click="ok()">Sim</button>
+				<button class="btn btn-warning" type="button" ng-click="closeThisDialog()">Não</button>
+			</div>
+		</div>
+	</div>
+</script>
