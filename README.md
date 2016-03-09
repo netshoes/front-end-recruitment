@@ -21,3 +21,17 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+
+## To run test
+
+You just need from a Unix OS go into the folder by terminal and type:
+
+```
+python -m SimpleHTTPServer 8000
+```
+
+It will open a native Simple Server on port 8000. Go  to the browser and type: localhost:8000
+
+That's all! Thank you!
+

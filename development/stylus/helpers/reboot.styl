@@ -1,0 +1,74 @@
+/*
+
+REBOOTCSS - DEVELOPER VERSION
+RebootCSS Browser Reset Stylesheet v.2.1.0
+
+==================================================
+
+RebootCSS is a kind of resetCSS;
+Fix default elements values;
+Add new default elements values;
+Mobile friendly;
+Beautiful properties for responsive websites;
+
+==================================================
+
+Last Update: 2014-03-14
+Author: Matheus Marsiglio: http://heymathe.us
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none; /* For lists */
+}
+
+/* Box sizing ;) */
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+/*/NEW*/
+
+body {
+  font:100% sans-serif;
+
+  /* Normalization of tap hightlight on touchable devices */
+  -webkit-tap-highlight-color:transparent;
+  -moz-tap-highlight-color:transparent;
+  -ms-tap-highlight-color:transparent;
+}
+
+/* Cases of monospace font */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+figure img { width: 100%; height: auto; }
+
+/* Font and number sizes sets */
+small { font-size:85%; }
+sub, sup { font-size:75%; line-height:0;position:relative; }
+sup { top:-0.5em; }
+sub { bottom:-0.25em; }
+
+/* Hand cursor on clickable input elements */
+input[type="button"], input[type="submit"], input[type="image"], button { cursor:pointer; }
+
+button, input, select, textarea {
+  border: 1px solid;
+  outline: none;
+}
+
+/* Text selection */
+::selection, ::-moz-selection {color:white; background:rgba(97,180,232,0.5); }
+
+/* Link styles */
+a { text-decoration:none; color:inherit; }
+a:hover, a:active, a:link, a:visited {
+  text-decoration:none;
+  outline:none;
+}
+
+
