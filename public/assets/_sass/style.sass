@@ -1,0 +1,222 @@
+@charset "utf-8"
+
+*
+	margin: 0
+	padding: 0
+
+
+/* Variables - Color */
+$black: #000000
+$black-2: #131316
+$black-3: #202025
+$black-4: #202025
+$black-5: #EAEAEA
+$gray: #88888a
+$silver: #999999
+$white: #ffffff
+$yellow: #dfbd00
+
+
+/* Variables - Font */
+$font-main: "Open Sans", Arial, Sans-Serif
+$font-small: 12px
+$font-medium: 14px
+$font-large: 24px
+
+
+body
+	background: $black-3
+	font-family: $font-main
+
+
+/* List-Products */
+aside
+	float: left
+	max-width: 215px
+	background: $white
+	padding-top: 105px
+	border-right: 2px solid #ccc
+	
+	.list-product
+		cursor: pointer
+		max-width: 205px
+		text-align: center
+		padding: 15px 0 35px
+
+		&:hover
+			background: $black-5
+
+		img
+			width: 180px
+			height: 230px
+			margin-bottom: 15px
+			display: block
+			margin: auto
+
+		h2
+			font-weight: 300
+			font-size: $font-medium
+
+		hr
+			width: 15px
+			height: 2px
+			display: block
+			margin: auto
+			background: $yellow
+			border: none
+		
+		.price > * 
+			font-weight: 400
+		
+		strong
+			display: block
+			font-size: $font-small
+
+			span
+				font-size: $font-large
+				font-weight: 600
+		
+			+ strong
+				color: $silver
+
+
+
+/* Content */
+main
+	float: left
+	width: 515px
+
+	.title
+		margin: 50px 0
+
+		h1
+			color: $white
+			width: 150px
+			height: 40px
+			margin: auto
+			font-weight: 700
+			font-size: $font-large
+			line-height: 40px
+			padding-left: 50px
+			position: relative
+			background: url(../img/ico-cart.png) no-repeat
+
+			span
+				top: 30px
+				left: 15px
+				width: 20px
+				height: 20px
+				color: $black
+				line-height: 20px
+				text-align: center
+				font-size: $font-small
+				position: absolute
+				background: $yellow
+
+				-webkit-border-radius: 50px
+				-moz-border-radius: 50px
+				border-radius: 50px
+
+	.cart-empty
+		color: $yellow
+		text-align: center
+
+	.list-product-cart
+
+		&:hover
+			background: #131316
+
+			.remove-product
+				background-position: center bottom
+				
+
+		.content-cart 
+			width: 472px
+			padding: 25px 0
+			overflow: hidden
+			position: relative
+			margin: -2px auto 0
+			border: 2px solid $black-2
+			border-width: 2px 0
+
+			.image-product 
+				float: left
+				margin-right: 20px
+
+				img
+					width: 50px
+					height: 50px
+
+			.description-product
+				float: left
+				color: $white
+
+				strong
+					font-weight: 600
+					font-size: $font-medium
+
+				p
+					color: $silver
+					font-weight: 300
+					font-size: $font-small
+
+			.price-product
+				float: right
+				margin-top: 35px
+
+				strong
+					color: $yellow
+					font-weight: 600
+					font-size: $font-medium
+
+		.remove-product
+			top: 25px
+			right: 0
+			width: 14px
+			height: 14px
+			position: absolute
+			text-indent: -9999px
+			background: url(../img/ico-close.png) no-repeat center top
+
+	.cart-total
+		overflow: hidden
+		margin: 15px 25px
+
+		> strong
+			float: left
+			color: $gray
+			margin-top: 15px
+
+		.price-total
+			float: right
+
+			strong
+				color: $yellow
+				display: block
+				text-align: right
+				font-weight: 600
+				font-size: $font-large
+
+			span
+				color: $gray
+				display: block
+				text-align: right			
+				font-size: $font-small
+				text-transform: uppercase
+
+	.button-buy
+		margin: 0 25px
+	
+		a
+			color: $white
+			height: 50px
+			display: block
+			text-decoration: none
+			line-height: 50px
+			background: $black
+			font-weight: 700
+			text-align: center
+			transition: all .2s
+
+			&:hover
+				opacity: 0.6
