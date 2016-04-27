@@ -21,3 +21,17 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+
+
+## Result
+
+## How to install dependencies
+
+`npm install`
+`bower install``
+
+## How to run local server
+
+`npm start`
+
+http://localhost:8000/index.html
