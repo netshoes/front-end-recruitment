@@ -1,0 +1,4 @@
+<header>
+  <span class="burguer-menu open-menu menu-anchor"><span></span><span></span><span></span><span></span></span>
+  <h1>{area}</h1>
+</header>

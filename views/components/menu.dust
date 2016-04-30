@@ -1,0 +1,4 @@
+<menu id="menu">
+  {>"components/cart" /}
+  <div id="close-menu" class="close-menu"></div>
+</menu>

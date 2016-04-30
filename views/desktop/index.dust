@@ -1,0 +1,11 @@
+{>"layout" mode="desktop" /}
+
+{<main}
+  <section id="main-container" class="main-container">
+    <div class="container">
+      {#showcase}
+        {>"components/product" class="gr-4" /}
+      {/showcase}
+    </div>
+  </section>
+{/main}

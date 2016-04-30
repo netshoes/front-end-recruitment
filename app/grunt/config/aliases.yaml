@@ -1,0 +1,25 @@
+# Grunt aliases
+---
+
+# Run reposts and tests
+tests:
+  - 'karma'
+
+
+# Build everything
+build:
+  - 'clean'
+  - 'concat'
+  - 'uglify'
+  - 'compass'
+  - 'cssmin'
+  - 'copy:root'
+  - 'copy:data'
+  - 'copy:images'
+  - 'copy:fonts'
+
+
+# Default
+default:
+  - 'build'
+  - 'watch'

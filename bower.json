@@ -1,0 +1,22 @@
+{
+  "name": "frontend-device",
+  "description": "Frontend device starter structure",
+  "authors": [
+    "Mauricio Silva Teixeira de Nobrega"
+  ],
+  "license": "ISC",
+  "private": true,
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "gridle": "^2.0.45",
+    "Buttons": "^2.0.0"
+  }
+}

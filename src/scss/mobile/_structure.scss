@@ -1,0 +1,29 @@
+@import "grid-settings",
+        "../global/structure";
+
+// INIT AND GENERATE CLASSES
+@include gridle_generate_classes();
+
+// MAKE THE USE OF MEDIA QUERIES REALLY EASY
+@include gridle_register_state (mobile, (
+  max-width: 480px
+));
+
+// EVEN WITH FULL CUSTOM QUERIES :
+@include gridle_register_state (landscape, (
+  query: "(orientation : landscape)"
+));
+
+
+menu {
+
+  .scroll {
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .close-menu {
+    width: 20%;
+  }
+
+}

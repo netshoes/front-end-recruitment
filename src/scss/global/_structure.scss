@@ -1,0 +1,23 @@
+@import "compass/reset",
+        "compass/layout/sticky-footer",
+        "compass/css3",
+        "variables",
+        "mixins",
+        "font",
+        "../../vendor/bower_components/gridle/sass/gridle/gridle",
+        "icons",
+        "buttons",
+        "components/slider-menu",
+        "components/close-icon",
+        "components/hamburguer-menu",
+        "components/card",
+        "components/header",
+        "components/cart";
+
+// SETTING UP THE GRID
+@include gridle_setup($settings);
+
+
+.main-container {
+  margin: 0 auto;
+}

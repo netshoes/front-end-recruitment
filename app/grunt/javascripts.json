@@ -1,0 +1,20 @@
+{
+  "modernizr": {
+    "scripts": [
+      "src/js/vendor/modernizr-3.3.1.js"
+    ]
+  },
+  "home": {
+    "scripts": [
+      "src/js/vendor/jquery-2.2.0.js",
+      "src/js/startup.js",
+
+      "src/js/vendor/buttons.js",
+      "src/js/polyfill.js",
+      "src/js/ajax.js",
+      "src/js/showcase.js",
+      "src/js/menu.js",
+      "src/js/cart.js"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+// CLOSE ICON
+.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background-color: #000;
+  }
+  &::before {
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    @include transform(rotate(-45deg));
+  }
+
+  &.black {
+    &::before, &::after {
+      height: 4px;
+    }
+  }
+  &.rounded {
+    &::before, &::after {
+      border-radius: 5px;
+    }
+  }
+}

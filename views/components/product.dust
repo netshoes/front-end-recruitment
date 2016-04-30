@@ -1,0 +1,27 @@
+<div class="{class} card" itemscope itemtype="http://schema.org/Product">
+  <div class="centralize">
+    <img class="image" src="/img/{sku}.png" alt="Foto de {{title}}" />
+    <div class="name" itemprop="name">{title}</div>
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+      <div class="detail"><b class="yellow"></b></div>
+      <span class="price-currency" itemprop="priceCurrency" content="{currencyId}">{currencyFormat} &nbsp;</span>
+      <span class="price" itemprop="price" content="{price}">{@priceMaskDecimalWrapper price=price /}</span>
+      {#availableSizes.length}
+        <link itemprop="availability" href="http://schema.org/InStock" />
+      {:else}
+        <link itemprop="availability" href="http://schema.org/OutOfStock" />
+      {/availableSizes.length}
+    </div>
+    <div class="installment">{@installment price=price currencyFormat=currencyFormat /}</div>
+
+    <span class="button-dropdown" data-buttons="dropdown">
+      <a class="button button-primary button-rounded">Adicionar ao carrinho <i class="fa fa-caret-down"></i></a>
+      <ul class="button-dropdown-list">
+        {#availableSizes sku=sku}
+          <li class="button-dropdown-divider"><a class="add-product open-menu" href="/cart/add/1/{sku}/{.}">{.}</a></li>
+        {/availableSizes}
+      </ul>
+    </span>
+
+  </div>
+</div>

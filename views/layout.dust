@@ -1,0 +1,40 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7 mobile-{@isMobile request=context.request /}" lang=""><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 mobile-{@isMobile request=context.request /}" lang=""><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 mobile-{@isMobile request=context.request /}" lang=""><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js {context.device} mobile-{@isMobile request=context.request /}" {+htmlClasses}{/htmlClasses}" lang="pt"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Loja</title>
+    <meta name="description" content="Carrinho Netshoes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300">
+    <script src="/js/modernizr.min.js"></script>
+    {+style}
+      <link type="text/css" rel="stylesheet" href="/css/{mode}/home.min.css" />
+    {/style}
+  </head>
+  <body>
+
+    <div class="site-container">
+      {+header}
+        {>"components/header-site" area="Loja" /}
+      {/header}
+      {+main}{/main}
+    </div>
+
+    {>"components/menu" /}
+
+    {+footerContent}
+      {>"components/footer-content" /}
+    {/footerContent}
+
+    {+script}
+      <script src="/js/home.min.js"></script>
+    {/script}
+  </body>
+</html>
+
+

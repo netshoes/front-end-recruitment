@@ -1,0 +1,86 @@
+// CARDS
+.main-container {
+  position: relative;
+
+  .card {
+    min-height: 400px;
+    position: relative;
+    color: $text-color;
+    font-size: 14px;
+    line-height: 16px;
+
+    .centralize {
+      margin: 10px 10px;
+      text-align: center;
+    }
+
+    .image {
+      width: 180px;
+      height: 230px;
+      margin: 0 auto 5px auto;
+    }
+
+    .name {
+      height: 32px;
+      margin: 5px 0;
+    }
+
+    .detail {
+      height: 2px;
+      margin: 0 0 10px 0;
+      .yellow {
+        display: block;
+        width: 15px;
+        height: 2px;
+        margin: 0 auto;
+        background: $yellow-detail-card;
+      }
+    }
+
+    .price-currency {
+      font-size: 12px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      small {
+        font-size: 50%;
+        font-weight: 500;
+      }
+    }
+
+    .installment {
+      height: 16px;
+      color: $base2;
+    }
+
+    .button {
+      @include transparent;
+      @include transition(opacity, 0.3s ease);
+      margin: 10px 0;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    &:hover {
+      .button {
+        opacity: 1;
+      }
+    }
+
+  }
+
+}
+
+// MOBILE
+.mobile-true {
+  .main-container {
+    .card {
+      .button,
+      .button-dropdown-menu-above {
+        opacity: 1;
+      }
+    }
+  }
+}

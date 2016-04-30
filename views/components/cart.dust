@@ -1,0 +1,25 @@
+<div id="cart" class="scroll cart">
+  <div class="area">
+    <strong class="label"><i class="icon-bag"><strong id="quantity">{@cartQuantity cart=session.cart /}</strong></i> SACOLA</strong>
+  </div>
+
+  {?session.cart}
+    <ul class="cart-list">
+      {#session.cart}
+        <li>{>"components/cart-item" /}</li>
+      {/session.cart}
+    </ul>
+    <div class="sub-total">
+      <span class="label">Subtotal</span>
+      <span class="total">R$ {@cartTotal cart=session.cart /}</span>
+      <span class="installment">{@installmentTotal cart=session.cart /}</span>
+    </div>
+
+    <div class="buy-button-checkout">
+      <a href="#" class="button button-block button-rounded button-flat button-large">Comprar</a>
+    </div>
+  {:else}
+    <div class="empty">Carrinho vazio</div>
+  {/session.cart}
+
+</div>

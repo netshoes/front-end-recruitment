@@ -1,0 +1,16 @@
+<div class="item">
+  <div class="img opacity">
+    <img src="/img/{sku}.png" alt="Foto do produto no carrinho" />
+  </div>
+
+  <div class="title opacity">{title}</div>
+  <div class="size opacity">
+    {@iterate key=selectedVariations}
+      {$key} x{$value}&nbsp;&nbsp;
+    {/iterate}
+  </div>
+  <div class="quantity opacity">Quantidade: {quantity}</div>
+
+  <a class="remove-product" href="/cart/remove/{sku}"><i class="close rounded black"></i></a>
+  <span class="total-item opacity">{currencyFormat} {@cartTotalItemPerQuantity price=price quantity=quantity /}</span>
+</div>

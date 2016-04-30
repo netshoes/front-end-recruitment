@@ -1,23 +1,50 @@
 # Netshoes Cart Test
+Netshoes Cart Test instructions.
 
-## Expected result
+Install dependences
+---------
 
-* See a list of products;
-* Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
+1) Install Compass Style http://compass-style.org/install/
+``` html
+$ gem update --system
+$ gem install compass
+```
 
-## Data
+2) Install Mongo DB
+Follow instructions: https://docs.mongodb.org/manual/installation/
 
-The data we provide is a static JSON file under `/public/data`.
+3) Install Node.js
+Follow instructions: https://nodejs.org/en/download/ or if your preferred, install Io.js (https://iojs.org/en/).
 
-## Notes
+4) Install Node dependences
+``` html
+$ npm install
+```
 
-* You can use whatever stack or tooling you want to help you;
-* Feel free to ask us questions during the process (but trust your guts, please!);
-* You should create a static server in order to access the JSON data provided.
+5) Install Bower and Grunt
+``` html
+$ npm install -g bower grunt-cli
+```
 
-## Bonus
 
-* Persist data on page reload;
-* Test your code;
-* Instructions on how to build/run the project.
+
+Run tests
+---------
+``` html
+$ grunt tests
+```
+
+Generate static assets
+---------
+``` html
+$ grunt build
+```
+
+Start application
+---------
+In application folder, execute command:
+``` html
+$ nodemon app.js
+```
+
+And open this page: [http://localhost:3000](http://localhost:3000/)

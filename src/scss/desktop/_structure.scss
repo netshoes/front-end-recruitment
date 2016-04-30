@@ -1,0 +1,9 @@
+@import "grid-settings",
+        "../global/structure";
+
+// INIT AND GENERATE CLASSES
+@include gridle_generate_classes();
+
+#main-container {
+  width: 730px;
+}

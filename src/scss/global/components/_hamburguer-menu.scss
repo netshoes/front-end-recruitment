@@ -1,0 +1,62 @@
+.burguer-menu {
+  display: block;
+  width: 30px;
+  height: 29px;
+  position: relative;
+  @include transform(rotate(0deg));
+  @include transition(.5s ease-in-out);
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 5px;
+    opacity: 1;
+    left: 0;
+    @include transform(rotate(0deg));
+    @include transition(.25s ease-in-out);
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 12px;
+    }
+
+    &:nth-child(4) {
+      top: 24px;
+    }
+  }
+}
+
+.menu-active .burguer-menu,
+.burguer-menu.open {
+  span {
+
+    &:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+
+    &:nth-child(2) {
+      @include transform(rotate(45deg));
+    }
+
+    &:nth-child(3) {
+      @include transform(rotate(-45deg));
+    }
+
+    &:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+
+  }
+}

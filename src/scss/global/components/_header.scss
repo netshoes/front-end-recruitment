@@ -1,0 +1,18 @@
+header {
+  display: table;
+  width: 100%;
+  position: relative;
+  background-color: #202025;
+  color: #FFF;
+
+  h1 {
+    margin: .67em;
+    font-size: 30px;
+  }
+
+  .menu-anchor {
+    position: absolute;
+    left: 20px;
+    top: 27px;
+  }
+}
