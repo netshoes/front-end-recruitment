@@ -1,13 +1,13 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "directory": "app/",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "nethoes-front-end-recruitment",
+  "description": "Netshoes test for front end recruitment",
+  "directory": "public/",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
     "bootstrap": "~3.1.1",
-    "mustache.js": "mustache#^2.2.1"
+    "mustache.js": "mustache#^2.2.1",
+    "mustache-wax": "^0.9.0"
   }
 }

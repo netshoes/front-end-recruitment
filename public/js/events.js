@@ -2,32 +2,39 @@
 
     'use strict';
 
+    Mustache.Formatters = {
+        'formatPrice' : store.product.formatPrice,
+        'calculateInstallments' : function(price, installments) {
+            return price / installments;
+        }
+    };
+
     $(document).ready(function() {
         store.product.fetch();
     });
 
     $(document).on('change', '[data-product-sizes]', function(e) {
-        var element = $(this);
-
-        store.product.resetValidation(element);
+        store.product.resetValidation(
+            $(this)
+        );
     });
 
     $(document).on('click', '[data-add-to-bag]', function(e) {
         e.preventDefault();
 
-        var element = $(this);
-
-        store.product.addToBag(element);
+        store.product.addToBag(
+            $(this)
+        );
     });
 
-    $(document).on('show-bag', function() {
+    $(document).on('bag-show', function() {
         store.bag.show();
     });
 
     $(document).on('click', '[data-bag-item-remove]', function() {
-        var element = $(this);
-
-        store.bag.remove(element);
+        store.bag.remove(
+            $(this)
+        );
     });
 
     $(document).on('mouseover', '[data-bag-item-remove]', function() {

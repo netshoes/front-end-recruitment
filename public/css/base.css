@@ -1,5 +1,5 @@
 body {
-    font-family: "Open Sans";
+    font-family: OpenSans, 'Sans serif';
     font-size: 16px;
     font-weight: 400;
     line-height: 16px;
@@ -25,16 +25,16 @@ ul {
     transition: all 0.3s ease-out;
 }
 
-.page.active {
+.page.show-bag {
     position: static;
     padding: 0;
 }
 
-.active .products {
+.show-bag .products {
     display: none;
 }
 
-.active .bag {
+.show-bag .bag {
     position: fixed;
     top: 0;
     width: 100%;
@@ -46,23 +46,23 @@ ul {
 }
 
 @media (min-width: 767px) {
-    .page.active {
+    .page.show-bag {
         right: 17em;
     }
 
-    .active .products {
+    .show-bag .products {
         display: block;
         width: 20%;
     }
 
-    .active .bag {
+    .show-bag .bag {
         width: 70%;
         right: 0;
     }
 }
 
 @media (min-width: 1086px) {
-    .active .bag {
+    .show-bag .bag {
         width: 75%;
     }
 }

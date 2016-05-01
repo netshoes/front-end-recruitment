@@ -1,4 +1,4 @@
-.active .product-item {
+.show-bag .product-item {
     width: 100%;
 }
 
@@ -7,7 +7,10 @@
 }
 
 .product-price {
-    font-size: 0.875em;
+    display: block;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #313135;
 }
 
 .product-price:before {
@@ -30,9 +33,11 @@
     margin: 0 auto;
 }
 
-.product-installments strong {
+.product-installments {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 0.875em;
     color: #999;
-    font-size: 14px;
 }
 
 .product-sizes {
@@ -40,6 +45,7 @@
     margin: 0.5em auto;
     visibility: hidden;
     width: 15em;
+    height: 2em;
     padding: 0.1em 1em;
     border: none;
     background-color: #202025;

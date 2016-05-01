@@ -1,8 +1,25 @@
-.bag-title {
+.bag-header {
     margin: 2em 0 1.5em;
+}
+
+.bag-title {
+    margin: 2em 0;
     font-size: 1.5em;
+    font-weight: bold;
     text-transform: uppercase;
     color: #fff;
+}
+
+.bag-quantity {
+    display: inline-block;
+    position: absolute;
+    margin: -4.5em 0 0 4.5em;
+    padding: 0.3em 0.6em;
+    border-radius: 50%;
+    background-color: #dfbd00;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #000;
 }
 
 .bag-list {
@@ -12,17 +29,23 @@
 
 .bag-list-item {
     margin: 0;
-    padding: 0 2em 2em;
+    padding: 0 2em;
+    height: 6.25em;
     text-align: left;
 }
 
-.bag-list-item:before {
+.bag-list-item:before,
+.bag-list-item:last-child:after {
     content: '';
     display: block;
     margin-bottom: 1.5em;
     height: 0.125em;
     width: 90%;
     background-color: #131316;
+}
+
+.bag-list-item:last-child:after {
+    margin-top: 1.5em;
 }
 
 .bag-item-description {
@@ -43,7 +66,9 @@
 }
 
 .bag-item-price {
+    margin-bottom: 0.7em;
     font-weight: 400;
+    text-align: right;
     color: #dfbd00;
 }
 
@@ -54,11 +79,12 @@
 .bag-subtotal-label {
     margin: 2em 1em;
     text-transform: uppercase;
+    color: #999;
 }
 
 .bag-subtotal-values {
-    float: right;
     margin: 2em 1em;
+    text-align: right;
 }
 
 .bag-subtotal-price {
@@ -69,41 +95,43 @@
 
 .bag-subtotal-installments {
     display: block;
-    font-size: 0.865em;
+    margin-top: 0.5em;
+    font-size: 0.765em;
     text-transform: uppercase;
-    color: #fff;
+    color: #999;
 }
 
 .bag-btn-buy {
     display: block;
     clear: both;
-    margin: 1em auto;
+    width: 85%;
+    margin: 1em 2em;
     padding: 1em;
     border: none;
+    border-radius: 0.125em;
     background-color: #000;
     text-transform: uppercase;
     color: #fff;
 }
 
 .bag-btn-buy:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .bag-item-remove {
+    margin: -2em 0 1em;
     padding: 0.5em;
     font-size: 0.875em;
     color: #000;
     cursor: pointer;
 }
 
-.removing .bag-item-description {
+.removing .bag-item-description,
+.removing .bag-item-price {
     text-decoration: line-through;
+    opacity: 0.9;
 }
 
 .removing.bag-list-item {
     background-color: rgba(0, 0, 0, 0.4)
 }
-
-@media (min-width: 390px) {
-}
-
