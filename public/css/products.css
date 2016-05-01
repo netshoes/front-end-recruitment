@@ -35,22 +35,48 @@
     font-size: 14px;
 }
 
+.product-sizes {
+    display: block;
+    margin: 0.5em auto;
+    visibility: hidden;
+    width: 15em;
+    padding: 0.1em 1em;
+    border: none;
+    background-color: #202025;
+    color: #fff;
+}
+
+.product-sizes:hover {
+    opacity: 0.9;
+}
+
 .add-to-bag {
     display: block;
     visibility: hidden;
     display: block;
-    margin: 1em auto 0;
-    width: 12em;
-    padding: 1em;
+    width: 15em;
+    margin: 0 auto;
+    padding: 0.5em 1em;
     border-radius: 2px;
-    background-color:  #000;
-    height: 50px;
-    color: #fff;
-}
-
-.product-item:hover .add-to-bag {
-    visibility: visible;
+    background-color: #202025;
     cursor: pointer;
     color: #fff;
 }
 
+.add-to-bag:hover {
+    opacity: 0.9;
+}
+
+.product-item:hover .add-to-bag {
+    visibility: visible;
+    color: #fff;
+}
+
+.product-item:hover .product-sizes {
+    visibility: visible;
+}
+
+.error .product-sizes {
+    background-color: red;
+    border-color: red;
+}

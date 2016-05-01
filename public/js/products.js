@@ -2,34 +2,57 @@
 
     'use strict';
 
-    $(document).ready(function() {
-        $.getJSON('data/products.json', function(response) {
-            var template = $('#products-template').html();
-            var products = Mustache.render(template, response);
+    store.product = {
+        'fetch' : function() {
+            $.getJSON('data/products.json', function(response) {
+                var template = $('#products-template').html();
+                var products = Mustache.render(template, response);
 
-            $('[data-products]').html(products);
-        });
-    });
+                $('[data-products]').html(products);
+            });
+        },
 
-    $(document).on('click', '[data-add-to-bag]', function(e) {
-        e.preventDefault();
+        'addToBag' : function(element) {
+            var $productItem = element.closest('[data-product-item]');
+            var size = element.prevAll('[data-product-sizes]').val();
 
-        var id = $(this).data('addToBag');
+            $productItem.removeClass('error');
 
-        $.ajax({
-            'url': 'data/success.json',
-            'type': 'GET',
-            'dataType': 'json',
-            'success': function(response) {
-                var bag = JSON.parse(localStorage.getItem('bag')) || {};
-
-                bag[id] = (bag[id]) ? bag[id] += 1 : 1;
-
-                localStorage.setItem('bag', JSON.stringify(bag));
-
-                $(document).trigger('show-bag');
+            if (size === 'false') {
+                return $productItem.addClass('error');
             }
-        });
-    });
+
+            $.ajax({
+                'url': 'data/success.json',
+                'type': 'GET',
+                'dataType': 'json',
+                'success': $.proxy(this, 'saveBagToLocalStorage', element)
+            });
+        },
+
+        'saveBagToLocalStorage' : function(element) {
+            var bag = JSON.parse(localStorage.getItem('bag')) || {};
+            var sku = element.data('addToBag');
+            var size = element.prevAll('[data-product-sizes]').val();
+            var quantity = 1;
+
+            if (bag[sku]) {
+                quantity = bag[sku].quantity + 1;
+            }
+
+            bag[sku] = {
+                'quantity' : quantity,
+                'size' : size
+            };
+
+            localStorage.setItem('bag', JSON.stringify(bag));
+
+            $(document).trigger('show-bag');
+        },
+
+        'resetValidation' : function(element) {
+            element.closest('[data-product-item]').removeClass('error');
+        }
+    };
 
 }(jQuery));

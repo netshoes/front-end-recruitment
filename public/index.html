@@ -22,14 +22,20 @@
         <script id="products-template" type="text/x-mustache-template">
             <ul class="row">
                 {{ #products }}
-                    <li class="product-item col-md-4 col-sm-6 col-xs-12">
+                    <li data-product-item class="product-item col-md-4 col-sm-6 col-xs-12">
                         <img class="product-image" src="" width="180px" height="230px" />
                         <p class="product-name">{{ title }}</p>
                         <span class="product-price">{{ price }}</span>
                         <span class="product-installments">
                             ou {{ installments }}x <strong>{{ price / installments }}</strong>
                         </span>
-                        <a href="/bag/add/?sku={{ sku }}" data-add-to-bag="{{ id }}" class="add-to-bag">Adicionar à sacola</a>
+                        <select data-product-sizes class="product-sizes">
+                            <option selected="selected" value="false">Selecione um tamanho</option>
+                            {{ #availableSizes }}
+                                <option value="{{ . }}">{{ . }}</option>
+                            {{ /availableSizes }}
+                        </select>
+                        <a href="/bag/add/?sku={{ sku }}" data-add-to-bag="{{ sku }}" class="add-to-bag">Adicionar à sacola</a>
                     </li>
                 {{ /products }}
             </ul>
@@ -41,31 +47,41 @@
             </header>
             <ul class="bag-list row">
                 {{ #products }}
-                    <li data-bag-item class="bag-list-item">
-                        <img class="bag-item-image" src="" width="50x" height="50px" />
-                        <div class="bag-item-description">
+                    <li data-bag-item class="bag-list-item row">
+                        <img class="bag-item-image col-md-1" src="" width="50x" height="50px" />
+                        <div class="bag-item-description col-md-9">
                             <p class="bag-item-title">{{ title }}</p>
-                            <p>GG | {{ style }}</p>
-                            <p>Quantidade: 1</p>
-                            <span class="bag-item-price">{{ currencyFormat }} {{ price }}</span>
+                            <p>{{ size }} | {{ style }}</p>
+                            <p>Quantidade: {{ quantity }}</p>
                         </div>
-                        <span data-bag-item-remove="{{ id }}" class="bag-item-remove glyphicon glyphicon-remove"></span>
+                        <div class="bag-item-price col-md-2">
+                            <span data-bag-item-remove="{{ sku }}" class="bag-item-remove glyphicon glyphicon-remove"></span>
+                            <p class="bag-item-price">{{ currencyFormat }} {{ price }}</p>
+                        </div>
                     </li>
                 {{ /products }}
             </ul>
-            <footer>
-                <p class="bag-subtotal-label">Subtotal</p>
-                <span class="bag-subtotal-price">{{ subtotal.price }}</span>
-                <span class="bag-subtotal-installments">
-                    ou em até {{ subtotal.installments }}x de {{ subtotal.price / subtotal.installments }}
-                </span>
+            <footer class="bag-subtotal">
+                <div class="bag-subtotal-description row">
+                    <p class="bag-subtotal-label col-md-2">Subtotal</p>
+                    <div class="bag-subtotal-values col-md-8">
+                        <span class="bag-subtotal-price">{{ subtotal.price }}</span>
+                        <span class="bag-subtotal-installments">
+                            ou em até {{ subtotal.installments }}x de {{ subtotal.price / subtotal.installments }}
+                        </span>
+                    </div>
+                </div>
                 <button class="bag-btn-buy">Comprar</button>
             </footer>
         </script>
 
+        <script type="text/javascript">
+            var store = store || {};
+        </script>
         <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="vendor/mustache.js/mustache.js"></script>
         <script type="text/javascript" src="js/products.js"></script>
         <script type="text/javascript" src="js/bag.js"></script>
+        <script type="text/javascript" src="js/events.js"></script>
     </body>
 </html>

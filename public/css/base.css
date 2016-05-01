@@ -26,5 +26,43 @@ ul {
 }
 
 .page.active {
-    right: 17em;
+    position: static;
+    padding: 0;
+}
+
+.active .products {
+    display: none;
+}
+
+.active .bag {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #202025;
+    color: #fff;
+}
+
+@media (min-width: 767px) {
+    .page.active {
+        right: 17em;
+    }
+
+    .active .products {
+        display: block;
+        width: 20%;
+    }
+
+    .active .bag {
+        width: 70%;
+        right: 0;
+    }
+}
+
+@media (min-width: 1086px) {
+    .active .bag {
+        width: 75%;
+    }
 }
