@@ -7,32 +7,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="css/app.css">
-        <link rel="stylesheet" href="css/add-to-bag.css">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/bag.css">
+        <link rel="stylesheet" type="text/css" href="css/products.css">
     </head>
 
     <body>
-        <section data-product-list></section>
+        <div class="page">
+            <section data-products class="products"></section>
+            <section data-bag class="bag"></section>
+        </div>
 
-        <script id="product-list" type="text/x-mustache-template">
+        <script id="products-template" type="text/x-mustache-template">
             <ul class="row">
                 {{ #products }}
-                    <li class="col-md-4 col-sm-6 col-xs-12">
-                        <img src="" width="180px" height="230px" />
-                        <p>{{ title }}</p>
-                        <h1>{{ price }}</h1>
+                    <li class="product-item col-md-4 col-sm-6 col-xs-12">
+                        <img class="product-image" src="" width="180px" height="230px" />
+                        <p class="product-name">{{ title }}</p>
+                        <span class="product-price">{{ price }}</span>
                         <span class="product-installments">
                             ou {{ installments }}x <strong>{{ price / installments }}</strong>
                         </span>
-                        <a href="/bag/add/?sku={{ sku }}" data-add-to-bag class="add-to-bag">Adicionar à sacola</a>
+                        <a href="/bag/add/?sku={{ sku }}" data-add-to-bag="{{ id }}" class="add-to-bag">Adicionar à sacola</a>
                     </li>
                 {{ /products }}
             </ul>
         </script>
 
-        <script type="text/javascript" src="vendor/mustache.js/mustache.js"></script>
+        <script id="bag-template" type="text/x-mustache-template">
+            <header>
+                <h1 class="bag-title">Sacola</h1>
+            </header>
+            <ul class="bag-list row">
+                {{ #products }}
+                    <li data-bag-item class="bag-list-item">
+                        <img class="bag-item-image" src="" width="50x" height="50px" />
+                        <div class="bag-item-description">
+                            <p class="bag-item-title">{{ title }}</p>
+                            <p>GG | {{ style }}</p>
+                            <p>Quantidade: 1</p>
+                            <span class="bag-item-price">{{ currencyFormat }} {{ price }}</span>
+                        </div>
+                        <span data-bag-item-remove="{{ id }}" class="bag-item-remove glyphicon glyphicon-remove"></span>
+                    </li>
+                {{ /products }}
+            </ul>
+            <footer>
+                <p class="bag-subtotal-label">Subtotal</p>
+                <span class="bag-subtotal-price">{{ subtotal.price }}</span>
+                <span class="bag-subtotal-installments">
+                    ou em até {{ subtotal.installments }}x de {{ subtotal.price / subtotal.installments }}
+                </span>
+                <button class="bag-btn-buy">Comprar</button>
+            </footer>
+        </script>
+
         <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="vendor/mustache.js/mustache.js"></script>
+        <script type="text/javascript" src="js/products.js"></script>
+        <script type="text/javascript" src="js/bag.js"></script>
     </body>
 </html>

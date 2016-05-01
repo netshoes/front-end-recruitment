@@ -1,0 +1,30 @@
+body {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    color: #313135;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.page {
+    position: relative;
+    padding: 1em;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.page.active {
+    right: 17em;
+}

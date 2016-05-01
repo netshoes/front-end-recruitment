@@ -1,0 +1,56 @@
+.active .product-item {
+    width: 100%;
+}
+
+.product-item {
+    margin: 1em 0;
+}
+
+.product-price {
+    font-size: 0.875em;
+}
+
+.product-price:before {
+    content: '';
+    display: block;
+    height: 0.125em;
+    width: 0.938em;
+    margin: 0 auto 0.625em;
+    background-color: #dfbd00;
+}
+
+.product-name {
+    margin-top: 1em;
+}
+
+.product-image {
+    background-color: grey;
+    width: 180px;
+    height: 230px;
+    margin: 0 auto;
+}
+
+.product-installments strong {
+    color: #999;
+    font-size: 14px;
+}
+
+.add-to-bag {
+    display: block;
+    visibility: hidden;
+    display: block;
+    margin: 1em auto 0;
+    width: 12em;
+    padding: 1em;
+    border-radius: 2px;
+    background-color:  #000;
+    height: 50px;
+    color: #fff;
+}
+
+.product-item:hover .add-to-bag {
+    visibility: visible;
+    cursor: pointer;
+    color: #fff;
+}
+

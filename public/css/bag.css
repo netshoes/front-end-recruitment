@@ -1,0 +1,85 @@
+.active .bag {
+    position: absolute;
+    height: 100%;
+    width: 33em;
+    right: -17em;
+    top: 0;
+    background-color: #202025;
+    color: #fff;
+}
+
+.bag-title {
+    margin: 2em 0 1.5em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.bag-list-item {
+    margin-top: 1.5em;
+    text-align: left;
+}
+
+.bag-item-description {
+    margin-left: 5em;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.bag-item-description p {
+    margin-bottom: 0.2em;
+}
+
+.bag-item-title {
+    color: #fff;
+}
+
+.bag-list-item:before {
+    content: '';
+    display: block;
+    margin-bottom: 1.5em;
+    height: 0.125em;
+    width: 90%;
+    background-color: #131316;
+}
+
+.bag-item-image {
+    float: left;
+}
+
+.bag-item-price {
+    float: right;
+    margin: -2em 4em 0 0;
+    font-weight: 400;
+    color: #dfbd00;
+}
+
+.bag-btn-buy {
+    margin: 1em;
+    padding: 1em;
+    border: none;
+    background-color: #000;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.bag-btn-buy:hover {
+    opacity: 0.8;
+}
+
+.bag-item-remove {
+    float: right;
+    margin: -5em 3.6em 0 0;
+    padding: 0.5em;
+    font-size: 0.875em;
+    color: #000;
+    cursor: pointer;
+}
+
+.removing .bag-item-description {
+    text-decoration: line-through;
+}
+
+.removing.bag-list-item {
+    background-color: rgba(0, 0, 0, 0.4)
+}
