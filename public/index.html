@@ -1,25 +1,38 @@
 <!doctype html>
-<html ng-app="store">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/add-to-bag.css">
     </head>
-    <body>
-        <section ng-controller="StoreController">
-            <ul>
-                <li ng-repeat="product in products">
-                    <p>{{ product.title }}</p>
-                    <span>{{ product.price }}</span>
-                </li>
-            </ul>
-        </section>
 
-        <script type="text/javascript" src="vendor/angular/angular.js"></script>
-        <script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>
+    <body>
+        <section data-product-list></section>
+
+        <script id="product-list" type="text/x-mustache-template">
+            <ul class="row">
+                {{ #products }}
+                    <li class="col-md-4 col-sm-6 col-xs-12">
+                        <img src="" width="180px" height="230px" />
+                        <p>{{ title }}</p>
+                        <h1>{{ price }}</h1>
+                        <span class="product-installments">
+                            ou {{ installments }}x <strong>{{ price / installments }}</strong>
+                        </span>
+                        <a href="/bag/add/?sku={{ sku }}" data-add-to-bag class="add-to-bag">Adicionar à sacola</a>
+                    </li>
+                {{ /products }}
+            </ul>
+        </script>
+
+        <script type="text/javascript" src="vendor/mustache.js/mustache.js"></script>
+        <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

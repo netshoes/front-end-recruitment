@@ -1,13 +1,18 @@
-(function() {
+(function($) {
 
     'use strict';
 
-    var app = angular.module('store', []);
+    $(document).ready(function() {
+        $.getJSON('data/products.json', function(response) {
+            var template = $('#product-list').html();
+            var products = Mustache.render(template, response);
 
-    app.controller('StoreController', ['$scope', '$http',
-        function ($scope, $http) {
-            $http.get('data/products.json').success(function(response) {
-                $scope.products = response.products;
+            $('[data-product-list]').html(products);
         });
-    }]);
-}());
+    });
+
+    $(document).on('click', '[data-add-to-bag]', function() {
+        $.post('data/add.json', function(response) {});
+    });
+
+}(jQuery));

@@ -34,4 +34,6 @@ The data we provide is a static JSON file under `/public/data`.
 
 `npm start`
 
+It will make the following link available to be access on the browser
+
 http://localhost:8000/index.html

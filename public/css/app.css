@@ -1,0 +1,51 @@
+body {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    padding: 1em;
+    color:  #313135;
+}
+
+h1 {
+    font-size: 0.875em;
+}
+
+h1:before {
+    content: '';
+    display: block;
+    height: 0.125em;
+    width: 0.938em;
+    margin: 0 auto 0.625em;
+    background-color: #dfbd00;
+}
+
+p {
+    margin-top: 1em;
+}
+
+.image {
+    background-color: grey;
+    width: 180px;
+    height: 230px;
+    margin: 0 auto;
+}
+
+span, strong {
+    color:  #999;
+    font-size: 14px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 1em 0 2em;
+}
+
