@@ -1,0 +1,8 @@
+{
+  "extends": "../.jshintrc",
+  "expr": true,
+  "jasmine": true,
+  "predef": [
+    "inject"
+  ]
+}

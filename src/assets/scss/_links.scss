@@ -1,0 +1,16 @@
+a{
+  @include transition(.33s);
+  color: $link-color;
+  font-size: $font-size-base;
+  text-transform: none;
+  text-decoration: none;
+  &:active, &:focus, &:hover{
+    @include transition(.33s);
+    border: none;
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:visited{
+    color: $link-color;
+  }
+}

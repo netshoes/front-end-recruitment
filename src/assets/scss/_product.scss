@@ -1,0 +1,120 @@
+.product-list{
+  list-style: none;
+  margin-bottom: 60px;
+  width: 100%;
+  .product-item{
+    display: inline-block;
+    width: 25%;
+    @media (max-width: $screen-sm-min) {
+      width: 50%;
+    }
+    @media (max-width: $screen-xs-min) {
+      width: 100%;
+    }
+  }
+
+  &--horizontal{
+    .product-item{
+      display: table;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin: 0;
+      width: 100%;
+      &:hover{
+        background: rgba(19, 19, 22, 0.40);
+        cursor: pointer;
+      }
+    }
+    .product-item__image,
+    .product-item__title,
+    .product-item__price
+    {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .product-item__image{
+      img{
+        border:none;
+        height: 50px;
+        width: 50px;
+      }
+    }
+    .product-item__title{
+      color: $white;
+      font-size: $font-size-base;
+      font-weight: 600;
+      padding: 0 20px;
+      text-align: left;
+    }
+    .product-item__details{
+      color: $gray-dark;
+      font-size: $font-size-base - 2;
+      font-weight: 200;
+      li{
+        border: none;
+        list-style: none;
+        &:last-child{
+          border: none;
+        }
+      }
+    }
+    .product-item__price{
+      color: $yellow;
+      font-size: $font-size-base;
+      font-weight: 700;
+      text-align: right;
+      width: 90px;
+      &:before{
+        display: none;
+      }
+    }
+  }
+
+}
+
+.product-item__link{
+  cursor: pointer;
+}
+
+.product-item{
+  margin-top: 60px;
+  padding: 0 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.product-item__title{
+  line-height: 20px;
+  margin-top: 15px;
+  min-height: 40px;
+}
+
+.product-item__price{
+  font-size: $font-size-base - 2;
+  &:before{
+    content: '';
+    background: $yellow;
+    display: block;
+    height: 2px;
+    margin: 8px auto 7px auto;
+    width: 15px;
+  }
+  strong{
+    font-size: $font-size-base + 10;
+    font-weight: 700;
+  }
+}
+
+.product-item__installment{
+  color: $gray-dark;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.product-item__remove{
+  color: $black;
+  display: block;
+  font-size: $font-size-base + 4;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

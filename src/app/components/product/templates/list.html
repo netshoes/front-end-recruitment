@@ -1,0 +1,24 @@
+<div class="box-container">
+  <ul class="product-list" ng-init="vm.list()">
+    <li itemscope itemtype="http://schema.org/Product"
+        class="product-item" ng-repeat="product in vm.products">
+      <a ng-click="vm.buy(product)" class="product-item__link">
+        <img itemprop="image"
+             ng-src="assets/images/{{product.id}}.jpg" alt="{{product.title}}" class="product-item__image">
+        <div itemprop="name"
+             class="product-item__title">
+          {{product.title}}
+        </div>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer"
+             class="product-item__price">
+          <product-price itemprop="price"
+                         price="{{product.price}}" currency="{{product.currencyFormat}}">
+        </div>
+        <div class="product-item__installment">
+          ou {{product.installments}} x
+          <product-installments price="{{product.price}}" installments="{{product.installments}}"></product-installments>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

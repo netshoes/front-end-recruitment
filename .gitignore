@@ -1,0 +1,13 @@
+*.DS_Store
+node_modules
+bower_components
+npm-debug.log
+
+src/bower
+src/**/*.min*
+src/**/*.css
+src/**/*templates.js
+
+dist
+
+tests/coverage

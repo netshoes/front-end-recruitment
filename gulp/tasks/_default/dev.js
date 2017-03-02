@@ -1,0 +1,12 @@
+gulp.task(
+  'dev',
+  [
+    'linter',
+    'styles',
+    'vendor',
+    'templates',
+    'app',
+    'watch',
+    'server'
+  ]
+);

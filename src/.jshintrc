@@ -1,0 +1,9 @@
+{
+  "extends": "../.jshintrc",
+  "predef": [
+    "angular"
+  ],
+  "node": false,
+  "module": false,
+  "varstmt": true
+}

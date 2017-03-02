@@ -1,0 +1,20 @@
+{
+  "name": "angular-init",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gcajpa/angular-init",
+  "description": "Init for MEAN project.",
+  "author": "Gustavo Alves <contato@gustavocalves.com.br>",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.4",
+    "angular-animate": "~1.4.4",
+    "angular-mocks": "~1.4.4",
+    "angular-ui-router": "~0.2.15",
+    "angular-i18n": "~1.4.8"
+  }
+}

@@ -1,0 +1,60 @@
+<div class="cart"
+        ng-class="!cart.isHidden ? 'cart--open' : ''"
+        ng-init="cart.init()">
+  <div href="" class="cart-control" ng-click="cart.control()">{{cart.items_size}}</div>
+  <div class="cart-head">
+    <div class="cart-title">
+      <span class="cart-counter">{{cart.items_size}}</span>
+      <span class="icon-cart"></span> Sacola
+    </div>
+  </div>
+
+  <div class="cart-message" ng-if="cart.message">
+    {{cart.message}}
+  </div>
+
+  <div class="cart-list" ng-if="cart.cart">
+    <ul class="product-list product-list--horizontal">
+      <li class="product-item" ng-repeat="cart_item in cart.cart">
+        <div class="product-item__image">
+          <img ng-src="assets/images/{{cart_item.id}}.jpg" alt="{{cart_item.title}}">
+        </div>
+        <div class="product-item__title">
+          {{cart_item.title}}
+          <ul class="product-item__details">
+            <li>
+              {{cart_item.availableSizes[0]}} | {{cart_item.style}}
+            </li>
+            <li>
+              Quantidade: {{cart_item.quantity}}
+            </li>
+          </ul>
+        </div>
+        <div class="product-item__price">
+          <a href="#" ng-click="cart.remove(cart_item.id)" class="product-item__remove">X</a>
+          {{cart_item.price | currency:cart_item.currencyFormat}}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cart-subtotal">
+    <div class="cart-subtotal__text">
+      Subtotal
+    </div>
+    <div class="cart-subtotal__sum">
+      <div class="cart-subtotal__sum-total">
+        <div class="cart-subtotal__sum-total__value">
+          {{cart.total_price | currency:"R$ "}}
+        </div>
+        ou em até 10 X
+        <product-installments price="{{cart.total_price}}" installments="10"></product-installments>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-buy">
+    <button class="btn" ng-click="cart.checkout()">Comprar</button>
+  </div>
+
+</div>

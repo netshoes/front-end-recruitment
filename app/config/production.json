@@ -1,0 +1,5 @@
+{
+  "DB" : {
+    "URI": "MONGOLAB_URI"
+  }
+}

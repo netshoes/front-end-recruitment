@@ -1,0 +1,72 @@
+/******************
+ *  GENERAL
+ ******************/
+
+ @mixin clearfix() {
+   &:before,
+   &:after {
+     content: " ";
+     display: table;
+   }
+   &:after {
+     clear: both;
+   }
+ }
+
+
+/******************
+ *  GRID SYSTEM
+ ******************/
+
+ // Centered container element
+ @mixin container-fixed($gutter: $grid-gutter-width) {
+   margin-right: auto;
+   margin-left: auto;
+   padding-left:  ($gutter / 2);
+   padding-right: ($gutter / 2);
+   @include clearfix;
+ }
+
+
+/******************
+ *  SHAPES
+ ******************/
+
+@mixin triangle-base() {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+}
+@mixin triangle($direction, $size, $color) {
+  @include triangle($direction, $size * 2, $size, $color);
+}
+@mixin triangle($direction, $width, $height, $color) {
+  @include triangle-base();
+  @if $direction == up {
+      border-left: ($width / 2) solid transparent;
+      border-right: ($width / 2) solid transparent;
+      border-bottom: $height solid $color;
+    } @else if $direction == down {
+      border-left: ($width / 2) solid transparent;
+      border-right: ($width / 2) solid transparent;
+      border-top: $height solid $color;
+    } @else if $direction == left {
+      border-top: ($width / 2) solid transparent;
+      border-bottom: ($width / 2) solid transparent;
+      border-right: $height solid $color;
+    } @else if $direction == right {
+      border-top: ($width / 2) solid transparent;
+      border-bottom: ($width / 2) solid transparent;
+      border-left: $height solid $color;
+    }
+}
+
+/******************
+ *  Animation and Effect
+ ******************/
+
+@mixin transition($seconds) {
+  -webkit-transition: all $seconds ease-in-out;
+  transition:  all $seconds ease-in-out;
+}

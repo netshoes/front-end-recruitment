@@ -1,0 +1,11 @@
+{
+    "devel": true
+  , "strict": true
+  , "esnext": true
+  , "undef": true
+  , "node": true
+  , "module": true
+  , "indent": 2
+  , "camelcase": false
+  , "laxcomma": true
+}

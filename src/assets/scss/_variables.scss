@@ -1,0 +1,59 @@
+/**
+ * Variables
+ * @author Gustavo Alves - contato@gustavocalves.com.br
+ */
+
+/******************
+ *  COLORS
+ ******************/
+
+// General Colors
+$white: #fff;
+$black: #000;
+
+$gray: #cccccc;
+$gray-dark: #999999;
+
+$blue-darker: #131316;
+$blue-dark: #202025;
+
+$yellow: #dfbd00;
+
+// Type Colors
+$text-color: $gray-dark;
+
+$link-color: $black;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+
+/******************
+ *  FONT
+ ******************/
+
+$font-size-base: 14px;
+$font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+
+/******************
+ *  MEDIA QUERIES
+ ******************/
+
+ $screen-xs-min: 480px;
+ $screen-sm-min: 768px;
+ $screen-md-min: 992px;
+ $screen-lg-min: 1200px;
+
+ $screen-xs-max: ($screen-sm-min - 1) !default;
+ $screen-sm-max: ($screen-md-min - 1) !default;
+ $screen-md-max: ($screen-lg-min - 1) !default;
+
+ /******************
+  *  GRID
+  ******************/
+
+ $grid-gutter-width: 20px;
+
+ $container-sm: (720px + $grid-gutter-width);
+ $container-md: (940px + $grid-gutter-width);
+ $container-lg: (1140px + $grid-gutter-width);
