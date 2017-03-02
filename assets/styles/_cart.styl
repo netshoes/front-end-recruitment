@@ -1,0 +1,147 @@
+.cart-wrap {
+  background-color: #1F1F25;
+  width: 515px;
+  color: #fff;
+  position: fixed;
+  right: -545px;
+  top: 0;
+  height: 100%;
+  box-shadow: 0px 0px 10px #666;
+  transition: all .5s ease-in-out;
+  overflow: scroll;
+  &.open {
+    right: 0;
+  }
+  &.close {
+    right: -545px;
+  }
+  &:hover {
+    right: 0;
+  }
+  h1 {
+    text-transform: uppercase;
+    padding: 2em;
+		font-size: 1.5em;
+    text-align: center;
+    margin-left: 40px;
+  }
+  .icon-saloca {
+    background: url("../../assets/images/sprite.png") no-repeat -4px -2px;
+    width: 40px;
+    height: 45px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+    top: 35px;
+  }
+}
+.list-cart-item {
+  float: left;
+  cursor: pointer;
+  &:hover {
+    background-color: #131316;
+  }
+  figure {
+    width: 50px;
+    float: left;
+    margin-right: 15px;
+  }
+  .list-cart-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .cart-product-style, .cart-product-size {
+    color: #999;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .list-cart-info {
+    float: left;
+    width: 405px;
+    position: relative;
+    .list-cart-price {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #DFBD00;
+      font-size: 14px;
+    }
+    .icon-close {
+      background: url("../../assets/images/sprite.png") no-repeat -5px -50px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      &:hover {
+        background-position: -25px -50px;
+      }
+    }
+  }
+  .list-cart-content {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    float: left;
+    padding: 15px 0;
+    margin: 0px 20px;
+  }
+}
+.logo-wrap {
+    position: relative;
+}
+.quant-cart {
+    background-color: #dfbd00;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    color: #000;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin-left: -70px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.btn-buy {
+    width: 465px;
+    margin: 20px auto;
+    display: block;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.cart-subtotal {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.cart-info {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    height: 50px;
+}
+.cart-price-total {
+    color: #dfbd00;
+    font-size: 16px;
+    float: right;
+    margin-right: 45px;
+}
+.cart-parcel-price {
+    color: #46464a;
+    text-transform: uppercase;
+    font-size: 13px;
+    position: relative;
+    right: -73px;
+    float: right;
+    top: 22px;
+}

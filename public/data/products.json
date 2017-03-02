@@ -13,7 +13,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 1,
       "sku": 18644119330491312,
@@ -27,7 +26,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 2,
       "sku": 11854078013954528,
@@ -41,7 +39,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 3,
       "sku": 876661122392077,
@@ -55,7 +52,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 4,
       "sku": 9197907543445677,
@@ -69,7 +65,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": false
     },
-
     {
       "id": 5,
       "sku": 10547961582846888,
@@ -83,7 +78,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": false
     },
-
     {
       "id": 6,
       "sku": 6090484789343891,
@@ -97,7 +91,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 7,
       "sku": 18532669286405342,
@@ -111,7 +104,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 8,
       "sku": 5619496040738316,
@@ -125,7 +117,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": false
     },
-
     {
       "id": 9,
       "sku": 11600983276356165,
@@ -139,7 +130,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 10,
       "sku": 27250082398145995,
@@ -153,7 +143,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 11,
       "sku": 39876704341265606,
@@ -167,7 +156,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 12,
       "sku": 12064273040195392,
@@ -181,7 +169,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 13,
       "sku": 51498472915966366,
@@ -195,7 +182,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 14,
       "sku": 10686354557628303,
@@ -209,7 +195,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 15,
       "sku": 11033926921508487,
@@ -223,7 +208,6 @@
       "currencyFormat": "R$",
       "isFreeShipping": true
     },
-
     {
       "id": 16,
       "sku": 10412368723880253,
