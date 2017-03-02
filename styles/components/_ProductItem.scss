@@ -1,0 +1,41 @@
+/**
+ * ProductItem
+ */
+
+.ProductItem {
+
+  // ensure every product is correctly aligned (avoiding hard rows)
+  height: 365px;
+  text-align: center;
+}
+
+  .ProductItem-link {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .ProductItem-thumb {
+
+  }
+
+  .ProductItem-title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+
+    margin-top: $spacing-unit--small;
+    margin-bottom: 0;
+  }
+
+  .ProductItem-price {
+    font-size: 12px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ProductItem-buy {
+    border: none;
+    background-color: $color-gold;
+    padding: $spacing-unit--tiny $spacing-unit--small;
+  }

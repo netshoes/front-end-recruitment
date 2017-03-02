@@ -1,0 +1,21 @@
+/**
+ * Page
+ */
+
+@font-face {
+      font-family: 'OpenSans'; font-style: normal; font-weight: normal;
+      src: url('../fonts/OpenSans-Regular-webfont.eot');
+      src: url('../fonts/OpenSans-Regular-webfont.eot?') format('eot'),
+           url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+           url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+           url('../fonts/OpenSans-Regular-webfont.ttf')  format('truetype');
+}
+
+html {
+  font-family: 'OpenSans';
+  color: $color-dark-gray;
+}
+
+* {
+  box-sizing: border-box;
+}

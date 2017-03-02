@@ -1,0 +1,12 @@
+/**
+ * EntryPoint
+ */
+
+.EntryPoint {
+  width: 1245px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include clearfix;
+}

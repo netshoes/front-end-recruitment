@@ -1,0 +1,20 @@
+/**
+ * Collection
+ */
+
+.Collection {
+  width: 730px;
+  float: left;
+
+  padding-top: $spacing-unit--large;
+}
+
+  .Collection-item {
+    width: (100% / 3);
+    float: left;
+
+    padding-left: $spacing-unit--tiny;
+    padding-right: $spacing-unit--tiny;
+
+    margin-bottom: $spacing-unit--large;
+  }

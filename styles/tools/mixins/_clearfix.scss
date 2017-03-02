@@ -1,0 +1,11 @@
+/**
+ * Clearfix as per css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ */
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
