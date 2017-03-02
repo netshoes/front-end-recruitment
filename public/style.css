@@ -1,0 +1,106 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	margin-top: 50px;
+	font-family: 'Open Sans', sans-serif;
+	background: #CCC;
+}
+
+.container {
+	background: #FFF;
+}
+
+.product {
+	min-width: 240px;
+	padding: 15px;
+	border: 0;
+}
+
+.product-image{
+ margin-bottom:15px;
+}
+
+.product-content {
+	min-height: 315px;
+}
+
+.price-big {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.checkout {
+	background-color: #202025;
+	color: #FFF;
+	height: 100%;
+	margin-top: 15px;
+}
+
+.bag {
+	background: url('/public/images/sacola.png') no-repeat;
+	width: 33px;
+	height: 40px;
+	display: inline-block;
+	margin-top: -20px;
+}
+
+.bag-count {
+	background: #ec971f;
+	font-size: 13px;
+	border: 2px solid #ec971f;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border-radius: 60px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+
+.bag-delete,
+.bag-delete:hover {
+	color: #FFFFFF;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.list-bag li {
+	margin: 15px;
+}
+
+.list-bag img {
+	float: left;
+	vertical-align: top;
+}
+
+.list-item {
+	padding: 15px 0;
+    border-top: 2px solid #000;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.list-item h4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.list-item .price {
+	color: 	#ec971f;
+}
+
+.finalizar-compra {
+	background: #000;
+    border-color: #000;
+    border-radius: 0;
+}
+
+.subtotal {
+	border-top: 80px solid #000;
+	padding-top: 15px;
+	border-radius: 0;
+}
+

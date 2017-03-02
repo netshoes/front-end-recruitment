@@ -1,0 +1,32 @@
+{
+  "name": "front-end-recruitment",
+  "version": "1.0.0",
+  "description": "front-end test for netshoes",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-route": "^1.4.7",
+    "express": "^4.13.3",
+    "orchestrate": "^0.5.1",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netshoes/front-end-recruitment.git"
+  },
+  "author": "Caio da Cunha Batista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netshoes/front-end-recruitment/issues"
+  },
+  "homepage": "https://github.com/netshoes/front-end-recruitment#readme"
+}
