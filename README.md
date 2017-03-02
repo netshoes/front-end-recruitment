@@ -1,3 +1,16 @@
+#Build
+`$ bower install`
+
+#Run the project
+- Run static server:
+	- `$ http-server public `   
+
+- If not installed run:
+	- `$ npm install http-server -g`
+	- `$ http-server public`
+
+- Access http://127.0.0.1:8080/list.html
+
 # Netshoes Cart Test
 
 ## Expected result
@@ -21,3 +34,4 @@ The data we provide is a static JSON file under `/public/data`.
 * Persist data on page reload;
 * Test your code;
 * Instructions on how to build/run the project.
+

@@ -1,0 +1,116 @@
+/**
+ * Created by alanlucian on 11/6/15.
+ */
+
+
+ function ListPage( dataPath , listContainerSelector){
+    // Private STATMENTS
+    var self  = this;
+
+    var dataPath = dataPath;
+    var listContainer = $("#"+listContainerSelector);
+    var productList;
+    var productDetails =  new Array();
+    var detailModalPrefix =  "productDetail_";
+    var bindEventsLock = false; // bool to lock due an BUG on loadTemplate Plugin
+
+
+    function getData() {
+        $.get( dataPath, parseData, "json"  );
+    };
+
+    //
+    function parseData ( data ){
+        console.log(data);
+        productList = data;
+
+        for ( var i =0 ; i < productList.products.length; i++){
+            var product = productList.products[i];
+            product.productPrice1 = product.price.toString().split(".")[0];
+            product.productPrice2 = ","+product.price.toFixed(2).toString().split(".")[1];
+            product.installmentPrice = ( product.price / product.installments ).formatMoney(product.currencyId);
+            product.modalDetailId = detailModalPrefix  + product.sku ;
+            product.freeShippingInfo = ( product.isFreeShipping? "display:block":"display:none");
+            product.JSONString = window.JSON.stringify(product);
+            product.image = VIEW_CONFIG.productImagePath + product.sku + ".png";
+
+
+
+        }
+        renderList();
+
+    };
+
+    function renderList(){
+        for ( var i =0 ; i < productList.products.length; i++){
+
+            //console.log(listContainer,itemTemplatePath,productList.products[i]);
+            listContainer.loadTemplate(VIEW_CONFIG.listItemTemplate, productList.products[i] ,
+                {   overwriteCache : true,
+                    append: true,
+                    complete: (i==productList.products.length-1)? bindEvents: null,  //  at the last item BindEvents when template load is complete
+                    bindingOptions: {"ignoreUndefined": true, "ignoreNull": true}
+                });
+        }
+
+    }
+
+     function bindEvents(){
+         if( bindEventsLock ) return ;
+         bindEventsLock = true;
+
+
+         /* List */
+         $(".product-detail").each(function(){
+             //console.log($(this).attr("id"));
+             productDetails[$(this).attr("id")] =
+                 $(this).dialog({
+                     width:'auto',
+                     closeOnEscape: true,
+                     draggable: false,
+                     modal: true,
+                     open: function(event, ui) {
+                         $(".ui-dialog-titlebar-close").hide();
+                         $(".ui-dialog-titlebar").hide();
+
+                     },
+                    autoOpen: false
+                 });
+         });
+
+         $(".product .clickable").click(function(){
+              var product_id =  $(this).parents("article").data("product-info").sku ;
+              productDetails[detailModalPrefix  + product_id].dialog( "open" );
+             $('.ui-widget-overlay').click(function(){
+
+                 productDetails[detailModalPrefix  + product_id].dialog('close');
+             });
+         });
+
+         /* Detail Events */
+
+         $(".product-buy-btn").click(function(){
+             $('.ui-widget-overlay').trigger("click");
+             CartModule.addProduct( $(this).parents("form").serializeArray() );
+         });
+
+
+     }
+
+    // PUBLIC STATMENTS
+    this.show = function(){
+            getData();
+    };
+
+    this.todo=function(){
+        alert("public AF");
+    };
+
+
+
+}
+$(function() {
+    var lp = new ListPage( "data/products.json", "product-list", "assets/product.tpl.html" );
+    lp.show();
+
+});

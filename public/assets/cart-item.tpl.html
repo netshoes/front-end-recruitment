@@ -1,0 +1,39 @@
+<article class="cart-item" data-template-bind='
+[
+    {"attribute": "id", "value": "modalDetailId"},
+    {"attribute": "data-product-info", "value": "JSONString"}
+
+    ]'>
+<form>
+    <input type="hidden"  name="product-info"  >
+    <div class="left cart-item-image" >
+        <img width="60"
+             data-template-bind='{"attribute": "src", "value": "image"}'
+             src="//static1.netshoes.net/Produtos/camisa-polo-nike-matchup-mini-stripe/14/D12-1384-014/D12-1384-014_janela.jpg"/>
+    </div>
+
+    <div class="left cart-item-details" style="" >
+        <div class="product-detail-name" >
+            <span data-content="title" ></span>
+            <span data-content="description" ></span>
+
+        </div>
+        <!--<div data-content="description" class="product-detail-description"></div>-->
+        <div class="gray-text">
+            <span data-content="size" ></span> | <span data-content="style" ></span>
+        </div>
+        <div class="gray-text" >
+            Quantidade: <span data-content="quantity" class="cart-item-quantity"  ></span>
+        </div>
+
+    </div>
+    <div class="left cart-item-price-wrapper" >
+        <div class="cart-item-remove clickable" >&times;</div>
+        <div class="cart-item-price">
+            <span data-content="currencyFormat" >R$</span>
+            <strong data-content="productPrice1">19</strong><span data-content="productPrice2" >,90</span>
+        </div>
+    </div>
+    </form>
+    <!--<hr class="cart-spacer-black-line"/>-->
+</article>

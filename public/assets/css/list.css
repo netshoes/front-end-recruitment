@@ -1,0 +1,99 @@
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+.hide{
+    display: none;
+}
+
+.left {
+    float:left;
+}
+.clickable {
+    cursor: pointer;
+}
+#product-list{
+    /*width:100%;*/
+
+}
+.product{
+    float: left;
+    margin: 0px 10px 40px 10px ;
+    /*width: 210px;*/
+}
+
+.product-image-holder{
+
+    padding: 0px 15px;
+    margin-bottom: 5px;
+
+}
+.product-image-holder img{
+    width: 180px;
+}
+
+.product-info-holder{
+    width:100%;
+    font-size: 13px;
+    color: #313135;
+
+    text-align: center;
+}
+
+.visual-line{
+    margin: auto;
+    height: 2px;
+    width: 20px;
+    background-color: #dfbd00;
+}
+
+.product-name, .product-detail-name{
+    margin-bottom: 5px;
+    /*max-width: 210px;*/
+
+}
+
+.product-pricing{
+    margin-bottom: 5px;
+
+}
+
+.product-price{
+    font-size: 12px;
+}
+.product-price1{
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-installment{
+    color: #999999;
+}
+
+/* PRODUCT DETAIL*/
+.product-detail{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.product-detail-description,
+.product-detail-style{
+    font-size: 12px;
+    color:#999;
+
+}
+
+.product-detail-sizes{
+    font-size: 16px;
+    margin: 10px 0px;
+}
+.product-detail-installment{
+    font-size: 12px;
+}
+.product-detail-shipping{
+    color: #dfbd00;
+}
+
+
+.product-buy-btn{
+    margin-top: 10px;
+}
