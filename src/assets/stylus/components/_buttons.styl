@@ -1,0 +1,54 @@
+@import "../settings/_settings.defaults"
+
+.circle-button
+	border-radius 50%
+	cursor pointer
+	font-weight 700
+	display inline-block
+	transition background 0.2s ease-in
+	text-align center
+	width 40px
+	height 40px
+	
+	&.circle-button--highlight
+		background highlight-color
+		color #000000
+		
+		&:hover
+			background lighten(highlight-color, 10%)
+		
+		&:active
+			background darken(highlight-color, 5%)
+
+.button
+	cursor pointer
+	display inline-block
+	font-weight 700
+	text-align center
+	text-transform uppercase
+	text-decoration none
+	transition background 0.2s ease-in
+	padding 20px 0
+	font-size 13px
+	width 100%
+	
+	&.button--highlight
+		background highlight-color
+		color #000000
+		
+		&:hover
+			background lighten(highlight-color, 10%)
+		
+		&:active
+			background darken(highlight-color, 5%)
+
+	&.button--black
+		background #000000
+		border-bottom 2px solid #1a1a1e
+		color #ffffff
+		
+		&:hover
+			background #0f0f0f
+
+		&:active
+			background #333339
