@@ -7,7 +7,7 @@ import { addProduct } from '../../services/floatCart/actions';
 
 import Product from './Product';
 import Filter from './Filter';
-import ShelfHeader from './Header';
+import ShelfHeader from './ShelfHeader';
 import Clearfix from '../Clearfix';
 import Spinner from '../Spinner';
 
@@ -19,12 +19,12 @@ class Shelf extends Component {
     products: PropTypes.array.isRequired,
     addProduct: PropTypes.func.isRequired,
     filters: PropTypes.array,
-    sort: PropTypes.string,
-  }
+    sort: PropTypes.string
+  };
 
   state = {
-    loading: false,
-  }
+    loading: false
+  };
 
   componentWillMount() {
     const { filters, sort } = this.props;
@@ -44,47 +44,47 @@ class Shelf extends Component {
     }
   }
 
-  handleFetchProducts = (filters = this.props.filters, sort = this.props.sort) => {
+  handleFetchProducts = (
+    filters = this.props.filters,
+    sort = this.props.sort
+  ) => {
     this.setState({ loading: true });
     this.props.fetchProducts(filters, sort, () => {
       this.setState({ loading: false });
     });
-  }
+  };
 
   render() {
     const { products } = this.props;
 
     const p = products.map(p => {
       return (
-        <Product
-          product={p}
-          addProduct={this.props.addProduct}
-          key={p.id}
-        />
+        <Product product={p} addProduct={this.props.addProduct} key={p.id} />
       );
     });
 
     return (
       <React.Fragment>
-        {this.state.loading &&
-          <Spinner />
-        }
+        {this.state.loading && <Spinner />}
         <Filter />
         <div className="shelf-container">
-          <ShelfHeader productsLength={products.length}/>
+          <ShelfHeader productsLength={products.length} />
           {p}
           <Clearfix />
         </div>
         <Clearfix />
       </React.Fragment>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   products: state.shelf.products,
   filters: state.filters.items,
-  sort: state.sort.type,
-})
+  sort: state.sort.type
+});
 
-export default connect(mapStateToProps, { fetchProducts, addProduct })(Shelf);
+export default connect(
+  mapStateToProps,
+  { fetchProducts, addProduct }
+)(Shelf);
