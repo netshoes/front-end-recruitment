@@ -1,7 +1,17 @@
-import Sort from '..';
+import Sort from '../';
+import Root from '../../../../Root';
 
-describe('Sort', () => {
-  xit('should mount correctly', () => {
-    // expect(wrapper).toMatchSnapshot();
-  });
+const initialState = {
+  sort: {
+    type: 'highestprice'
+  }
+};
+
+it('mounts without crashing', () => {
+  const wrapped = mount(
+    <Root initialState={initialState}>
+      <Sort />
+    </Root>
+  );
+  wrapped.unmount();
 });

@@ -1,50 +1,44 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { updateFilters } from '../../../services/filter/actions';
 import Checkbox from '../../Checkbox';
 
 import './style.scss';
 
-const availableSizes = [
-  '40',
-  '41',
-  '43',
-  'S',
-  'G',
-  'GG',
-  'GGG',
-];
+const availableSizes = ['40', '41', '43', 'S', 'G', 'GG', 'GGG'];
 
 class Filter extends Component {
+  static propTypes = {
+    updateFilters: PropTypes.func.isRequired,
+    filters: PropTypes.array
+  };
 
   componentWillMount() {
     this.selectedCheckboxes = new Set();
   }
 
-  toggleCheckbox = (label) => {
+  toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
       this.selectedCheckboxes.delete(label);
-  } else {
+    } else {
       this.selectedCheckboxes.add(label);
     }
 
     this.props.updateFilters(Array.from(this.selectedCheckboxes));
-  }
+  };
 
-  createCheckbox = (label) => (
+  createCheckbox = label => (
     <Checkbox
-        classes="filters-available-size"
-        label={label}
-        handleCheckboxChange={this.toggleCheckbox}
-        key={label}
+      classes="filters-available-size"
+      label={label}
+      handleCheckboxChange={this.toggleCheckbox}
+      key={label}
     />
-  )
+  );
 
-  createCheckboxes = () => (
-    availableSizes.map(this.createCheckbox)
-  )
+  createCheckboxes = () => availableSizes.map(this.createCheckbox);
 
   render() {
     return (
@@ -56,13 +50,11 @@ class Filter extends Component {
   }
 }
 
-Filter.propTypes = {
-  updateFilters: PropTypes.func.isRequired,
-  filters: PropTypes.array,
-}
-
 const mapStateToProps = state => ({
-  filters: state.filters.items,
-})
+  filters: state.filters.items
+});
 
-export default connect(mapStateToProps, { updateFilters })(Filter);
+export default connect(
+  mapStateToProps,
+  { updateFilters }
+)(Filter);
