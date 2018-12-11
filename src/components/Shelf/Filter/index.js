@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { updateFilters } from '../../../services/filter/actions';
+import { updateFilters } from '../../../services/filters/actions';
 import Checkbox from '../../Checkbox';
 
 import './style.scss';
