@@ -1,9 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Root from '../../../Root';
 import App from '../';
 
-xit('renders without crashing', () => {
-  const div = document.createElement('div');
-  // ReactDOM.render(<App />, div);
-  // ReactDOM.unmountComponentAtNode(div);
+import Shelf from '../../Shelf';
+import FloatCart from '../../FloatCart';
+
+let wrapped;
+
+beforeEach(() => {
+  wrapped = mount(
+    <Root>
+      <App />
+    </Root>
+  );
+});
+
+it('shows a shelf', () => {
+  expect(wrapped.find(Shelf).length).toEqual(1);
+});
+
+it('shows a floating cart', () => {
+  expect(wrapped.find(FloatCart).length).toEqual(1);
 });

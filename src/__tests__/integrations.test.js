@@ -56,36 +56,38 @@ afterEach(() => {
   moxios.uninstall();
 });
 
-it('should fetch 2 products and add 1 to cart', done => {
-  const wrapped = mount(
-    <Root>
-      <App />
-    </Root>
-  );
+describe('Integrations', () => {
+  it('should fetch 2 products and add 1 to cart', done => {
+    const wrapped = mount(
+      <Root>
+        <App />
+      </Root>
+    );
 
-  /* Before fetch the shelf should contain 0 products in it */
-  expect(wrapped.find(ShelfHeader).props().productsLength).toEqual(0);
+    /* Before fetch the shelf should contain 0 products in it */
+    expect(wrapped.find(ShelfHeader).props().productsLength).toEqual(0);
 
-  moxios.wait(() => {
-    wrapped.update();
+    moxios.wait(() => {
+      wrapped.update();
 
-    /* and then after fetch, should contain 2 */
-    expect(wrapped.find(ShelfHeader).props().productsLength).toEqual(2);
+      /* and then after fetch, should contain 2 */
+      expect(wrapped.find(ShelfHeader).props().productsLength).toEqual(2);
 
-    /* Cart should start with 0 products */
-    expect(wrapped.find(CartProduct).length).toEqual(0);
+      /* Cart should start with 0 products */
+      expect(wrapped.find(CartProduct).length).toEqual(0);
 
-    /* Click to add product to cart */
-    wrapped
-      .find(Product)
-      .at(0)
-      .find('.shelf-item__buy-btn')
-      .simulate('click');
+      /* Click to add product to cart */
+      wrapped
+        .find(Product)
+        .at(0)
+        .find('.shelf-item__buy-btn')
+        .simulate('click');
 
-    /* Then after one product is added to cart, it should have 1 in it */
-    expect(wrapped.find(CartProduct).length).toEqual(1);
+      /* Then after one product is added to cart, it should have 1 in it */
+      expect(wrapped.find(CartProduct).length).toEqual(1);
 
-    wrapped.unmount();
-    done();
+      wrapped.unmount();
+      done();
+    });
   });
 });
