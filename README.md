@@ -37,6 +37,19 @@ both more scalable and reusable.
   - BEM methodology
   - SASS
 
+## About tests
+
+- Unit tests
+  - All components have at least a basic smoke test
+- Integration tests
+  - Fetch product and add to cart properly
+- e2e
+  - (Todo)
+
+### Coverage report
+
+![Filters](./doc/coverage-report.png 'Filters')
+
 ## Build/Run
 
 ```javascript
@@ -52,11 +65,5 @@ npm start
 npm run test
 
 ```
-
-## About tests
-
-## Coverage report
-
-![Filters](./doc/coverage-report.png 'Filters')
 
 The React app should open automatically on localhost:3000
