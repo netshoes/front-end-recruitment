@@ -1,27 +1,54 @@
+import Root from '../../../Root';
 import FloatCart from '..';
+import CartProduct from '../CartProduct';
 
-import store from '../../../services/store';
+const initialState = {
+  cart: {
+    products: [
+      {
+        id: 0,
+        sku: 8552515751438644,
+        title: 'Camisa Nike Corinthians I',
+        description: '14/15 s/nº',
+        availableSizes: ['S', 'G', 'GG', 'GGG'],
+        style: 'Branco com listras pretas',
+        price: 229.9,
+        installments: 9,
+        currencyId: 'BRL',
+        currencyFormat: 'R$',
+        isFreeShipping: true
+      },
+      {
+        id: 1,
+        sku: 18644119330491312,
+        title: 'Camisa Nike Corinthians II',
+        description: '14/15 s/nº',
+        availableSizes: ['S', 'G', 'GG', 'GGG'],
+        style: 'Preta com listras brancas',
+        price: 229.9,
+        installments: 9,
+        currencyId: 'BRL',
+        currencyFormat: 'R$',
+        isFreeShipping: true
+      }
+    ]
+  }
+};
 
-describe('FloatCart', () => {
-  xit('should render correctly', () => {
-    const wrapper = render(
-      <Provider store={store()}>
-        <FloatCart />
-      </Provider>
-    );
+let wrapped;
 
-    // expect(wrapper).toMatchSnapshot();
-  });
+beforeEach(() => {
+  wrapped = mount(
+    <Root initialState={initialState}>
+      <FloatCart />
+    </Root>
+  );
+});
 
-  xit('should render bag__quantity with 0 products in it', () => {
-    const wrapper = render(
-      <Provider store={store()}>
-        <FloatCart />
-      </Provider>
-    );
+afterEach(() => {
+  wrapped.unmount();
+});
 
-    const productQuantity = parseInt(wrapper.find('.bag__quantity').text());
-
-    // expect(productQuantity).toEqual(0);
-  });
+it('should mount with 2 products in it', () => {
+  expect(wrapped.find(CartProduct).length).toEqual(2);
 });
