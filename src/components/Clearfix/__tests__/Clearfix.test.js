@@ -1,9 +1,6 @@
 import Clearfix from '..';
 
-describe('Clearfix', () => {
-  xit('should render correctly', () => {
-    const wrapper = shallow(<Clearfix />);
-
-    // expect(wrapper).toMatchSnapshot();
-  });
+it('mounts without crashing', () => {
+  const wrapped = mount(<Clearfix />);
+  wrapped.unmount();
 });

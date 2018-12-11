@@ -14,6 +14,10 @@ beforeEach(() => {
   );
 });
 
+afterEach(() => {
+  wrapped.unmount();
+});
+
 it('shows a shelf', () => {
   expect(wrapped.find(Shelf).length).toEqual(1);
 });
