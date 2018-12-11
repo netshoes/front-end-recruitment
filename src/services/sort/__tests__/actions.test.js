@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import * as types from '../actionTypes';
 
 describe('sort actions', () => {
-  xit('should return expected payload', () => {
+  it('should return expected payload', () => {
     const text = 'lowestprice';
 
     const expectedAction = {

@@ -17,7 +17,7 @@ const mockProduct = {
 
 describe('floatCart actions', () => {
   describe('loadCart', () => {
-    xit('should return expected payload', () => {
+    it('should return expected payload', () => {
       const expectedAction = {
         type: types.LOAD_CART,
         payload: mockProduct
@@ -28,7 +28,7 @@ describe('floatCart actions', () => {
   });
 
   describe('addProduct', () => {
-    xit('should return expected payload', () => {
+    it('should return expected payload', () => {
       const expectedAction = {
         type: types.ADD_PRODUCT,
         payload: mockProduct
@@ -39,7 +39,7 @@ describe('floatCart actions', () => {
   });
 
   describe('removeProduct', () => {
-    xit('should return expected payload', () => {
+    it('should return expected payload', () => {
       const expectedAction = {
         type: types.REMOVE_PRODUCT,
         payload: mockProduct

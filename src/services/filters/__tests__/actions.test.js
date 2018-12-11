@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import * as types from '../actionTypes';
 
 describe('filter actions', () => {
-  xit('should return expected payload', () => {
+  it('should return expected payload', () => {
     const text = '42';
 
     const expectedAction = {
