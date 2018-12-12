@@ -8,13 +8,7 @@
 
 - Add and remove products from the floating cart
 - Sort products by highest to lowest and lowest to highest price
-
-![Sort](./doc/sort.png 'Sort')
-
 - Filter products by available sizes
-
-![Filters](./doc/filters.png 'Filters')
-
 - Products persist in floating cart even after page reloads
 - Responsive design for desktop, tablets and mobile
 - Product stoppers for free shipping
