@@ -32,19 +32,22 @@ both more scalable and reusable.
   - Nodemon - for a better development experience
   - Concurrently - To run multiple tasks at once
 - Axios - for promise HTTP requests
-- Native local storage - to persist products in cart even after page reload
 - CSS
   - BEM methodology
   - SASS
+- Moxios - to stub http request
+- Enzyme - to mount, shallow, render and query the DOM tree of React components
+- Webdriverio - to do automated tests in a real browser environment
+- Native local storage - to persist products in cart even after page reload
 
 ## About tests
 
 - Unit tests
   - All components have at least a basic smoke test
-- Integration tests
-  - Fetch product and add to cart properly
+- **Integration tests**
+  - **Fetch product and add to cart properly**
 - e2e
-  - (Todo)
+  - Webdriverio - Add and remove product from cart
 
 ### Coverage report
 
@@ -60,9 +63,11 @@ npm install
 /* To start both Node and React*/
 npm start
 
-
 /* To run the tests */
 npm run test
+
+/* Running e2e tests */
+npm run wdio
 
 ```
 
