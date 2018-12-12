@@ -64,4 +64,3 @@ npm run wdio
 
 ```
 
-The React app should open automatically on localhost:3000
