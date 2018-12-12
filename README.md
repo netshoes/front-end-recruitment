@@ -57,8 +57,10 @@ npm start
 /* To run the tests */
 npm run test
 
-/* Running e2e tests */
+/* Running e2e tests (The app should be running first) */
 npm run wdio
+
+
 
 ```
 
