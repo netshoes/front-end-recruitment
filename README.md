@@ -1,5 +1,9 @@
 # Netshoes Front end Recruitment Test
 
+<p align="center">
+  <img src="./screenshot.png">
+</p>
+
 #### Features
 
 - Add and remove products from the floating cart
