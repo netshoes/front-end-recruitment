@@ -168,7 +168,7 @@ class FloatCart extends Component {
               </small>
             </div>
             <div onClick={() => this.proceedToCheckout()} className="buy-btn">
-              Checkout
+              Finalizar
             </div>
           </div>
         </div>
