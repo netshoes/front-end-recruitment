@@ -51,7 +51,7 @@
 /* Install the needed packages */
 npm install
 
-/* To start both Node and React*/
+/* To start both Node and React */
 npm start
 
 /* To run the tests */
