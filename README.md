@@ -1,7 +1,7 @@
 # Netshoes Front end Recruitment Test
 
 <p align="center">
-  <img src="./screenshot.png">
+  <img src="./doc/screenshot.png">
 </p>
 
 #### Features
