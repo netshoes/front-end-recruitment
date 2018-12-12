@@ -1,12 +1,4 @@
-# Front end Recruitment Test
-
-## Why components/services as folder structure?
-
-I believe that a component should be self-contained, each component,
-scene or service (a feature) must have everything it needs to work on its own,
-such as its own styles, images, translations, set of actions as well as
-unit tests. I learned that this pattern help my projects to be
-both more scalable and reusable.
+# Netshoes Front end Recruitment Test
 
 #### Features
 
@@ -22,6 +14,7 @@ both more scalable and reusable.
 - Products persist in floating cart even after page reloads
 - Responsive design for desktop, tablets and mobile
 - Product stoppers for free shipping
+- **Unit tests, integration tests and e2e testing.**
 
 #### Using
 
@@ -46,8 +39,8 @@ both more scalable and reusable.
   - All components have at least a basic smoke test
 - **Integration tests**
   - **Fetch product and add to cart properly**
-- e2e
-  - Webdriverio - Add and remove product from cart
+- **e2e**
+  - **Webdriverio - Add and remove product from cart**
 
 ### Coverage report
 
