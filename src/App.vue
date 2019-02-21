@@ -1,33 +1,49 @@
 <template>
   <div id="app">
     <header>
+      <!-- Cabeçalho -->
       <div id="header">
-        <div class="container-fluid header__wrapper">
-          <div class="col-lg-12">
-            <span class="header__wrapper--bag" v-show="showCart">BAG STORE</span>
+        <div class="container wrapper">
+          <div class="row">
+            <div class="col-lg-12">
+              <span class="wrapper--bag" @click="showCart = !showCart">CART</span>
+            </div>
           </div>
         </div>
       </div>
-      <div id="cart" v-if="showCart = !showCart">
-        <div class="container fluid cart__wrapper">
-          <div class="col-lg-12">
-            <span>APENAS UM TEXTO</span>
+      <!-- FIM do Cabeçalho -->
+      <!-- Carrinho escondido -->
+      <div id="cart" v-if="!showCart">
+        <div class="container wrapper">
+          <div class="row justify-content-end">
+            <div class="col-lg-8">
+              <productsCart/>
+            </div>
           </div>
         </div>
       </div>
+      <!-- FIM do Carrinho escondido -->
     </header>
     <main>
-      <div id="home"></div>
+      <!-- Produtos -->
+      <productsHome/>
     </main>
   </div>
+  <!-- FIM dos produtos -->
 </template>
 
 <script>
+import productsHome from "@/components/productsHome.vue";
+import productsCart from "@/components/productsCart.vue";
 export default {
   name: "app",
+  components: {
+    productsHome,
+    productsCart
+  },
   data() {
     return {
-      showCart: false
+      showCart: true
     };
   }
 };
@@ -35,11 +51,19 @@ export default {
 
 <style lang="scss">
 html {
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
+  font-family: "Open Sans", sans-serif;
   font-size: 10px;
 }
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
+}
+#header {
+  .wrapper {
+    &--bag {
+    }
+  }
 }
 </style>

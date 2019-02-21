@@ -6,12 +6,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    products
+    products,
+    addedToCart: []
   },
   getters: {
   },
   mutations: {
-
+    addToCart(state, id) {
+      return state.addedToCart.push(id)
+    }
   },
   actions: {
 
