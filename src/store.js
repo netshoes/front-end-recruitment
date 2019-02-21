@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { products } from '@/public/data/products.json'
+import { products } from './data/products.json'
 
 Vue.use(Vuex)
 

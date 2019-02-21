@@ -4,15 +4,20 @@
       <div id="header">
         <div class="container-fluid header__wrapper">
           <div class="col-lg-12">
-              <span class="header__wrapper--bag" @click="showCart">BAG STORE</span>
+            <span class="header__wrapper--bag" v-show="showCart">BAG STORE</span>
+          </div>
+        </div>
+      </div>
+      <div id="cart" v-if="showCart = !showCart">
+        <div class="container fluid cart__wrapper">
+          <div class="col-lg-12">
+            <span>APENAS UM TEXTO</span>
           </div>
         </div>
       </div>
     </header>
     <main>
-      <div id="home">
-        
-      </div>
+      <div id="home"></div>
     </main>
   </div>
 </template>
@@ -20,7 +25,11 @@
 <script>
 export default {
   name: "app",
-  components: {}
+  data() {
+    return {
+      showCart: false
+    };
+  }
 };
 </script>
 
