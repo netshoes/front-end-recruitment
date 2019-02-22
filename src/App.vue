@@ -5,8 +5,10 @@
       <div id="header">
         <div class="container wrapper">
           <div class="row">
-            <div class="col-lg-12">
-              <span class="wrapper--bag" @click="showCart = !showCart">CART</span>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+              <span class="wrapper--bag" @click="showCart = !showCart">
+                <font-awesome-icon :icon="['fas', 'shopping-bag']" class="fa-lg"/>
+              </span>
             </div>
           </div>
         </div>
@@ -16,7 +18,7 @@
       <div id="cart" v-if="!showCart">
         <div class="container wrapper">
           <div class="row justify-content-end">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
               <productsCart/>
             </div>
           </div>
@@ -63,6 +65,10 @@ html {
 #header {
   .wrapper {
     &--bag {
+      font-size: 2rem;
+      &:hover {
+        color: rgb(223, 189, 0);
+      }
     }
   }
 }

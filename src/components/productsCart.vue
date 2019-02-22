@@ -1,34 +1,47 @@
 <template>
   <div id="products-cart">
     <div class="container wrapper">
-      <div
-        class="row card-product justify-content-center"
-        v-for="(product,index) in products"
-        :key="index"
-      >
-        <div class="col-lg-2">
-          <img
-            class="card-product__image"
-            src="https://via.placeholder.com/60x60"
-            alt="Uma foto de produto"
-          >
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <span class="wrapper__bag">
+            <font-awesome-icon :icon="['fas', 'shopping-bag']" class="fa-lg wrapper__bag--icon"/>
+            <span class="wrapper__bag--cont align-self-end">{{products.length}}</span>
+            SACOLA
+          </span>
         </div>
-        <div class="col-lg-8">
-          <div class="d-flex flex-column">
-            <span class="card-product__title">{{product.title}}</span>
-            <div class="d-flex">
-              <span class="card-product__sizes">{{product.availableSizes[0]}}</span>
-              <span class="card-product__style">{{product.style}}</span>
-            </div>
-            <span class="card-product__quantity">QUANTIDADE</span>
+      </div>
+      <div v-for="(cart,index) in addedToCart" :key="index">
+        <div
+          class="row card-product justify-content-center"
+          v-for="(product, id) in products"
+          :key="id"
+        >
+          <div class="col-lg-2 col-md-2 col-sm-2 col-3" v-if="product.id == cart">
+            <img
+              class="card-product__image"
+              src="https://via.placeholder.com/60x60"
+              alt="Uma foto de produto"
+            >
           </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="d-flex flex-column align-items-center justify-content-between">
-            <button class="card-product__button">X</button>
-            <div class="d-flex">
-              <span class="card-product__format-price">{{product.currencyFormat}}</span>
-              <span class="card-product__price">{{product.price}}</span>
+          <div class="col-lg-8 col-md-8 col-sm-10 col-9">
+            <div class="d-flex flex-column">
+              <span class="card-product__title">{{product.title}}</span>
+              <div class="d-flex">
+                <span class="card-product__sizes">{{product.availableSizes[0]}}</span>
+                <span class="card-product__style">{{product.style}}</span>
+              </div>
+              <span class="card-product__quantity">Quantidade:</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-12 col-12">
+            <div
+              class="d-flex flex-lg-column flex-md-column flex-sm-column flex-row align-items-center justify-content-between"
+            >
+              <button class="card-product__remove-from-cart d-none d-sm-block d-md-block">X</button>
+              <div class="d-flex">
+                <span class="card-product__format-price">{{product.currencyFormat}}</span>
+                <span class="card-product__price">{{product.price}}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -51,11 +64,11 @@
 export default {
   name: "productsCart",
   computed: {
-    products() {
-      return this.$store.state.products;
-    },
     addedToCart() {
       return this.$store.state.addedToCart;
+    },
+    products() {
+      return this.$store.state.products;
     }
   }
 };
@@ -65,9 +78,29 @@ export default {
 <style lang="scss">
 #products-cart {
   .wrapper {
+    border-radius: 3px;
     z-index: 1;
     background-color: rgb(32, 32, 37);
     position: absolute;
+    &__bag {
+      color: rgb(255, 255, 255);
+      font-size: 4rem;
+      padding: 5rem;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      border-bottom: 3px solid rgb(0, 0, 0);
+      &--icon {
+      }
+      &--cont {
+        margin-right: 2rem;
+        font-size: 1rem;
+        background-color: rgb(223, 189, 0);
+        border-radius: 30rem;
+        color: rgb(0, 0, 0);
+        padding: 0.3rem;
+      }
+    }
     .card-product {
       margin: 1rem 0;
       color: rgb(255, 255, 255);
@@ -83,6 +116,7 @@ export default {
       }
       &__title {
         font-size: 1.4rem;
+        font-weight: 600;
       }
       &__sizes {
         color: rgb(153, 153, 153);
@@ -104,10 +138,11 @@ export default {
         font-size: 1.4rem;
         color: rgb(153, 153, 153);
       }
-      &__button {
+      &__remove-from-cart {
         font-size: 1.4rem;
         background: none;
         border: none;
+        color: rgb(0, 0, 0);
         &:hover {
           color: rgb(255, 255, 255);
         }
@@ -124,7 +159,7 @@ export default {
       }
     }
     .total {
-      color: rgb(153,153,153)
+      color: rgb(153, 153, 153);
     }
     .submit {
       text-transform: uppercase;
@@ -136,6 +171,9 @@ export default {
       padding: 2rem;
       font-size: 1.4rem;
       font-weight: 600;
+      &:hover {
+        color: rgb(223, 189, 0);
+      }
     }
   }
 }

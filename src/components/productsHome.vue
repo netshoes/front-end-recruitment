@@ -3,7 +3,7 @@
     <div class="container wrapper">
       <div class="row">
         <div
-          class="col-lg-4 col-sm-6 card-product"
+          class="col-lg-4 col-sm-6 col-sm-12 card-product"
           v-for="(product,index) in products"
           :key="index"
         >
@@ -36,9 +36,6 @@ export default {
   computed: {
     products() {
       return this.$store.state.products;
-    },
-    addedToCart() {
-      return this.$store.state.addedToCart;
     }
   },
   methods: {
@@ -52,7 +49,7 @@ export default {
 
 <style lang="scss">
 #products-home {
-  .wrapper {  
+  .wrapper {
     .card-product {
       text-align: center;
       &__image {
