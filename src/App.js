@@ -1,26 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+import ProductList from './components/ProductList';
+import { StoreContext } from './context/index';
 import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const appContext = useContext(StoreContext);
+	const { loading } = appContext;
+	return <div>{loading ? <h1> fetching products... </h1> : <ProductList />}</div>;
 }
 
 export default App;
