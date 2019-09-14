@@ -8,12 +8,10 @@ export default function ProductList() {
 
 	return (
 		<React.Fragment>
-			<div>
-				<div className="product-list">
-					{products.map((product) => {
-						return <Product key={product.id} product={product} />;
-					})}
-				</div>
+			<div className="products-list">
+				{products.map((product) => {
+					return <Product key={product.id} product={product} />;
+				})}
 			</div>
 		</React.Fragment>
 	);

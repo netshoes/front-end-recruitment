@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-export default function Recipe({ product }) {
-	const { id, sku, title } = product;
+export default function Product({ product }) {
+	const { id, installments, price, title } = product;
+
+	let price_splitted = String(parseFloat(Math.round(price * 100) / 100).toFixed(2)).split('.');
 	/*
     Available properties on destructing:
     id, sku, title, description, availableSizes": ["S","G","GG","GGG"],
@@ -10,11 +12,21 @@ export default function Recipe({ product }) {
 
 	return (
 		<React.Fragment>
-			<div>
-				<div className="card">
-					<h6>{title}</h6>
-					<img src={`./assets/${id}.jpg`} />
-				</div>
+			<div className="product">
+				<img className="product__image" src={`./assets/${id}.jpg`} />
+				<p className="product__title">{title}</p>
+
+				<p className="product__price">
+					<p className="product__price--topline" />
+					R${' '}
+					<span className="product__price--second-1">
+						{price_splitted[0]}
+						<span className="product__price--second-2">,{price_splitted[1]}</span>
+					</span>
+				</p>
+				<p className="product__installment">
+					ou {installments} x R$ {parseFloat(Math.round(price / installments)).toFixed(2).replace('.', ',')}
+				</p>
 			</div>
 		</React.Fragment>
 	);

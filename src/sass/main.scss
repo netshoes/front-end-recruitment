@@ -1,0 +1,15 @@
+//ABSTRACTS
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+//BASE
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+
+//COMPONENT
+@import "components/product";
+
+//LAYOUT
+@import "layout/products-list";
+@import "layout/interface";
