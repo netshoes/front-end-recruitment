@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { StoreContext } from '../context/index';
 
 export default function Product({ product }) {
 	const { id, installments, price, title } = product;
@@ -9,13 +10,24 @@ export default function Product({ product }) {
     id, sku, title, description, availableSizes": ["S","G","GG","GGG"],
     style, price, installments, currencyId, currencyFormat, isFreeShipping
     */
+	const appContext = useContext(StoreContext);
+	const { addProductToCart, removeProductFromCart, cart } = appContext;
 
 	return (
 		<React.Fragment>
 			<div className="product">
-				<img className="product__image" src={`./assets/${id}.jpg`} />
-				<p className="product__title">{title}</p>
-
+				<img
+					className="product__image"
+					src={`./assets/${id}.jpg`}
+					onClick={() => {
+						if (!document.querySelector('.cart')) {
+							addProductToCart(product, cart);
+						}
+					}}
+				/>
+				<p className="product__title" onClick={() => removeProductFromCart(product, cart)}>
+					{title}
+				</p>
 				<p className="product__price">
 					<p className="product__price--topline" />
 					R${' '}
