@@ -10,7 +10,7 @@ function App() {
 	return (
 		<React.Fragment>
 			{loading ? (
-				<h1> fetching products... </h1>
+				<h1> Loading... </h1>
 			) : (
 				<React.Fragment>
 					<ProductList />

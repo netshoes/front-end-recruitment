@@ -11,31 +11,33 @@ export default function Product({ product }) {
     style, price, installments, currencyId, currencyFormat, isFreeShipping
     */
 	const appContext = useContext(StoreContext);
-	const { addProductToCart, removeProductFromCart, cart } = appContext;
-
+	const { addProductToCart, removeProductFromCart, cart, toogleCart } = appContext;
 	return (
 		<React.Fragment>
 			<div className="product">
 				<img
 					className="product__image"
 					src={`./assets/${id}.jpg`}
+					alt={`produto ${id}`}
 					onClick={() => {
-						if (!document.querySelector('.cart')) {
+						if (document.querySelector('.cart__hidden')) {
 							addProductToCart(product, cart);
+						} else {
+							toogleCart();
 						}
 					}}
 				/>
 				<p className="product__title" onClick={() => removeProductFromCart(product, cart)}>
 					{title}
 				</p>
-				<p className="product__price">
+				<div className="product__price">
 					<p className="product__price--topline" />
 					R${' '}
 					<span className="product__price--second-1">
 						{price_splitted[0]}
 						<span className="product__price--second-2">,{price_splitted[1]}</span>
 					</span>
-				</p>
+				</div>
 				<p className="product__installment">
 					ou {installments} x R$ {parseFloat(Math.round(price / installments)).toFixed(2).replace('.', ',')}
 				</p>

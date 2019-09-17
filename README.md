@@ -4,7 +4,7 @@
 
 * See a list of products; DONE
 * Be able to add or remove items to the cart and get instant visual feedback;
-* See the products added to the cart.
+* See the products added to the cart. DONE
 
 ## Data
 
@@ -28,6 +28,6 @@ json-server --watch ./public/data/products.json --port 8001
 
 ## Bonus
 
-* Persist data on page reload;
+* Persist data on page reload; DONE
 * Test your code;
 * Instructions on how to build/run the project.
