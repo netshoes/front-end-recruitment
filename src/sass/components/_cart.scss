@@ -10,6 +10,15 @@
 	transition: width 0.4s;
 	font-family: "Open Sans";
 	margin-left: -250px;
+
+	@include respond(phone) {
+		width: 100%;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 	&__checkout {
 		width: 100%;
 		background-color: $color-black;
@@ -25,8 +34,23 @@
 		text-align: center;
 	}
 
+	&__empty {
+		font-size: 36px;
+		display: block;
+		text-align: center;
+		position: absolute;
+		top: 20%;
+		left: 30%;
+		color: $color-white;
+	}
+
 	&__list {
 		height: 40vh;
+
+		@include respond(phone) {
+			height: 60vh;
+			padding: 0 10px;
+		}
 
 		&--scroll {
 			/* FOR FIREFOX*/
@@ -52,6 +76,18 @@
 		padding: 20px 0;
 		padding-right: 10px;
 
+		&__delete {
+			opacity: 0.5;
+			color: $color-white;
+			& .cart__item--info--style,
+			& .cart__item--info--quantity p:first-child,
+			& .cart__item--info--price,
+			& select {
+				text-decoration: line-through;
+				background-color: rgba($cart-background, .5);
+			}
+		}
+
 		&--image {
 			width: 57px;
 			height: 60px;
@@ -64,6 +100,7 @@
 				font-size: 14px;
 				font-weight: 600;
 				color: $color-white;
+				position: relative;
 			}
 			&--size {
 				/* styling */
@@ -104,6 +141,37 @@
 				font-weight: 300;
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
+
+				@include respond(phone) {
+					flex-wrap: wrap;
+				}
+				&--input {
+					display: flex;
+					align-items: center;
+					& > input {
+						width: 36px;
+						height: 36px;
+						border-radius: 5px;
+						border: 1px solid #dfdfdf;
+						width: 30px;
+						height: 30px;
+						margin: 0 10px;
+						font-size: 12px;
+						font-weight: 600;
+						text-align: center;
+					}
+					& > p {
+						font-size: 14px;
+						color: #dfdfdf;
+						border: 1px solid #dfdfdf;
+						width: 25px;
+						border-radius: 50%;
+						text-align: center;
+						font-weight: bold;
+						cursor: pointer;
+					}
+				}
 			}
 			&--price {
 				font-size: 14px;
@@ -111,6 +179,21 @@
 				color: $color-cart-price;
 				font-weight: 400;
 				text-align: right;
+			}
+		}
+
+		&--remove {
+			transition: color 0.7s ease;
+			position: absolute;
+			cursor: pointer;
+			right: 0;
+			color: $color-black;
+			display: inline-block;
+			transform: scaleX(1.5);
+			font-family: Arial;
+			font-weight: bold;
+			&:hover {
+				color: $color-white;
 			}
 		}
 	}
@@ -121,6 +204,10 @@
 		justify-content: center;
 		align-items: center;
 		padding: 35px 0;
+
+		@include respond(phone) {
+			padding: 15px 0;
+		}
 
 		&--amount {
 			cursor: pointer;
@@ -165,6 +252,10 @@
 		display: flex;
 		justify-content: space-between;
 		margin: 20px 0;
+
+		@include respond(phone) {
+			padding: 0 10px;
+		}
 
 		&--1st {
 			font-size: 14px;

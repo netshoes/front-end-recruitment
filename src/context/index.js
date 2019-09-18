@@ -32,7 +32,7 @@ const StoreProvider = (props) => {
 		updatedCart.amount++;
 
 		setOpenCart(true);
-		setCart(updatedCart);
+		setCart({ ...updatedCart });
 		localStorage.setItem('cart-netshoes', JSON.stringify({ updatedCart }));
 	};
 
@@ -48,9 +48,24 @@ const StoreProvider = (props) => {
 		} else {
 			updatedCart.products[updatedItemIndex] = updatedItem;
 		}
+
+		updatedCart.subtotal -= product.price;
 		updatedCart.amount--;
 
-		setCart(updatedCart);
+		setCart({ ...updatedCart });
+		localStorage.setItem('cart-netshoes', JSON.stringify({ updatedCart }));
+	};
+
+	const spliceFromCart = (product, cart) => {
+		const updatedCart = cart;
+		const updatedItemIndex = updatedCart.products.findIndex((item) => item.id === product.id);
+		const updatedItem = updatedCart.products[updatedItemIndex];
+
+		updatedCart.subtotal -= parseFloat((updatedItem.price * updatedItem.quantity).toFixed(1));
+		updatedCart.amount -= updatedItem.quantity;
+		updatedCart.products.splice(updatedItemIndex, 1);
+
+		setCart({ ...updatedCart });
 		localStorage.setItem('cart-netshoes', JSON.stringify({ updatedCart }));
 	};
 
@@ -101,6 +116,7 @@ const StoreProvider = (props) => {
 				removeProductFromCart,
 				openCart,
 				products,
+				spliceFromCart,
 				toogleCart
 			}}
 		>

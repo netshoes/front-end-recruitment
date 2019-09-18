@@ -5,6 +5,10 @@
 	text-align: center;
 	margin-bottom: 50px;
 
+	@include respond(phone) {
+		width: 100%;
+	}
+
 	&__image {
 		cursor: pointer;
 	}
